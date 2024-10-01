@@ -1,0 +1,3703 @@
+[
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_13209_13253",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 0,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_deuce_return_bh_gs_CC_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_13760_13804",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 0,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_return_fh_gs_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_14427_14442",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 0,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_W_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 73,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_14630_14703",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 0,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_secondserve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_deuce_return_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 73,
+        "label": "near_ad_stroke_fh_smash_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 160,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_15268_15428",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 0,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_B_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_return_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 131,
+        "label": "near_deuce_stroke_fh_gs_II_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 160,
+        "label": "far_deuce_stroke_bh_gs_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 160,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_15993_16153",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 1,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_return_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 102,
+        "label": "far_deuce_stroke_fh_lob_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 160,
+        "label": "near_deuce_stroke_fh_gs_DL_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_17646_17661",
+    "far_name": "Bopanna & Ebden",
+    "far_hand": "RH & RH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 0,
+    "near_name": "Granollers & Zeballos",
+    "near_hand": "RH & LH",
+    "near_set": 0,
+    "near_game": 0,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_T_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 102,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_18110_18212",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 1,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_return_fh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_deuce_stroke_bh_volley_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 102,
+        "label": "near_deuce_stroke_fh_gs_CC_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 218,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_18922_19140",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 1,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_deuce_return_fh_gs_II_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 73,
+        "label": "far_deuce_stroke_fh_volley_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 102,
+        "label": "near_ad_stroke_bh_volley_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 189,
+        "label": "near_deuce_stroke_fh_volley_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 218,
+        "label": "far_deuce_stroke_bh_volley_B_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_19966_19981",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 2,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 1,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_return_bh_gs_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 276,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_20749_21025",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 3,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 1,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_ad_return_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 73,
+        "label": "far_ad_stroke_bh_volley_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 131,
+        "label": "near_ad_stroke_bh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 160,
+        "label": "far_deuce_stroke_fh_volley_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 276,
+        "label": "far_deuce_stroke_fh_smash_CC_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_21851_21866",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 3,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 1,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_W_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 102,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_22315_22417",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 3,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 1,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_deuce_secondserve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_deuce_return_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 73,
+        "label": "far_deuce_stroke_fh_volley_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 102,
+        "label": "near_deuce_stroke_fh_gs_CC_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 131,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_23330_23461",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 3,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 1,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_B_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_ad_return_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 102,
+        "label": "far_ad_stroke_fh_smash_II_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 131,
+        "label": "near_deuce_stroke_fh_lob_DL_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_24461_24505",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 4,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 1,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_ad_return_fh_gs_IO_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 189,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_25447_25636",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 4,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 1,
+    "near_point": 4,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_deuce_return_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 73,
+        "label": "near_deuce_stroke_fh_volley_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 102,
+        "label": "far_deuce_stroke_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 131,
+        "label": "near_deuce_stroke_fh_volley_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 160,
+        "label": "far_deuce_stroke_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 189,
+        "label": "near_deuce_stroke_fh_volley_CC_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_26230_26274",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 4,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 1,
+    "near_point": 5,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_return_bh_gs_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_26781_26825",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 2,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_deuce_return_bh_gs_CC_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 73,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_27390_27463",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 2,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_return_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 73,
+        "label": "near_ad_stroke_bh_volley_CC_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 73,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_30493_30566",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 2,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_deuce_return_fh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 73,
+        "label": "far_deuce_stroke_bh_gs_CC_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 798,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_31276_32074",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 2,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_B_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_ad_return_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 798,
+        "label": "far_deuce_serve_-_-_T_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_32436_32480",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 2,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_secondserve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_return_bh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_deuce_stroke_bh_lob_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_33509_33524",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 2,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_W_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_33915_33959",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 2,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_ad_secondserve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_ad_return_bh_gs_CC_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_34727_34771",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 2,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 2,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_B_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_deuce_return_bh_gs_II_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_35568_35612",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 3,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 2,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_ad_return_bh_gs_CC_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_36554_36569",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 3,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 2,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_T_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_36931_36975",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 3,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 2,
+    "near_point": 4,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_ad_secondserve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_ad_return_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_stroke_bh_volley_CC_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_37946_37990",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 4,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 2,
+    "near_point": 4,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_return_bh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_deuce_stroke_bh_volley_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_38526_38570",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 4,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 2,
+    "near_point": 5,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_return_bh_gs_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_39019_39034",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 4,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 2,
+    "near_point": 5,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_T_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_39251_39295",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 3,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_secondserve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_deuce_return_bh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_deuce_stroke_bh_volley_DL_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 276,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_39918_40194",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 3,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_ad_return_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 102,
+        "label": "near_ad_stroke_fh_gs_II_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 160,
+        "label": "far_deuce_stroke_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 189,
+        "label": "near_deuce_stroke_fh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 247,
+        "label": "far_deuce_stroke_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 276,
+        "label": "near_deuce_stroke_fh_gs_CC_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_40817_40861",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 3,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_return_bh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_deuce_stroke_bh_volley_CC_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 131,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_41455_41586",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 3,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_return_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 73,
+        "label": "near_ad_stroke_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 131,
+        "label": "far_ad_stroke_bh_gs_CC_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 102,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_44529_44631",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 3,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_B_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_return_bh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 73,
+        "label": "far_ad_stroke_fh_smash_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 102,
+        "label": "near_deuce_stroke_fh_gs_CC_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_45283_45298",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 2,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 3,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_return_bh_gs_CC_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_45921_45965",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 4,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_deuce_return_fh_gs_CC_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_46588_46632",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 4,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_ad_return_fh_gs_II_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_47284_47328",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 2,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 4,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_deuce_return_bh_gs_IO_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_48038_48082",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 2,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 4,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_return_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_deuce_stroke_fh_volley_CC_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 102,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_48966_49068",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 2,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 4,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_return_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_ad_stroke_fh_volley_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 73,
+        "label": "near_deuce_stroke_fh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 102,
+        "label": "far_deuce_stroke_fh_volley_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_50010_50054",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 2,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 4,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_deuce_return_bh_gs_CC_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_50619_50634",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 2,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 4,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_W_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_50967_51011",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 5,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_secondserve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_return_fh_gs_IO_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_51663_51678",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 5,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_T_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_51924_51968",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 5,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_deuce_secondserve_-_-_B_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_return_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_deuce_stroke_fh_volley_DL_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_52620_52635",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 5,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_ad_return_bh_gs_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_56419_56463",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 5,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_deuce_return_bh_gs_IO_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_57376_57391",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 5,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_W_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_57782_57826",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 2,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 5,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_ad_secondserve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_return_bh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_deuce_stroke_fh_volley_DL_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 131,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_58449_58580",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 3,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 5,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_deuce_return_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 73,
+        "label": "far_deuce_stroke_fh_volley_II_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 102,
+        "label": "near_ad_stroke_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 131,
+        "label": "far_ad_stroke_fh_volley_II_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 102,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_59203_59305",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 5,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_return_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 73,
+        "label": "far_ad_stroke_fh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 102,
+        "label": "near_deuce_stroke_bh_gs_II_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_60711_60755",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 5,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_deuce_return_bh_gs_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 160,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_61378_61538",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 5,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_return_bh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 131,
+        "label": "near_deuce_stroke_fh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 160,
+        "label": "far_ad_stroke_bh_gs_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_62132_62176",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 0,
+    "near_game": 5,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_return_bh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_ad_stroke_fh_volley_II_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 102,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_62799_62901",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 0,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_ad_return_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_ad_stroke_bh_volley_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 102,
+        "label": "far_deuce_stroke_bh_lob_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_63988_64003",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 0,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_return_bh_gs_IO_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 276,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_64597_64873",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 0,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_ad_return_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 73,
+        "label": "far_ad_stroke_bh_volley_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 102,
+        "label": "near_deuce_stroke_fh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 131,
+        "label": "far_ad_stroke_bh_volley_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 160,
+        "label": "near_deuce_stroke_bh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 160,
+        "label": "far_ad_stroke_fh_volley_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 218,
+        "label": "near_ad_stroke_fh_gs_II_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 218,
+        "label": "far_deuce_stroke_bh_volley_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 247,
+        "label": "near_deuce_stroke_bh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 276,
+        "label": "far_ad_stroke_fh_volley_II_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_65757_65772",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 0,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_W_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 160,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_66221_66381",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 0,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_deuce_secondserve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_deuce_return_bh_gs_II_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_stroke_bh_lob_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 102,
+        "label": "near_deuce_stroke_fh_smash_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 102,
+        "label": "far_deuce_stroke_fh_volley_II_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 160,
+        "label": "near_ad_stroke_fh_volley_II_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 102,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_67236_67338",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 0,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_stroke_bh_volley_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 102,
+        "label": "near_deuce_stroke_fh_lob_CC_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_68512_68556",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 1,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_return_fh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_ad_stroke_fh_volley_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_71470_71485",
+    "far_name": "Bopanna & Ebden",
+    "far_hand": "RH & RH",
+    "far_set": 1,
+    "far_game": 1,
+    "far_point": 0,
+    "near_name": "Granollers & Zeballos",
+    "near_hand": "RH & LH",
+    "near_set": 0,
+    "near_game": 0,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_T_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 73,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_71702_71775",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 1,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_secondserve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 73,
+        "label": "far_deuce_return_fh_gs_II_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_72311_72355",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 1,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_return_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_ad_stroke_bh_volley_CC_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 102,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_72891_72993",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 1,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_B_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_deuce_return_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 73,
+        "label": "near_ad_stroke_fh_volley_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 102,
+        "label": "far_ad_stroke_bh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 102,
+        "label": "near_deuce_stroke_fh_smash_DL_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_74022_74037",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 1,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_W_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_74225_74269",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 2,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_ad_secondserve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_return_bh_gs_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 131,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_75530_75661",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 2,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_return_fh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 102,
+        "label": "far_ad_stroke_fh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 131,
+        "label": "near_ad_stroke_fh_gs_IO_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_76487_76531",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 2,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_deuce_return_fh_gs_IO_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_77386_77401",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 2,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_T_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_77792_77836",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 2,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 2,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_secondserve_-_-_B_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_deuce_return_bh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_stroke_fh_volley_IO_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 189,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_78604_78793",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 2,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 2,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_ad_return_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 131,
+        "label": "far_ad_stroke_fh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 131,
+        "label": "near_ad_stroke_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 160,
+        "label": "far_ad_stroke_bh_volley_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 189,
+        "label": "near_deuce_stroke_fh_gs_CC_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 102,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_79677_79779",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 0,
+    "far_point": 3,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 2,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_deuce_return_bh_gs_II_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 102,
+        "label": "far_deuce_stroke_fh_volley_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 102,
+        "label": "near_deuce_stroke_fh_gs_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 73,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_80750_80823",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 2,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_ad_return_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 73,
+        "label": "far_deuce_stroke_bh_volley_IO_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 885,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_83795_84680",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 2,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_deuce_return_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 102,
+        "label": "near_deuce_stroke_fh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 131,
+        "label": "far_deuce_stroke_fh_gs_II_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 131,
+        "label": "near_ad_stroke_bh_volley_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 856,
+        "label": "near_ad_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 885,
+        "label": "far_ad_return_bh_gs_DL_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_85651_85695",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 2,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_deuce_return_bh_gs_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_86376_86420",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 2,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_return_bh_gs_DL_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_86985_87029",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 2,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_deuce_return_bh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_ad_stroke_bh_volley_CC_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 711,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_87565_88276",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_return_bh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 682,
+        "label": "far_deuce_serve_-_-_B_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 711,
+        "label": "near_deuce_return_fh_gs_CC_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_89044_89059",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_return_fh_gs_II_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 827,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_89856_90683",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 2,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_return_bh_gs_II_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_ad_stroke_fh_volley_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 798,
+        "label": "far_ad_serve_-_-_B_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 827,
+        "label": "near_ad_return_fh_gs_II_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 827,
+        "label": "far_deuce_stroke_bh_volley_CC_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 131,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_91393_91524",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 3,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_deuce_stroke_fh_volley_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_deuce_stroke_fh_lob_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 102,
+        "label": "near_ad_stroke_fh_volley_II_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 131,
+        "label": "far_deuce_stroke_bh_volley_CC_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 1349,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_93075_94424",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 3,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P4",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_deuce_return_bh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 73,
+        "label": "far_deuce_stroke_fh_volley_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 102,
+        "label": "near_deuce_stroke_fh_lob_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 160,
+        "label": "far_ad_stroke_bh_smash_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 1349,
+        "label": "near_deuce_serve_-_-_T_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_94960_95004",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 3,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_return_fh_gs_II_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_95453_95497",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 3,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_deuce_return_fh_gs_IO_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 102,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_96004_96106",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 3,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 4,
+    "events": [
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_return_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 102,
+        "label": "near_ad_stroke_fh_smash_IO_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_97222_97237",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 3,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 4,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_T_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_97686_97701",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 4,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 4,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_secondserve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 15,
+        "label": "near_deuce_return_bh_gs_II_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_98295_98310",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 4,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 4,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_T_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 73,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_98759_98832",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 1,
+    "far_point": 5,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 4,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_ad_secondserve_-_-_B_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_ad_return_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_stroke_bh_volley_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 73,
+        "label": "near_deuce_stroke_fh_volley_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 73,
+        "label": "far_ad_stroke_bh_volley_DL_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 44,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_99571_99615",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 2,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_deuce_serve_-_-_B_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_deuce_return_bh_gs_IO_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 73,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_100180_100253",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 2,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P3",
+        "frame": 15,
+        "label": "far_ad_serve_-_-_T_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 44,
+        "label": "near_ad_return_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 73,
+        "label": "far_ad_stroke_fh_volley_II_win",
+        "outcome": "win"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 73,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_103196_103269",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 2,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_ad_stroke_fh_volley_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 73,
+        "label": "far_ad_stroke_fh_volley_IO_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_103776_103791",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 2,
+    "far_point": 1,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_T_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_104095_104110",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 2,
+    "far_point": 2,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 1,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_secondserve_-_-_B_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 247,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_104733_104980",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 2,
+    "far_point": 2,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 44,
+        "label": "far_deuce_return_bh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_ad_stroke_bh_volley_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 102,
+        "label": "far_ad_stroke_bh_gs_CC_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 131,
+        "label": "far_ad_stroke_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 189,
+        "label": "far_ad_stroke_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P2",
+        "frame": 218,
+        "label": "near_ad_stroke_fh_gs_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 247,
+        "label": "far_ad_stroke_fh_gs_IO_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_105661_105676",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 2,
+    "far_point": 2,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 2,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_serve_-_-_W_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 73,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_106067_106140",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 2,
+    "far_point": 2,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 3,
+    "near_point": 3,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_ad_secondserve_-_-_W_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P4",
+        "frame": 44,
+        "label": "far_ad_return_bh_gs_DL_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P1",
+        "frame": 44,
+        "label": "near_deuce_stroke_bh_volley_IO_in",
+        "outcome": "in"
+      },
+      {
+        "player": "P3",
+        "frame": 73,
+        "label": "far_deuce_stroke_bh_volley_CC_err",
+        "outcome": "err"
+      }
+    ]
+  },
+  {
+    "fps": 29.0,
+    "height": 720,
+    "width": 1280,
+    "num_frames": 15,
+    "video": "miami-2024-sf-bopanna-ebden-granollers-zeballos_106792_106807",
+    "far_name": "Granollers & Zeballos",
+    "far_hand": "RH & LH",
+    "far_set": 0,
+    "far_game": 2,
+    "far_point": 0,
+    "near_name": "Bopanna & Ebden",
+    "near_hand": "RH & RH",
+    "near_set": 1,
+    "near_game": 4,
+    "near_point": 0,
+    "events": [
+      {
+        "player": "P2",
+        "frame": 15,
+        "label": "near_deuce_serve_-_-_W_win",
+        "outcome": "win"
+      }
+    ]
+  }
+]

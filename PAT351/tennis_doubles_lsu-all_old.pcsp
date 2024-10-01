@@ -1,0 +1,1332 @@
+﻿// tennis court (current model is with 8 regions, later model will be 16 regions with more strategies)
+//Chen Dong(2)/Julien Penzlin(1) (LSU) def. Sarr(4)/ Daryabeigi(3) (SC) 6-1
+//     *****
+// Julien  Chen
+// de_ct   ad_ct
+// ------+------  baseline
+// |  1  |  2  |
+// |-----|-----|  service line
+// |  3  |  4  |
+// |===========|  net. "9" is representing net error or not able to hit over to opponent court area.
+// |  5  |  6  |
+// |-----|-----|  service line
+// |  7  |  8  |
+// ------+------  baseline
+// ad_ct   de_ct
+// Sarr  Daryabeigi
+//     *****
+
+//Chen Dong(2)/Julien Penzlin(1) (LSU) def. Sarr(4)/ Daryabeigi(3) (SC) 6-1
+
+enum{t1,t2, na};
+
+
+var turn = na; // who serves current turn
+var team1 = 0;
+var team2 = 0;
+var won = na;
+var order = [1,3,2,4];
+var points = 1;
+
+// Only call after serving from deuce court
+#define nextServer(p) {if (order[0]==p) {turn=order[1]}
+					   else {if (order[1]==p) {turn=order[2]}
+					         else {if (order[2]==p) {turn=order[3]}
+							       else {turn=order[0]}}}};
+
+WhoServe1st = TossCoin -> p1p3{order[0]=1;order[1]=3;order[2]=2;order[3]=4;turn=1} -> Skip []
+						  p1p4{order[0]=1;order[1]=4;order[2]=2;order[3]=3;turn=1} -> Skip []
+			 			  p2p3{order[0]=2;order[1]=3;order[2]=1;order[3]=4;turn=2} -> Skip []
+						  p2p4{order[0]=2;order[1]=4;order[2]=1;order[3]=3;turn=2} -> Skip []
+						  p3p1{order[0]=3;order[1]=1;order[2]=4;order[3]=2;turn=3} -> Skip []
+						  p3p2{order[0]=3;order[1]=2;order[2]=4;order[3]=1;turn=3} -> Skip []
+						  p4p1{order[0]=4;order[1]=1;order[2]=3;order[3]=2;turn=4} -> Skip []
+						  p4p2{order[0]=4;order[1]=2;order[2]=3;order[3]=1;turn=4} -> Skip;
+
+// Whoever won the toss, each team will decide who will serve first, therefore, it is modelled as general choice of 1..4
+TieBreakGame = WhoServe1st; (P1_DeServe [] P2_DeServe [] P3_DeServe [] P4_DeServe);
+
+// Proceed to the next point
+P1_Serve = [won==na && turn==1 && (team1+team2)%2==0]ReadyDeServe -> P1_DeServe [] [won==na && turn==1 && (team1+team2)%2==1]ReadyAdServe -> P1_AdServe;
+P2_Serve = [won==na && turn==2 && (team1+team2)%2==0]ReadyDeServe -> P2_DeServe [] [won==na && turn==2 && (team1+team2)%2==1]ReadyAdServe -> P2_AdServe;
+P3_Serve = [won==na && turn==3 && (team1+team2)%2==0]ReadyDeServe -> P3_DeServe [] [won==na && turn==3 && (team1+team2)%2==1]ReadyAdServe -> P3_AdServe;
+P4_Serve = [won==na && turn==4 && (team1+team2)%2==0]ReadyDeServe -> P4_DeServe [] [won==na && turn==4 && (team1+team2)%2==1]ReadyAdServe -> P4_AdServe;
+NextPt = P1_Serve [] P2_Serve [] P3_Serve [] P4_Serve [] ([won != na] GameOver -> Skip);
+
+// P1 1st serve from Deuce court
+P1_DeServe = [turn == 1] P1DeReady1st -> pcase { 
+	3: ServeT_in -> P3_DeReturn_BH  
+	1: ServeT_err -> P1_DeServe_2nd  
+	0: ServeT_win -> Ace{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt 
+    
+	4: ServeWide_in -> P3_DeReturn_FH
+	1: ServeWide_err -> P1_DeServe_2nd
+	0: ServeWide_win -> Ace{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt 
+	
+	1: ServeBody_in -> P3_DeReturn_FH [] P3_DeReturn_BH
+	1: ServeBody_err -> P1_DeServe_2nd
+	0: ServeBody_win -> Ace{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+}; 
+
+// P1 2nd serve from Deuce court
+P1_DeServe_2nd = [turn == 1] P1DeReady2nd -> pcase {                    
+	0: ServeT_in -> P3_DeReturn_BH
+	0: ServeT_err -> Doublefault{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeT_win -> Ace{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt 
+	
+	0: ServeWide_in -> P3_DeReturn_FH 
+	0: ServeWide_err -> Doublefault{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeWide_win -> Ace{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt 
+	
+	2: ServeBody_in -> P3_DeReturn_FH [] P3_DeReturn_BH
+	1: ServeBody_err -> Doublefault{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeBody_win -> Ace{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+}; 
+
+// P1 1st serve from Ad court
+P1_AdServe = [turn == 1] P1AdReady1st -> pcase { 
+	2: ServeT_in -> P4_AdReturn_FH
+	1: ServeT_err -> P1_AdServe_2nd
+	0: ServeT_win -> Ace{team1++; if (team1==points) {won=t1}} -> NextPt
+    
+	1: ServeWide_in -> P4_AdReturn_BH
+	2: ServeWide_err -> P1_AdServe_2nd
+	0: ServeWide_win -> Ace{team1++; if (team1==points) {won=t1}} -> NextPt
+
+	6: ServeBody_in -> P4_AdReturn_FH [] P4_AdReturn_BH
+	0: ServeBody_err -> P1_AdServe_2nd
+	0: ServeBody_win -> Ace{team1++; if (team1==points) {won=t1}} -> NextPt
+}; 
+
+// P1 2nd serve from Ad court
+P1_AdServe_2nd = [turn == 1] P1AdReady2nd -> pcase {                    
+	0: ServeT_in -> P4_AdReturn_FH
+	0: ServeT_err -> Doublefault{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt   
+	0: ServeT_win -> Ace{team1++; if (team1==points) {won=t1}} -> NextPt
+    
+	1: ServeWide_in -> P4_AdReturn_BH
+	0: ServeWide_err -> Doublefault{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	1: ServeWide_win -> Ace{team1++; if (team1==points) {won=t1}} -> NextPt
+
+	0: ServeBody_in -> P4_AdReturn_FH [] P4_AdReturn_BH
+	0: ServeBody_err -> Doublefault{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeBody_win -> Ace{team1++; if (team1==points) {won=t1}} -> NextPt
+}; 
+
+P1_DeReturn_FH = P1DeReadyFHReturn -> pcase {
+	3: FH_DownLine -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdStroke_BH [] P3_AdStroke_FH [] P3_AdVolley_FH [] P3_AdVolley_BH
+	1: FH_DownLine_err -> Error{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	4: FH_DownLine_win -> Winner{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+
+	1: FH_DownLine_lob -> P4_AdSmash_FH [] P4_AdSmash_BH [] P3_AdSmash_FH [] P3_AdSmash_BH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	1: FH_DownLine_lob_err -> Error{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: FH_DownLine_lob_win -> Winner{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+
+	1: FH_CrossCourt -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH
+	0: FH_CrossCourt_err -> Error{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	1: FH_CrossCourt_win -> Winner{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+
+	0: FH_CrossCourt_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_BH [] P3_DeStroke_FH
+	0: FH_CrossCourt_lob_err -> Error{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: FH_CrossCourt_lob_win -> Winner{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+};
+
+P1_DeReturn_BH = P1DeReadyBHReturn -> pcase {
+	2: BH_InsideIn -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdStroke_BH [] P3_AdStroke_FH [] P3_AdVolley_FH [] P3_AdVolley_BH
+	3: BH_InsideIn_err -> Error{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	1: BH_InsideIn_win -> Winner{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+
+	2: BH_InsideIn_lob -> P4_AdSmash_FH [] P4_AdSmash_BH [] P3_AdSmash_FH [] P3_AdSmash_BH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_InsideIn_lob_err -> Error{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: BH_InsideIn_lob_win -> Winner{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+
+	3: BH_InsideOut -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH
+	1: BH_InsideOut_err -> Error{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: BH_InsideOut_win -> Winner{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+
+	1: BH_InsideOut_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_BH [] P3_DeStroke_FH
+	0: BH_InsideOut_lob_err -> Error{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: BH_InsideOut_lob_win -> Winner{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+};
+
+P1_AdReturn_FH = P1AdReadyFHReturn -> pcase {
+	0: FH_InsideIn -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeStroke_FH [] P4_DeStroke_BH [] P4_DeVolley_FH [] P4_DeVolley_BH
+	0: FH_InsideIn_err -> Error{team2++; if (team2==points) {won=t2}} -> NextPt
+	0: FH_InsideIn_win -> Winner{team1++; if (team1==points) {won=t1}} -> NextPt
+
+	0: FH_InsideIn_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P4_DeStroke_BH [] P4_DeStroke_FH
+	0: FH_InsideIn_lob_err -> Error{team2++; if (team2==points) {won=t2}} -> NextPt
+	0: FH_InsideIn_lob_win -> Winner{team1++; if (team1==points) {won=t1}} -> NextPt
+
+	0: FH_InsideOut -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_BH [] P3_AdVolley_FH [] P4_AdStroke_BH [] P4_AdStroke_FH
+	0: FH_InsideOut_err -> Error{team2++; if (team2==points) {won=t2}} -> NextPt
+	0: FH_InsideOut_win -> Winner{team1++; if (team1==points) {won=t1}} -> NextPt
+
+	0: FH_InsideOut_lob -> P4_AdSmash_FH [] P4_AdSmash_BH [] P3_AdSmash_FH [] P3_AdSmash_BH [] P4_AdStroke_BH [] P4_AdStroke_FH
+	0: FH_InsideOut_lob_err -> Error{team2++; if (team2==points) {won=t2}} -> NextPt
+	0: FH_InsideOut_lob_win -> Winner{team1++; if (team1==points) {won=t1}} -> NextPt
+};
+
+P1_AdReturn_BH = P1AdReadyBHReturn -> pcase {
+	0: BH_DownLine -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeStroke_FH [] P4_DeStroke_BH [] P4_DeVolley_FH [] P4_DeVolley_BH
+	0: BH_DownLine_err -> Error{team2++; if (team2==points) {won=t2}} -> NextPt
+	0: BH_DownLine_win -> Winner{team1++; if (team1==points) {won=t1}} -> NextPt
+
+	0: BH_DownLine_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P4_DeStroke_BH [] P4_DeStroke_FH
+	0: BH_DownLine_lob_err -> Error{team2++; if (team2==points) {won=t2}} -> NextPt
+	0: BH_DownLine_lob_win -> Winner{team1++; if (team1==points) {won=t1}} -> NextPt
+
+	0: BH_CrossCourt -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_BH [] P3_AdVolley_FH [] P4_AdStroke_BH [] P4_AdStroke_FH
+	0: BH_CrossCourt_err -> Error{team2++; if (team2==points) {won=t2}} -> NextPt
+	0: BH_CrossCourt_win -> Winner{team1++; if (team1==points) {won=t1}} -> NextPt
+
+	0: BH_CrossCourt_lob -> P4_AdSmash_FH [] P4_AdSmash_BH [] P3_AdSmash_FH [] P3_AdSmash_BH [] P4_AdStroke_BH [] P4_AdStroke_FH
+	0: BH_CrossCourt_lob_err -> Error{team2++; if (team2==points) {won=t2}} -> NextPt
+	0: BH_CrossCourt_lob_win -> Winner{team1++; if (team1==points) {won=t1}} -> NextPt
+};
+
+P1_DeVolley_FH = P1DeReadyFHVolley -> pcase {
+	1: FH_DownLine_volley -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_FH [] P3_AdVolley_BH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_DownLine_volley_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	2: FH_DownLine_volley_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_DownLine_volley_lob -> P4_AdSmash_BH [] P4_AdSmash_FH [] P3_AdSmash_FH [] P3_AdSmash_BH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_DownLine_volley_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_DownLine_volley_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	2: FH_CrossCourt_volley -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: FH_CrossCourt_volley_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_volley_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_CrossCourt_volley_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: FH_CrossCourt_volley_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_volley_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P1_DeVolley_BH = P1DeReadyBHVolley -> pcase {
+	1: BH_InsideIn_volley -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_FH [] P3_AdVolley_BH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	1: BH_InsideIn_volley_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_volley_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideIn_volley_lob -> P4_AdSmash_BH [] P4_AdSmash_FH [] P3_AdSmash_FH [] P3_AdSmash_BH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_InsideIn_volley_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_volley_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideOut_volley -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_InsideOut_volley_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_volley_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideOut_volley_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_InsideOut_volley_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_volley_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P1_AdVolley_FH = P1DeReadyFHVolley -> pcase {
+	2: FH_InsideIn_volley -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: FH_InsideIn_volley_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideIn_volley_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideIn_volley_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: FH_InsideIn_volley_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideIn_volley_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	3: FH_InsideOut_volley -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_BH [] P3_AdVolley_FH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_InsideOut_volley_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	1: FH_InsideOut_volley_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideOut_volley_lob -> P4_AdSmash_BH [] P4_AdSmash_FH [] P3_AdSmash_BH [] P3_AdSmash_FH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_InsideOut_volley_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideOut_volley_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P1_AdVolley_BH = P1DeReadyBHVolley -> pcase {
+	3: BH_DownLine_volley -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_DownLine_volley_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_DownLine_volley_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_DownLine_volley_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_DownLine_volley_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_DownLine_volley_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	2: BH_CrossCourt_volley -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_BH [] P3_AdVolley_FH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_CrossCourt_volley_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_volley_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_CrossCourt_volley_lob -> P4_AdSmash_BH [] P4_AdSmash_FH [] P3_AdSmash_BH [] P3_AdSmash_FH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_CrossCourt_volley_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_volley_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P1_DeSmash_FH = P1DeReadyFHSmash -> pcase {
+	0: FH_DownLine_smash -> P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_DownLine_smash_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	1: FH_DownLine_smash_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_CrossCourt_smash -> P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: FH_CrossCourt_smash_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_smash_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P1_DeSmash_BH = P1DeReadyBHSmash -> pcase {
+	0: BH_InsideIn_smash -> P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_InsideIn_smash_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_smash_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideOut_smash -> P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_InsideOut_smash_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_smash_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P1_AdSmash_FH = P1AdReadyFHSmash -> pcase {
+	0: FH_InsideIn_smash -> P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: FH_InsideIn_smash_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideIn_smash_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideOut_smash -> P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	1: FH_InsideOut_smash_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	1: FH_InsideOut_smash_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P1_AdSmash_BH = P1AdReadyBHSmash -> pcase {
+	0: BH_DownLine_smash -> P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_DownLine_smash_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_DownLine_smash_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: BH_CrossCourt_smash -> P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_CrossCourt_smash_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_smash_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P1_DeStroke_FH = P1DeReadyFHStroke -> pcase {
+	3: FH_DownLine -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_FH [] P3_AdVolley_BH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	1: FH_DownLine_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	2: FH_DownLine_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: FH_DownLine_lob -> P4_AdSmash_BH [] P4_AdSmash_FH [] P3_AdSmash_FH [] P3_AdSmash_BH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_DownLine_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_DownLine_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	11: FH_CrossCourt -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	3: FH_CrossCourt_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_CrossCourt_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: FH_CrossCourt_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P1_DeStroke_BH = P1DeReadyBHStroke -> pcase {
+	0: BH_InsideIn -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_FH [] P3_AdVolley_BH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_InsideIn_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideIn_lob -> P4_AdSmash_BH [] P4_AdSmash_FH [] P3_AdSmash_FH [] P3_AdSmash_BH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_InsideIn_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: BH_InsideOut -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_InsideOut_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideOut_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_InsideOut_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P1_AdStroke_FH = P1DeReadyFHStroke -> pcase {
+	4: FH_InsideIn -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: FH_InsideIn_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	1: FH_InsideIn_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideIn_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: FH_InsideIn_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideIn_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	3: FH_InsideOut -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_BH [] P3_AdVolley_FH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_InsideOut_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideOut_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideOut_lob -> P4_AdSmash_BH [] P4_AdSmash_FH [] P3_AdSmash_BH [] P3_AdSmash_FH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_InsideOut_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideOut_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P1_AdStroke_BH = P1DeReadyBHStroke -> pcase {
+	3: BH_DownLine -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_DownLine_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	1: BH_DownLine_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_DownLine_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_DownLine_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_DownLine_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: BH_CrossCourt -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_BH [] P3_AdVolley_FH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_CrossCourt_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_CrossCourt_lob -> P4_AdSmash_BH [] P4_AdSmash_FH [] P3_AdSmash_BH [] P3_AdSmash_FH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_CrossCourt_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+// ========================================================================================================================================================================== \\
+
+// P2 1st serve from Deuce court
+P2_DeServe = [turn == 2] P2DeReady1st -> pcase { 
+	5: ServeT_in -> P3_DeReturn_BH  
+	0: ServeT_err -> P2_DeServe_2nd  
+	0: ServeT_win -> Ace{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt 
+    
+	4: ServeWide_in -> P3_DeReturn_FH
+	3: ServeWide_err -> P2_DeServe_2nd
+	0: ServeWide_win -> Ace{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt 
+	
+	3: ServeBody_in -> P3_DeReturn_FH [] P3_DeReturn_BH
+	2: ServeBody_err -> P2_DeServe_2nd
+	0: ServeBody_win -> Ace{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+}; 
+
+// P2 2nd serve from Deuce court
+P2_DeServe_2nd = [turn == 2] P2DeReady2nd -> pcase {                    
+	1: ServeT_in -> P3_DeReturn_BH
+	0: ServeT_err -> Doublefault{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeT_win -> Ace{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt 
+	
+	1: ServeWide_in -> P3_DeReturn_FH 
+	0: ServeWide_err -> Doublefault{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeWide_win -> Ace{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt 
+	
+	3: ServeBody_in -> P3_DeReturn_FH [] P3_DeReturn_BH
+	0: ServeBody_err -> Doublefault{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeBody_win -> Ace{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+}; 
+
+// P2 1st serve from Ad court
+P2_AdServe = [turn == 2] P2AdReady1st -> pcase { 
+	2: ServeT_in -> P4_AdReturn_FH
+	1: ServeT_err -> P2_AdServe_2nd
+	1: ServeT_win -> Ace{team1++; if (team1==points) {won=t1}} -> NextPt
+    
+	6: ServeWide_in -> P4_AdReturn_BH
+	2: ServeWide_err -> P2_AdServe_2nd
+	0: ServeWide_win -> Ace{team1++; if (team1==points) {won=t1}} -> NextPt
+
+	1: ServeBody_in -> P4_AdReturn_FH [] P4_AdReturn_BH
+	0: ServeBody_err -> P2_AdServe_2nd
+	0: ServeBody_win -> Ace{team1++; if (team1==points) {won=t1}} -> NextPt
+}; 
+
+// P2 2nd serve from Ad court
+P2_AdServe_2nd = [turn == 2] P2AdReady2nd -> pcase {                    
+	0: ServeT_in -> P4_AdReturn_FH
+	1: ServeT_err -> Doublefault{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt   
+	0: ServeT_win -> Ace{team1++; if (team1==points) {won=t1}} -> NextPt
+    
+	2: ServeWide_in -> P4_AdReturn_BH
+	0: ServeWide_err -> Doublefault{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeWide_win -> Ace{team1++; if (team1==points) {won=t1}} -> NextPt
+
+	0: ServeBody_in -> P4_AdReturn_FH [] P4_AdReturn_BH
+	0: ServeBody_err -> Doublefault{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeBody_win -> Ace{team1++; if (team1==points) {won=t1}} -> NextPt
+}; 
+
+P2_DeReturn_FH = P2DeReadyFHReturn -> pcase {
+	0: FH_DownLine -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdStroke_BH [] P3_AdStroke_FH [] P3_AdVolley_FH [] P3_AdVolley_BH
+	0: FH_DownLine_err -> Error{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: FH_DownLine_win -> Winner{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+
+	0: FH_DownLine_lob -> P4_AdSmash_FH [] P4_AdSmash_BH [] P3_AdSmash_FH [] P3_AdSmash_BH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_DownLine_lob_err -> Error{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: FH_DownLine_lob_win -> Winner{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+
+	0: FH_CrossCourt -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH
+	0: FH_CrossCourt_err -> Error{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: FH_CrossCourt_win -> Winner{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+
+	0: FH_CrossCourt_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_BH [] P3_DeStroke_FH
+	0: FH_CrossCourt_lob_err -> Error{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: FH_CrossCourt_lob_win -> Winner{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+};
+
+P2_DeReturn_BH = P2DeReadyBHReturn -> pcase {
+	0: BH_InsideIn -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdStroke_BH [] P3_AdStroke_FH [] P3_AdVolley_FH [] P3_AdVolley_BH
+	0: BH_InsideIn_err -> Error{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: BH_InsideIn_win -> Winner{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+
+	0: BH_InsideIn_lob -> P4_AdSmash_FH [] P4_AdSmash_BH [] P3_AdSmash_FH [] P3_AdSmash_BH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_InsideIn_lob_err -> Error{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: BH_InsideIn_lob_win -> Winner{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+
+	0: BH_InsideOut -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH
+	0: BH_InsideOut_err -> Error{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: BH_InsideOut_win -> Winner{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+
+	0: BH_InsideOut_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_BH [] P3_DeStroke_FH
+	0: BH_InsideOut_lob_err -> Error{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+	0: BH_InsideOut_lob_win -> Winner{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+};
+
+P2_AdReturn_FH = P2AdReadyFHReturn -> pcase {
+	2: FH_InsideIn -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeStroke_FH [] P4_DeStroke_BH [] P4_DeVolley_FH [] P4_DeVolley_BH
+	1: FH_InsideIn_err -> Error{team2++; if (team2==points) {won=t2}} -> NextPt
+	0: FH_InsideIn_win -> Winner{team1++; if (team1==points) {won=t1}} -> NextPt
+
+	0: FH_InsideIn_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P4_DeStroke_BH [] P4_DeStroke_FH
+	0: FH_InsideIn_lob_err -> Error{team2++; if (team2==points) {won=t2}} -> NextPt
+	0: FH_InsideIn_lob_win -> Winner{team1++; if (team1==points) {won=t1}} -> NextPt
+
+	2: FH_InsideOut -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_BH [] P3_AdVolley_FH [] P4_AdStroke_BH [] P4_AdStroke_FH
+	1: FH_InsideOut_err -> Error{team2++; if (team2==points) {won=t2}} -> NextPt
+	1: FH_InsideOut_win -> Winner{team1++; if (team1==points) {won=t1}} -> NextPt
+
+	0: FH_InsideOut_lob -> P4_AdSmash_FH [] P4_AdSmash_BH [] P3_AdSmash_FH [] P3_AdSmash_BH [] P4_AdStroke_BH [] P4_AdStroke_FH
+	0: FH_InsideOut_lob_err -> Error{team2++; if (team2==points) {won=t2}} -> NextPt
+	0: FH_InsideOut_lob_win -> Winner{team1++; if (team1==points) {won=t1}} -> NextPt
+};
+
+P2_AdReturn_BH = P2AdReadyBHReturn -> pcase {
+	3: BH_DownLine -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeStroke_FH [] P4_DeStroke_BH [] P4_DeVolley_FH [] P4_DeVolley_BH
+	3: BH_DownLine_err -> Error{team2++; if (team2==points) {won=t2}} -> NextPt
+	1: BH_DownLine_win -> Winner{team1++; if (team1==points) {won=t1}} -> NextPt
+
+	1: BH_DownLine_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P4_DeStroke_BH [] P4_DeStroke_FH
+	1: BH_DownLine_lob_err -> Error{team2++; if (team2==points) {won=t2}} -> NextPt
+	0: BH_DownLine_lob_win -> Winner{team1++; if (team1==points) {won=t1}} -> NextPt
+
+	5: BH_CrossCourt -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_BH [] P3_AdVolley_FH [] P4_AdStroke_BH [] P4_AdStroke_FH
+	2: BH_CrossCourt_err -> Error{team2++; if (team2==points) {won=t2}} -> NextPt
+	0: BH_CrossCourt_win -> Winner{team1++; if (team1==points) {won=t1}} -> NextPt
+
+	0: BH_CrossCourt_lob -> P4_AdSmash_FH [] P4_AdSmash_BH [] P3_AdSmash_FH [] P3_AdSmash_BH [] P4_AdStroke_BH [] P4_AdStroke_FH
+	0: BH_CrossCourt_lob_err -> Error{team2++; if (team2==points) {won=t2}} -> NextPt
+	0: BH_CrossCourt_lob_win -> Winner{team1++; if (team1==points) {won=t1}} -> NextPt
+};
+
+P2_DeVolley_FH = P2DeReadyFHVolley -> pcase {
+	4: FH_DownLine_volley -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_FH [] P3_AdVolley_BH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_DownLine_volley_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_DownLine_volley_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_DownLine_volley_lob -> P4_AdSmash_BH [] P4_AdSmash_FH [] P3_AdSmash_FH [] P3_AdSmash_BH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_DownLine_volley_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_DownLine_volley_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	2: FH_CrossCourt_volley -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: FH_CrossCourt_volley_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_volley_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_CrossCourt_volley_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: FH_CrossCourt_volley_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_volley_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P2_DeVolley_BH = P2DeReadyBHVolley -> pcase {
+	2: BH_InsideIn_volley -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_FH [] P3_AdVolley_BH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	2: BH_InsideIn_volley_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_volley_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideIn_volley_lob -> P4_AdSmash_BH [] P4_AdSmash_FH [] P3_AdSmash_FH [] P3_AdSmash_BH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_InsideIn_volley_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_volley_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	2: BH_InsideOut_volley -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_InsideOut_volley_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_volley_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideOut_volley_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_InsideOut_volley_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_volley_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P2_AdVolley_FH = P2DeReadyFHVolley -> pcase {
+	1: FH_InsideIn_volley -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	1: FH_InsideIn_volley_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideIn_volley_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideIn_volley_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: FH_InsideIn_volley_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideIn_volley_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: FH_InsideOut_volley -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_BH [] P3_AdVolley_FH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_InsideOut_volley_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideOut_volley_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideOut_volley_lob -> P4_AdSmash_BH [] P4_AdSmash_FH [] P3_AdSmash_BH [] P3_AdSmash_FH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_InsideOut_volley_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideOut_volley_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P2_AdVolley_BH = P2DeReadyBHVolley -> pcase {
+	4: BH_DownLine_volley -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_DownLine_volley_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_DownLine_volley_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_DownLine_volley_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_DownLine_volley_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_DownLine_volley_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	2: BH_CrossCourt_volley -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_BH [] P3_AdVolley_FH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_CrossCourt_volley_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	2: BH_CrossCourt_volley_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_CrossCourt_volley_lob -> P4_AdSmash_BH [] P4_AdSmash_FH [] P3_AdSmash_BH [] P3_AdSmash_FH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_CrossCourt_volley_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_volley_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P2_DeSmash_FH = P2DeReadyFHSmash -> pcase {
+	0: FH_DownLine_smash -> P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_DownLine_smash_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	1: FH_DownLine_smash_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_CrossCourt_smash -> P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: FH_CrossCourt_smash_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_smash_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P2_DeSmash_BH = P2DeReadyBHSmash -> pcase {
+	0: BH_InsideIn_smash -> P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_InsideIn_smash_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_smash_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideOut_smash -> P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_InsideOut_smash_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_smash_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P2_AdSmash_FH = P2AdReadyFHSmash -> pcase {
+	0: FH_InsideIn_smash -> P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: FH_InsideIn_smash_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideIn_smash_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: FH_InsideOut_smash -> P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_InsideOut_smash_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	1: FH_InsideOut_smash_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P2_AdSmash_BH = P2AdReadyBHSmash -> pcase {
+	0: BH_DownLine_smash -> P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_DownLine_smash_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_DownLine_smash_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_CrossCourt_smash -> P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	1: BH_CrossCourt_smash_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_smash_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P2_DeStroke_FH = P2DeReadyFHStroke -> pcase {
+	10: FH_DownLine -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_FH [] P3_AdVolley_BH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_DownLine_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	1: FH_DownLine_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_DownLine_lob -> P4_AdSmash_BH [] P4_AdSmash_FH [] P3_AdSmash_FH [] P3_AdSmash_BH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_DownLine_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_DownLine_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	2: FH_CrossCourt -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: FH_CrossCourt_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	2: FH_CrossCourt_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_CrossCourt_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: FH_CrossCourt_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P2_DeStroke_BH = P2DeReadyBHStroke -> pcase {
+	0: BH_InsideIn -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_FH [] P3_AdVolley_BH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_InsideIn_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideIn_lob -> P4_AdSmash_BH [] P4_AdSmash_FH [] P3_AdSmash_FH [] P3_AdSmash_BH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_InsideIn_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: BH_InsideOut -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	1: BH_InsideOut_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideOut_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_InsideOut_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P2_AdStroke_FH = P2DeReadyFHStroke -> pcase {
+	3: FH_InsideIn -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	1: FH_InsideIn_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideIn_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideIn_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: FH_InsideIn_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideIn_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	7: FH_InsideOut -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_BH [] P3_AdVolley_FH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_InsideOut_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideOut_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideOut_lob -> P4_AdSmash_BH [] P4_AdSmash_FH [] P3_AdSmash_BH [] P3_AdSmash_FH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: FH_InsideOut_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideOut_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P2_AdStroke_BH = P2DeReadyBHStroke -> pcase {
+	1: BH_DownLine -> P3_DeVolley_FH [] P3_DeVolley_BH [] P4_DeVolley_FH [] P4_DeVolley_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_DownLine_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	1: BH_DownLine_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_DownLine_lob -> P3_DeSmash_FH [] P3_DeSmash_BH [] P4_DeSmash_FH [] P4_DeSmash_BH [] P3_DeStroke_FH [] P3_DeStroke_BH [] P4_DeStroke_FH [] P4_DeStroke_BH
+	0: BH_DownLine_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_DownLine_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	5: BH_CrossCourt -> P4_AdVolley_BH [] P4_AdVolley_FH [] P3_AdVolley_BH [] P3_AdVolley_FH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_CrossCourt_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_CrossCourt_lob -> P4_AdSmash_BH [] P4_AdSmash_FH [] P3_AdSmash_BH [] P3_AdSmash_FH [] P4_AdStroke_BH [] P4_AdStroke_FH [] P3_AdStroke_BH [] P3_AdStroke_FH
+	0: BH_CrossCourt_lob_err -> Error{team2++; if (team2==points) {won=t2} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_lob_win -> Ace{team1++; if (team1==points) {won=t1} else {if ((team1+team2)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+// ========================================================================================================================================================================== \\
+
+// P3 1st serve from Deuce court
+P3_DeServe = [turn == 3] P3DeReady1st -> pcase { 
+	3: ServeT_in -> P1_DeReturn_BH  
+	3: ServeT_err -> P3_DeServe_2nd  
+	0: ServeT_win -> Ace{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt 
+    
+	3: ServeWide_in -> P1_DeReturn_FH
+	1: ServeWide_err -> P3_DeServe_2nd
+	0: ServeWide_win -> Ace{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt 
+	
+	2: ServeBody_in -> P1_DeReturn_FH [] P1_DeReturn_BH
+	0: ServeBody_err -> P3_DeServe_2nd
+	0: ServeBody_win -> Ace{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+}; 
+
+// P3 2nd serve from Deuce court
+P3_DeServe_2nd = [turn == 3] P3DeReady2nd -> pcase {                    
+	0: ServeT_in -> P1_DeReturn_BH
+	0: ServeT_err -> Doublefault{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeT_win -> Ace{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt 
+	
+	2: ServeWide_in -> P1_DeReturn_FH 
+	1: ServeWide_err -> Doublefault{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeWide_win -> Ace{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt 
+	
+	1: ServeBody_in -> P1_DeReturn_FH [] P1_DeReturn_BH
+	0: ServeBody_err -> Doublefault{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeBody_win -> Ace{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+}; 
+
+// P3 1st serve from Ad court
+P3_AdServe = [turn == 3] P3AdReady1st -> pcase { 
+	1: ServeT_in -> P2_AdReturn_FH
+	2: ServeT_err -> P3_AdServe_2nd
+	0: ServeT_win -> Ace{team2++; if (team2==points) {won=t2}} -> NextPt
+    
+	6: ServeWide_in -> P2_AdReturn_BH
+	1: ServeWide_err -> P3_AdServe_2nd
+	0: ServeWide_win -> Ace{team2++; if (team2==points) {won=t2}} -> NextPt
+
+	0: ServeBody_in -> P2_AdReturn_FH [] P2_AdReturn_BH
+	0: ServeBody_err -> P3_AdServe_2nd
+	0: ServeBody_win -> Ace{team2++; if (team2==points) {won=t2}} -> NextPt
+}; 
+
+// P3 2nd serve from Ad court
+P3_AdServe_2nd = [turn == 3] P3AdReady2nd -> pcase {                    
+	0: ServeT_in -> P2_AdReturn_FH
+	0: ServeT_err -> Doublefault{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt   
+	0: ServeT_win -> Ace{team2++; if (team2==points) {won=t2}} -> NextPt
+    
+	2: ServeWide_in -> P2_AdReturn_BH
+	0: ServeWide_err -> Doublefault{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeWide_win -> Ace{team2++; if (team2==points) {won=t2}} -> NextPt
+
+	2: ServeBody_in -> P2_AdReturn_FH [] P2_AdReturn_BH
+	0: ServeBody_err -> Doublefault{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeBody_win -> Ace{team2++; if (team2==points) {won=t2}} -> NextPt
+}; 
+
+P3_DeReturn_FH = P3DeReadyFHReturn -> pcase {
+	5: FH_DownLine -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdStroke_BH [] P1_AdStroke_FH [] P1_AdVolley_FH [] P1_AdVolley_BH
+	2: FH_DownLine_err -> Error{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	1: FH_DownLine_win -> Winner{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+
+	2: FH_DownLine_lob -> P2_AdSmash_FH [] P2_AdSmash_BH [] P1_AdSmash_FH [] P1_AdSmash_BH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: FH_DownLine_lob_err -> Error{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: FH_DownLine_lob_win -> Winner{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+
+	2: FH_CrossCourt -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH
+	1: FH_CrossCourt_err -> Error{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: FH_CrossCourt_win -> Winner{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+
+	0: FH_CrossCourt_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_BH [] P1_DeStroke_FH
+	0: FH_CrossCourt_lob_err -> Error{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: FH_CrossCourt_lob_win -> Winner{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+};
+
+P3_DeReturn_BH = P3DeReadyBHReturn -> pcase {
+	4: BH_InsideIn -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdStroke_BH [] P1_AdStroke_FH [] P1_AdVolley_FH [] P1_AdVolley_BH
+	2: BH_InsideIn_err -> Error{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: BH_InsideIn_win -> Winner{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+
+	0: BH_InsideIn_lob -> P2_AdSmash_FH [] P2_AdSmash_BH [] P1_AdSmash_FH [] P1_AdSmash_BH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_InsideIn_lob_err -> Error{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: BH_InsideIn_lob_win -> Winner{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+
+	5: BH_InsideOut -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH
+	2: BH_InsideOut_err -> Error{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: BH_InsideOut_win -> Winner{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+
+	0: BH_InsideOut_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_BH [] P1_DeStroke_FH
+	0: BH_InsideOut_lob_err -> Error{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: BH_InsideOut_lob_win -> Winner{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+};
+
+P3_AdReturn_FH = P3AdReadyFHReturn -> pcase {
+	0: FH_InsideIn -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeStroke_FH [] P2_DeStroke_BH [] P2_DeVolley_FH [] P2_DeVolley_BH
+	0: FH_InsideIn_err -> Error{team1++; if (team1==points) {won=t1}} -> NextPt
+	0: FH_InsideIn_win -> Winner{team2++; if (team2==points) {won=t2}} -> NextPt
+
+	0: FH_InsideIn_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P2_DeStroke_BH [] P2_DeStroke_FH
+	0: FH_InsideIn_lob_err -> Error{team1++; if (team1==points) {won=t1}} -> NextPt
+	0: FH_InsideIn_lob_win -> Winner{team2++; if (team2==points) {won=t2}} -> NextPt
+
+	0: FH_InsideOut -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_BH [] P1_AdVolley_FH [] P2_AdStroke_BH [] P2_AdStroke_FH
+	0: FH_InsideOut_err -> Error{team1++; if (team1==points) {won=t1}} -> NextPt
+	0: FH_InsideOut_win -> Winner{team2++; if (team2==points) {won=t2}} -> NextPt
+
+	0: FH_InsideOut_lob -> P2_AdSmash_FH [] P2_AdSmash_BH [] P1_AdSmash_FH [] P1_AdSmash_BH [] P2_AdStroke_BH [] P2_AdStroke_FH
+	0: FH_InsideOut_lob_err -> Error{team1++; if (team1==points) {won=t1}} -> NextPt
+	0: FH_InsideOut_lob_win -> Winner{team2++; if (team2==points) {won=t2}} -> NextPt
+};
+
+P3_AdReturn_BH = P3AdReadyBHReturn -> pcase {
+	0: BH_DownLine -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeStroke_FH [] P2_DeStroke_BH [] P2_DeVolley_FH [] P2_DeVolley_BH
+	0: BH_DownLine_err -> Error{team1++; if (team1==points) {won=t1}} -> NextPt
+	0: BH_DownLine_win -> Winner{team2++; if (team2==points) {won=t2}} -> NextPt
+
+	0: BH_DownLine_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P2_DeStroke_BH [] P2_DeStroke_FH
+	0: BH_DownLine_lob_err -> Error{team1++; if (team1==points) {won=t1}} -> NextPt
+	0: BH_DownLine_lob_win -> Winner{team2++; if (team2==points) {won=t2}} -> NextPt
+
+	0: BH_CrossCourt -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_BH [] P1_AdVolley_FH [] P2_AdStroke_BH [] P2_AdStroke_FH
+	0: BH_CrossCourt_err -> Error{team1++; if (team1==points) {won=t1}} -> NextPt
+	0: BH_CrossCourt_win -> Winner{team2++; if (team2==points) {won=t2}} -> NextPt
+
+	0: BH_CrossCourt_lob -> P2_AdSmash_FH [] P2_AdSmash_BH [] P1_AdSmash_FH [] P1_AdSmash_BH [] P2_AdStroke_BH [] P2_AdStroke_FH
+	0: BH_CrossCourt_lob_err -> Error{team1++; if (team1==points) {won=t1}} -> NextPt
+	0: BH_CrossCourt_lob_win -> Winner{team2++; if (team2==points) {won=t2}} -> NextPt
+};
+
+P3_DeVolley_FH = P3DeReadyFHVolley -> pcase {
+	1: FH_DownLine_volley -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_FH [] P1_AdVolley_BH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	2: FH_DownLine_volley_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_DownLine_volley_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_DownLine_volley_lob -> P2_AdSmash_BH [] P2_AdSmash_FH [] P1_AdSmash_FH [] P1_AdSmash_BH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: FH_DownLine_volley_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_DownLine_volley_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	4: FH_CrossCourt_volley -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_CrossCourt_volley_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_volley_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_CrossCourt_volley_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_CrossCourt_volley_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_volley_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P3_DeVolley_BH = P3DeReadyBHVolley -> pcase {
+	1: BH_InsideIn_volley -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_FH [] P1_AdVolley_BH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	1: BH_InsideIn_volley_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	1: BH_InsideIn_volley_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideIn_volley_lob -> P2_AdSmash_BH [] P2_AdSmash_FH [] P1_AdSmash_FH [] P1_AdSmash_BH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_InsideIn_volley_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_volley_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	3: BH_InsideOut_volley -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	1: BH_InsideOut_volley_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_volley_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideOut_volley_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_InsideOut_volley_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_volley_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P3_AdVolley_FH = P3DeReadyFHVolley -> pcase {
+	2: FH_InsideIn_volley -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_InsideIn_volley_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideIn_volley_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideIn_volley_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_InsideIn_volley_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideIn_volley_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideOut_volley -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_BH [] P1_AdVolley_FH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: FH_InsideOut_volley_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideOut_volley_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideOut_volley_lob -> P2_AdSmash_BH [] P2_AdSmash_FH [] P1_AdSmash_BH [] P1_AdSmash_FH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: FH_InsideOut_volley_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideOut_volley_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P3_AdVolley_BH = P3DeReadyBHVolley -> pcase {
+	0: BH_DownLine_volley -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_DownLine_volley_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_DownLine_volley_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: BH_DownLine_volley_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_DownLine_volley_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_DownLine_volley_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_CrossCourt_volley -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_BH [] P1_AdVolley_FH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_CrossCourt_volley_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	2: BH_CrossCourt_volley_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_CrossCourt_volley_lob -> P2_AdSmash_BH [] P2_AdSmash_FH [] P1_AdSmash_BH [] P1_AdSmash_FH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_CrossCourt_volley_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_volley_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P3_DeSmash_FH = P3DeReadyFHSmash -> pcase {
+	0: FH_DownLine_smash -> P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: FH_DownLine_smash_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_DownLine_smash_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_CrossCourt_smash -> P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_CrossCourt_smash_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_smash_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P3_DeSmash_BH = P3DeReadyBHSmash -> pcase {
+	0: BH_InsideIn_smash -> P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_InsideIn_smash_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_smash_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideOut_smash -> P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_InsideOut_smash_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_smash_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P3_AdSmash_FH = P3AdReadyFHSmash -> pcase {
+	0: FH_InsideIn_smash -> P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_InsideIn_smash_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	2: FH_InsideIn_smash_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideOut_smash -> P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: FH_InsideOut_smash_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideOut_smash_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P3_AdSmash_BH = P3AdReadyBHSmash -> pcase {
+	0: BH_DownLine_smash -> P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_DownLine_smash_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	1: BH_DownLine_smash_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_CrossCourt_smash -> P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_CrossCourt_smash_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_smash_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P3_DeStroke_FH = P3DeReadyFHStroke -> pcase {
+	5: FH_DownLine -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_FH [] P1_AdVolley_BH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	2: FH_DownLine_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_DownLine_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	2: FH_DownLine_lob -> P2_AdSmash_BH [] P2_AdSmash_FH [] P1_AdSmash_FH [] P1_AdSmash_BH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: FH_DownLine_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_DownLine_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	7: FH_CrossCourt -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	1: FH_CrossCourt_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: FH_CrossCourt_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_CrossCourt_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P3_DeStroke_BH = P3DeReadyBHStroke -> pcase {
+	0: BH_InsideIn -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_FH [] P1_AdVolley_BH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_InsideIn_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: BH_InsideIn_lob -> P2_AdSmash_BH [] P2_AdSmash_FH [] P1_AdSmash_FH [] P1_AdSmash_BH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_InsideIn_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	3: BH_InsideOut -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_InsideOut_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideOut_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_InsideOut_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P3_AdStroke_FH = P3DeReadyFHStroke -> pcase {
+	1: FH_InsideIn -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_InsideIn_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	1: FH_InsideIn_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideIn_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_InsideIn_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideIn_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideOut -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_BH [] P1_AdVolley_FH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: FH_InsideOut_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideOut_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideOut_lob -> P2_AdSmash_BH [] P2_AdSmash_FH [] P1_AdSmash_BH [] P1_AdSmash_FH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: FH_InsideOut_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideOut_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P3_AdStroke_BH = P3DeReadyBHStroke -> pcase {
+	0: BH_DownLine -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_DownLine_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_DownLine_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_DownLine_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_DownLine_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_DownLine_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: BH_CrossCourt -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_BH [] P1_AdVolley_FH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_CrossCourt_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_CrossCourt_lob -> P2_AdSmash_BH [] P2_AdSmash_FH [] P1_AdSmash_BH [] P1_AdSmash_FH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_CrossCourt_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+// ========================================================================================================================================================================== \\
+
+// P4 1st serve from Deuce court
+P4_DeServe = [turn == 4] P4DeReady1st -> pcase { 
+	7: ServeT_in -> P1_DeReturn_BH  
+	5: ServeT_err -> P4_DeServe_2nd  
+	1: ServeT_win -> Ace{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt 
+    
+	2: ServeWide_in -> P1_DeReturn_FH
+	0: ServeWide_err -> P4_DeServe_2nd
+	0: ServeWide_win -> Ace{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt 
+	
+	2: ServeBody_in -> P1_DeReturn_FH [] P1_DeReturn_BH
+	0: ServeBody_err -> P4_DeServe_2nd
+	0: ServeBody_win -> Ace{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+}; 
+
+// P4 2nd serve from Deuce court
+P4_DeServe_2nd = [turn == 4] P4DeReady2nd -> pcase {                    
+	1: ServeT_in -> P1_DeReturn_BH
+	0: ServeT_err -> Doublefault{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeT_win -> Ace{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt 
+	
+	1: ServeWide_in -> P1_DeReturn_FH 
+	0: ServeWide_err -> Doublefault{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeWide_win -> Ace{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt 
+	
+	2: ServeBody_in -> P1_DeReturn_FH [] P1_DeReturn_BH
+	1: ServeBody_err -> Doublefault{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeBody_win -> Ace{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+}; 
+
+// P4 1st serve from Ad court
+P4_AdServe = [turn == 4] P4AdReady1st -> pcase { 
+	2: ServeT_in -> P2_AdReturn_FH
+	0: ServeT_err -> P4_AdServe_2nd
+	0: ServeT_win -> Ace{team2++; if (team2==points) {won=t2}} -> NextPt
+    
+	5: ServeWide_in -> P2_AdReturn_BH
+	2: ServeWide_err -> P4_AdServe_2nd
+	1: ServeWide_win -> Ace{team2++; if (team2==points) {won=t2}} -> NextPt
+
+	3: ServeBody_in -> P2_AdReturn_FH [] P2_AdReturn_BH
+	0: ServeBody_err -> P4_AdServe_2nd
+	0: ServeBody_win -> Ace{team2++; if (team2==points) {won=t2}} -> NextPt
+}; 
+
+// P4 2nd serve from Ad court
+P4_AdServe_2nd = [turn == 4] P4AdReady2nd -> pcase {                    
+	0: ServeT_in -> P2_AdReturn_FH
+	0: ServeT_err -> Doublefault{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt   
+	0: ServeT_win -> Ace{team2++; if (team2==points) {won=t2}} -> NextPt
+    
+	2: ServeWide_in -> P2_AdReturn_BH
+	0: ServeWide_err -> Doublefault{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeWide_win -> Ace{team2++; if (team2==points) {won=t2}} -> NextPt
+
+	0: ServeBody_in -> P2_AdReturn_FH [] P2_AdReturn_BH
+	0: ServeBody_err -> Doublefault{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: ServeBody_win -> Ace{team2++; if (team2==points) {won=t2}} -> NextPt
+}; 
+
+P4_DeReturn_FH = P4DeReadyFHReturn -> pcase {
+	0: FH_DownLine -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdStroke_BH [] P1_AdStroke_FH [] P1_AdVolley_FH [] P1_AdVolley_BH
+	0: FH_DownLine_err -> Error{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: FH_DownLine_win -> Winner{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+
+	0: FH_DownLine_lob -> P2_AdSmash_FH [] P2_AdSmash_BH [] P1_AdSmash_FH [] P1_AdSmash_BH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: FH_DownLine_lob_err -> Error{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: FH_DownLine_lob_win -> Winner{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+
+	0: FH_CrossCourt -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH
+	0: FH_CrossCourt_err -> Error{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: FH_CrossCourt_win -> Winner{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+
+	0: FH_CrossCourt_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_BH [] P1_DeStroke_FH
+	0: FH_CrossCourt_lob_err -> Error{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: FH_CrossCourt_lob_win -> Winner{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+};
+
+P4_DeReturn_BH = P4DeReadyBHReturn -> pcase {
+	0: BH_InsideIn -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdStroke_BH [] P1_AdStroke_FH [] P1_AdVolley_FH [] P1_AdVolley_BH
+	0: BH_InsideIn_err -> Error{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: BH_InsideIn_win -> Winner{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+
+	0: BH_InsideIn_lob -> P2_AdSmash_FH [] P2_AdSmash_BH [] P1_AdSmash_FH [] P1_AdSmash_BH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_InsideIn_lob_err -> Error{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: BH_InsideIn_lob_win -> Winner{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+
+	0: BH_InsideOut -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH
+	0: BH_InsideOut_err -> Error{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: BH_InsideOut_win -> Winner{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+
+	0: BH_InsideOut_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_BH [] P1_DeStroke_FH
+	0: BH_InsideOut_lob_err -> Error{team1++; if (team1==points) {won=t1} else {turn=call(nextServer, turn)}} -> NextPt
+	0: BH_InsideOut_lob_win -> Winner{team2++; if (team2==points) {won=t2} else {turn=call(nextServer, turn)}} -> NextPt
+};
+
+P4_AdReturn_FH = P4AdReadyFHReturn -> pcase {
+	2: FH_InsideIn -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeStroke_FH [] P2_DeStroke_BH [] P2_DeVolley_FH [] P2_DeVolley_BH
+	2: FH_InsideIn_err -> Error{team1++; if (team1==points) {won=t1}} -> NextPt
+	1: FH_InsideIn_win -> Winner{team2++; if (team2==points) {won=t2}} -> NextPt
+
+	0: FH_InsideIn_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P2_DeStroke_BH [] P2_DeStroke_FH
+	0: FH_InsideIn_lob_err -> Error{team1++; if (team1==points) {won=t1}} -> NextPt
+	0: FH_InsideIn_lob_win -> Winner{team2++; if (team2==points) {won=t2}} -> NextPt
+
+	3: FH_InsideOut -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_BH [] P1_AdVolley_FH [] P2_AdStroke_BH [] P2_AdStroke_FH
+	1: FH_InsideOut_err -> Error{team1++; if (team1==points) {won=t1}} -> NextPt
+	0: FH_InsideOut_win -> Winner{team2++; if (team2==points) {won=t2}} -> NextPt
+
+	1: FH_InsideOut_lob -> P2_AdSmash_FH [] P2_AdSmash_BH [] P1_AdSmash_FH [] P1_AdSmash_BH [] P2_AdStroke_BH [] P2_AdStroke_FH
+	0: FH_InsideOut_lob_err -> Error{team1++; if (team1==points) {won=t1}} -> NextPt
+	0: FH_InsideOut_lob_win -> Winner{team2++; if (team2==points) {won=t2}} -> NextPt
+};
+
+P4_AdReturn_BH = P4AdReadyBHReturn -> pcase {
+	2: BH_DownLine -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeStroke_FH [] P2_DeStroke_BH [] P2_DeVolley_FH [] P2_DeVolley_BH
+	3: BH_DownLine_err -> Error{team1++; if (team1==points) {won=t1}} -> NextPt
+	0: BH_DownLine_win -> Winner{team2++; if (team2==points) {won=t2}} -> NextPt
+
+	0: BH_DownLine_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P2_DeStroke_BH [] P2_DeStroke_FH
+	0: BH_DownLine_lob_err -> Error{team1++; if (team1==points) {won=t1}} -> NextPt
+	0: BH_DownLine_lob_win -> Winner{team2++; if (team2==points) {won=t2}} -> NextPt
+
+	6: BH_CrossCourt -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_BH [] P1_AdVolley_FH [] P2_AdStroke_BH [] P2_AdStroke_FH
+	2: BH_CrossCourt_err -> Error{team1++; if (team1==points) {won=t1}} -> NextPt
+	0: BH_CrossCourt_win -> Winner{team2++; if (team2==points) {won=t2}} -> NextPt
+
+	0: BH_CrossCourt_lob -> P2_AdSmash_FH [] P2_AdSmash_BH [] P1_AdSmash_FH [] P1_AdSmash_BH [] P2_AdStroke_BH [] P2_AdStroke_FH
+	0: BH_CrossCourt_lob_err -> Error{team1++; if (team1==points) {won=t1}} -> NextPt
+	0: BH_CrossCourt_lob_win -> Winner{team2++; if (team2==points) {won=t2}} -> NextPt
+};
+
+P4_DeVolley_FH = P4DeReadyFHVolley -> pcase {
+	2: FH_DownLine_volley -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_FH [] P1_AdVolley_BH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	1: FH_DownLine_volley_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	1: FH_DownLine_volley_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_DownLine_volley_lob -> P2_AdSmash_BH [] P2_AdSmash_FH [] P1_AdSmash_FH [] P1_AdSmash_BH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: FH_DownLine_volley_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_DownLine_volley_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	2: FH_CrossCourt_volley -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_CrossCourt_volley_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_volley_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_CrossCourt_volley_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_CrossCourt_volley_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_volley_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P4_DeVolley_BH = P4DeReadyBHVolley -> pcase {
+	0: BH_InsideIn_volley -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_FH [] P1_AdVolley_BH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	1: BH_InsideIn_volley_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_volley_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideIn_volley_lob -> P2_AdSmash_BH [] P2_AdSmash_FH [] P1_AdSmash_FH [] P1_AdSmash_BH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_InsideIn_volley_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_volley_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: BH_InsideOut_volley -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_InsideOut_volley_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_volley_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideOut_volley_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_InsideOut_volley_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_volley_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P4_AdVolley_FH = P4DeReadyFHVolley -> pcase {
+	3: FH_InsideIn_volley -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	1: FH_InsideIn_volley_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideIn_volley_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: FH_InsideIn_volley_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_InsideIn_volley_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideIn_volley_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	5: FH_InsideOut_volley -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_BH [] P1_AdVolley_FH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	1: FH_InsideOut_volley_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideOut_volley_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: FH_InsideOut_volley_lob -> P2_AdSmash_BH [] P2_AdSmash_FH [] P1_AdSmash_BH [] P1_AdSmash_FH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: FH_InsideOut_volley_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideOut_volley_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P4_AdVolley_BH = P4DeReadyBHVolley -> pcase {
+	4: BH_DownLine_volley -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	2: BH_DownLine_volley_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	1: BH_DownLine_volley_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_DownLine_volley_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_DownLine_volley_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_DownLine_volley_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	5: BH_CrossCourt_volley -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_BH [] P1_AdVolley_FH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	2: BH_CrossCourt_volley_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_volley_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: BH_CrossCourt_volley_lob -> P2_AdSmash_BH [] P2_AdSmash_FH [] P1_AdSmash_BH [] P1_AdSmash_FH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_CrossCourt_volley_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_volley_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P4_DeSmash_FH = P4DeReadyFHSmash -> pcase {
+	0: FH_DownLine_smash -> P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: FH_DownLine_smash_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	1: FH_DownLine_smash_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_CrossCourt_smash -> P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_CrossCourt_smash_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	1: FH_CrossCourt_smash_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P4_DeSmash_BH = P4DeReadyBHSmash -> pcase {
+	0: BH_InsideIn_smash -> P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_InsideIn_smash_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_smash_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideOut_smash -> P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_InsideOut_smash_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_smash_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P4_AdSmash_FH = P4AdReadyFHSmash -> pcase {
+	0: FH_InsideIn_smash -> P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_InsideIn_smash_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideIn_smash_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideOut_smash -> P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: FH_InsideOut_smash_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideOut_smash_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P4_AdSmash_BH = P4AdReadyBHSmash -> pcase {
+	0: BH_DownLine_smash -> P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_DownLine_smash_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_DownLine_smash_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_CrossCourt_smash -> P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_CrossCourt_smash_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_smash_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P4_DeStroke_FH = P4DeReadyFHStroke -> pcase {
+	4: FH_DownLine -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_FH [] P1_AdVolley_BH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	2: FH_DownLine_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_DownLine_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: FH_DownLine_lob -> P2_AdSmash_BH [] P2_AdSmash_FH [] P1_AdSmash_FH [] P1_AdSmash_BH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: FH_DownLine_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_DownLine_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_CrossCourt -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_CrossCourt_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_CrossCourt_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_CrossCourt_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_CrossCourt_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P4_DeStroke_BH = P4DeReadyBHStroke -> pcase {
+	0: BH_InsideIn -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_FH [] P1_AdVolley_BH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_InsideIn_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideIn_lob -> P2_AdSmash_BH [] P2_AdSmash_FH [] P1_AdSmash_FH [] P1_AdSmash_BH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_InsideIn_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideIn_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideOut -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_InsideOut_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: BH_InsideOut_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_InsideOut_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_InsideOut_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P4_AdStroke_FH = P4DeReadyFHStroke -> pcase {
+	8: FH_InsideIn -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_InsideIn_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideIn_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideIn_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: FH_InsideIn_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideIn_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	5: FH_InsideOut -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_BH [] P1_AdVolley_FH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: FH_InsideOut_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideOut_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	0: FH_InsideOut_lob -> P2_AdSmash_BH [] P2_AdSmash_FH [] P1_AdSmash_BH [] P1_AdSmash_FH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: FH_InsideOut_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: FH_InsideOut_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+P4_AdStroke_BH = P4DeReadyBHStroke -> pcase {
+	5: BH_DownLine -> P1_DeVolley_FH [] P1_DeVolley_BH [] P2_DeVolley_FH [] P2_DeVolley_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_DownLine_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_DownLine_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: BH_DownLine_lob -> P1_DeSmash_FH [] P1_DeSmash_BH [] P2_DeSmash_FH [] P2_DeSmash_BH [] P1_DeStroke_FH [] P1_DeStroke_BH [] P2_DeStroke_FH [] P2_DeStroke_BH
+	0: BH_DownLine_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_DownLine_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	3: BH_CrossCourt -> P2_AdVolley_BH [] P2_AdVolley_FH [] P1_AdVolley_BH [] P1_AdVolley_FH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	1: BH_CrossCourt_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+
+	1: BH_CrossCourt_lob -> P2_AdSmash_BH [] P2_AdSmash_FH [] P1_AdSmash_BH [] P1_AdSmash_FH [] P2_AdStroke_BH [] P2_AdStroke_FH [] P1_AdStroke_BH [] P1_AdStroke_FH
+	0: BH_CrossCourt_lob_err -> Error{team1++; if (team1==points) {won=t1} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+	0: BH_CrossCourt_lob_win -> Ace{team2++; if (team2==points) {won=t2} else {if ((team2+team1)%2==1) {turn=call(nextServer, turn)}}} -> NextPt
+};
+
+// ========================================================================================================================================================================== \\
+
+#define Team1Win won == t1;
+#define Team2Win won == t2;
+
+#assert TieBreakGame reaches Team1Win with prob;
+#assert TieBreakGame reaches Team2Win with prob;

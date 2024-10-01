@@ -1,0 +1,453 @@
+enum{f_ad_ct, f_de_ct, n_ad_ct, n_de_ct}; //serve position: ad court or deuce court
+enum{player1, player2, na};
+
+var turn = na; //serve turn;
+var fscore = 0;
+var nscore = 0;
+var won = na;
+var ball = 9;
+var Ply1_At_Net = 0;
+var Ply2_At_Net = 0;
+var points = 7;
+
+TieBreakGame = WhoServe1st; (Player1Serve [] Player2Serve);
+WhoServe1st = []i:{f_de_ct,n_de_ct}@ TossCoin{turn = i} -> Skip;
+Player1Serve = [won == na && turn == f_de_ct]FedReady_DeCt -> De_Ply1Serve [] 
+			   [won == na && turn == f_ad_ct]FedReady_AdCt -> Ad_Ply1Serve;
+Player2Serve = [won == na && turn == n_de_ct]NadReady_DeCt -> De_Ply2Serve [] 
+			   [won == na && turn == n_ad_ct]NadReady_AdCt -> Ad_Ply2Serve;
+NextPt = Player1Serve [] Player2Serve [] ([won != na] GameOver -> Skip);
+Resume = BackToBaseline{Ply1_At_Net=0;Ply2_At_Net=0} -> Skip;
+
+De_Ply1Serve = pcase {                             
+			81: ServeT_in -> Ply1_Serve_Move; Ply2_Return_DeT
+			34: ServeBody_in -> Ply1_Serve_Move; Ply2_Return_DeB
+			81: ServeWide_in -> Ply1_Serve_Move; Ply2_Return_DeW
+
+			91: Winner -> Resume; Ace{fscore++; if (fscore == points) {won = player1} else {turn = (turn+1)%4} }-> NextPt
+			211: Error -> Resume; De_Ply1Serve_2nd};
+
+// 1st serve is out
+De_Ply1Serve_2nd = pcase {                 
+			76: ServeT_in -> Ply1_Serve_Move; Ply2_Return_DeT
+			50: ServeBody_in -> Ply1_Serve_Move; Ply2_Return_DeB
+			41: ServeWide_in -> Ply1_Serve_Move; Ply2_Return_DeW
+
+			19: Winner -> Resume; Ace{fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			25: Error -> Resume; DoubleFault{nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt};
+
+Ad_Ply1Serve = pcase {
+			25: ServeT_in -> Ply1_Serve_Move; Ply2_Return_AdT
+			21: ServeBody_in -> Ply1_Serve_Move; Ply2_Return_AdB
+			53: ServeWide_in -> Ply1_Serve_Move; Ply2_Return_AdW
+
+			98: Winner -> Resume; Ace{fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			262: Error -> Resume; Ad_Ply1Serve_2nd};
+
+// 1st serve is out
+Ad_Ply1Serve_2nd = pcase {                 
+			54: ServeT_in -> Ply1_Serve_Move; Ply2_Return_AdT
+			47: ServeBody_in -> Ply1_Serve_Move; Ply2_Return_AdB
+			109: ServeWide_in -> Ply1_Serve_Move; Ply2_Return_AdW
+
+			18: Winner -> Resume; Ace{fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			34: Error -> Resume; DoubleFault{nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt};
+
+// forehand return deuce serveT
+Ply1_Return_DeT = [Ply2_At_Net==0]Opp_At_Baseline -> pcase {
+			18: BH_CrossCourt -> Ply1_Move; Ply2_ad_stroke
+			5: BH_InsideOut -> Ply1_Move; Ply2_de_stroke
+			62: BH_DownMid -> Ply1_Move; Ply2_mid_stroke
+
+			12: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			0: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply2_At_Net==1]Opp_At_Net -> pcase {
+			18: BH_CrossCourt -> Ply2_ad_stroke
+			5: BH_InsideOut -> Ply2_de_stroke
+			62: BH_DownMid -> Ply2_mid_stroke
+
+			12: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			0: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt};
+
+// forehand or backhand return deuce serveB
+Ply1_Return_DeB = [Ply2_At_Net==0]Opp_At_Baseline -> pcase {
+			17: To_De -> Ply1_Move; Ply2_de_stroke
+			16: To_Ad -> Ply1_Move; Ply2_ad_stroke
+			133: To_Mid -> Ply1_Move; Ply2_mid_stroke
+
+			4: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			2: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply2_At_Net==1]Opp_At_Net -> pcase {
+			17: To_De -> Ply2_de_stroke
+			16: To_Ad -> Ply2_ad_stroke
+			133: To_Mid -> Ply2_mid_stroke
+
+			4: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			2: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt};
+
+// backhand return deuce serveW
+Ply1_Return_DeW = [Ply2_At_Net==0]Opp_At_Baseline -> pcase {
+			36: FH_CrossCourt -> Ply1_Move; Ply2_de_stroke
+			4: FH_DownLine -> Ply1_Move; Ply2_ad_stroke
+			59: FH_DownMid -> Ply1_Move; Ply2_mid_stroke
+
+			7: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			0: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply2_At_Net==1]Opp_At_Net -> pcase {
+			36: FH_CrossCourt -> Ply2_de_stroke
+			4: FH_DownLine -> Ply2_ad_stroke
+			60: FH_DownMid -> Ply2_mid_stroke
+
+			8: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			0: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt};
+
+// forehand return ad serveT
+Ply1_Return_AdT = [Ply2_At_Net==0]Opp_At_Baseline -> pcase {
+			4: FH_CrossCourt -> Ply1_Move; Ply2_de_stroke
+			17: FH_InsideOut -> Ply1_Move; Ply2_ad_stroke
+			31: FH_DownMid -> Ply1_Move; Ply2_mid_stroke
+
+			1: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			0: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply2_At_Net==1]Opp_At_Net -> pcase {
+			4: FH_CrossCourt -> Ply2_de_stroke
+			17: FH_InsideOut -> Ply2_ad_stroke
+			31: FH_DownMid -> Ply2_mid_stroke
+
+			1: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			0: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt};
+
+// forehand or backhand return ad serveB
+Ply1_Return_AdB = [Ply2_At_Net==0]Opp_At_Baseline -> pcase {
+			3: To_De -> Ply1_Move; Ply2_de_stroke
+			17: To_Ad -> Ply1_Move; Ply2_ad_stroke
+			82: To_Mid -> Ply1_Move; Ply2_mid_stroke
+
+			0: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			1: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply2_At_Net==1]Opp_At_Net -> pcase {
+			3: To_De -> Ply2_de_stroke
+			17: To_Ad -> Ply2_ad_stroke
+			82: To_Mid -> Ply2_mid_stroke
+
+			0: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			1: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt};
+
+// backhand return ad serveW
+Ply1_Return_AdW = [Ply2_At_Net==0]Opp_At_Baseline -> pcase {
+			37: BH_CrossCourt -> Ply1_Move; Ply2_ad_stroke
+			5: BH_DownLine -> Ply1_Move; Ply2_de_stroke
+			91: BH_DownMid -> Ply1_Move; Ply2_mid_stroke
+
+			5: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			2: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply2_At_Net==1]Opp_At_Net -> pcase {
+			38: BH_CrossCourt -> Ply2_ad_stroke
+			5: BH_DownLine -> Ply2_de_stroke
+			91: BH_DownMid -> Ply2_mid_stroke
+
+			5: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			2: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt};
+
+// deuce stroke 
+Ply1_de_stroke = [Ply2_At_Net==0]Opp_At_Baseline -> pcase {
+			116: FH_Crosscourt -> Ply1_Move; Ply2_de_stroke
+			113: FH_Downline -> Ply1_Move; Ply2_ad_stroke
+			80: FH_DownMid -> Ply1_Move; Ply2_mid_stroke
+			0: BH_InsideIn -> Ply1_Move; Ply2_ad_stroke
+			0: BH_InsideOut -> Ply1_Move; Ply2_de_stroke
+			0: BH_DownMid -> Ply1_Move; Ply2_mid_stroke
+
+			55: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			112: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply2_At_Net==1]Opp_At_Net -> pcase {
+			117: FH_Crosscourt -> Ply2_de_stroke
+			115: FH_Downline -> Ply2_ad_stroke
+			81: FH_DownMid -> Ply2_mid_stroke
+			0: BH_InsideIn -> Ply2_ad_stroke
+			0: BH_InsideOut -> Ply2_de_stroke
+			0: BH_DownMid -> Ply2_mid_stroke
+
+			59: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			112: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt};
+
+// mid stroke 
+Ply1_mid_stroke = [Ply2_At_Net==0]Opp_At_Baseline -> pcase {
+			158: FH_InsideOut -> Ply1_Move; Ply2_ad_stroke
+			177: FH_Crosscourt -> Ply1_Move; Ply2_de_stroke
+			202: FH_DownMid -> Ply1_Move; Ply2_mid_stroke
+			49: BH_InsideOut -> Ply1_Move; Ply2_de_stroke
+			133: BH_Crosscourt -> Ply1_Move; Ply2_ad_stroke
+			144: BH_DownMid -> Ply1_Move; Ply2_mid_stroke
+
+			172: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			138: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply2_At_Net==1]Opp_At_Net -> pcase {
+			158: FH_InsideOut -> Ply2_ad_stroke
+			178: FH_Crosscourt -> Ply2_de_stroke
+			203: FH_DownMid -> Ply2_mid_stroke
+			50: BH_InsideOut -> Ply2_de_stroke
+			133: BH_Crosscourt -> Ply2_ad_stroke
+			144: BH_DownMid -> Ply2_mid_stroke
+
+			176: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			138: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt};
+
+// ad stroke 
+Ply1_ad_stroke = [Ply2_At_Net==0]Opp_At_Baseline -> pcase {
+			27: FH_InsideOut -> Ply1_Move; Ply2_ad_stroke
+			5: FH_InsideIn -> Ply1_Move; Ply2_de_stroke
+			10: FH_DownMid -> Ply1_Move; Ply2_mid_stroke
+			248: BH_Crosscourt -> Ply1_Move; Ply2_ad_stroke
+			34: BH_Downline -> Ply1_Move; Ply2_de_stroke
+			312: BH_DownMid -> Ply1_Move; Ply2_mid_stroke
+
+			70: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			195: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply2_At_Net==1]Opp_At_Net -> pcase {
+			27: FH_InsideOut -> Ply2_ad_stroke
+			5: FH_InsideIn -> Ply2_de_stroke
+			10: FH_DownMid -> Ply2_mid_stroke
+			253: BH_Crosscourt -> Ply2_ad_stroke
+			35: BH_Downline -> Ply2_de_stroke
+			318: BH_DownMid -> Ply2_mid_stroke
+
+			71: Winner -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt
+			195: Error -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt};
+
+Ply1_Serve_Move = pcase {
+			14: Approach{Ply1_At_Net=1} -> Skip
+			1416: Stay -> Skip
+}; 
+
+Ply1_Move = pcase {
+			41: Approach{Ply1_At_Net=1} -> Skip
+			3211: Stay -> Skip
+}; 
+
+De_Ply2Serve = pcase {                             
+			716: ServeT_in -> Ply2_Serve_Move; Ply1_Return_DeT
+			551: ServeBody_in -> Ply2_Serve_Move; Ply1_Return_DeB
+			1385: ServeWide_in -> Ply2_Serve_Move; Ply1_Return_DeW
+
+			1820: Winner -> Resume; Ace{nscore++; if (nscore == points) {won = player2} else {turn = (turn+1)%4} }-> NextPt
+			2455: Error -> Resume; De_Ply2Serve_2nd};
+
+// 1st serve is out
+De_Ply2Serve_2nd = pcase {                 
+			275: ServeT_in -> Ply2_Serve_Move; Ply1_Return_DeT
+			801: ServeBody_in -> Ply2_Serve_Move; Ply1_Return_DeB
+			484: ServeWide_in -> Ply2_Serve_Move; Ply1_Return_DeW
+
+			494: Winner -> Resume; Ace{nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			401: Error -> Resume; DoubleFault{fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt};
+
+Ad_Ply2Serve = pcase {
+			738: ServeT_in -> Ply2_Serve_Move; Ply1_Return_AdT
+			290: ServeBody_in -> Ply2_Serve_Move; Ply1_Return_AdB
+			1255: ServeWide_in -> Ply2_Serve_Move; Ply1_Return_AdW
+
+			1447: Winner -> Resume; Ace{nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			2538: Error -> Resume; Ad_Ply2Serve_2nd};
+
+// 1st serve is out
+Ad_Ply2Serve_2nd = pcase {                 
+			201: ServeT_in -> Ply2_Serve_Move; Ply1_Return_AdT
+			329: ServeBody_in -> Ply2_Serve_Move; Ply1_Return_AdB
+			1110: ServeWide_in -> Ply2_Serve_Move; Ply1_Return_AdW
+
+			471: Winner -> Resume; Ace{nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			427: Error -> Resume; DoubleFault{fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt};
+
+// forehand return deuce serveT
+Ply2_Return_DeT = [Ply1_At_Net==0]Opp_At_Baseline -> pcase {
+			204: BH_CrossCourt -> Ply2_Move; Ply1_ad_stroke
+			82: BH_InsideOut -> Ply2_Move; Ply1_de_stroke
+			820: BH_DownMid -> Ply2_Move; Ply1_mid_stroke
+
+			95: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			2: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply1_At_Net==1]Opp_At_Net -> pcase {
+			204: BH_CrossCourt -> Ply1_ad_stroke
+			88: BH_InsideOut -> Ply1_de_stroke
+			823: BH_DownMid -> Ply1_mid_stroke
+
+			95: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			2: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt};
+
+// forehand or backhand return deuce serveB
+Ply2_Return_DeB = [Ply1_At_Net==0]Opp_At_Baseline -> pcase {
+			237: To_De -> Ply2_Move; Ply1_de_stroke
+			210: To_Ad -> Ply2_Move; Ply1_ad_stroke
+			1115: To_Mid -> Ply2_Move; Ply1_mid_stroke
+
+			284: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			17: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply1_At_Net==1]Opp_At_Net -> pcase {
+			237: To_De -> Ply1_de_stroke
+			210: To_Ad -> Ply1_ad_stroke
+			1115: To_Mid -> Ply1_mid_stroke
+
+			284: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			17: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt};
+
+// backhand return deuce serveW
+Ply2_Return_DeW = [Ply1_At_Net==0]Opp_At_Baseline -> pcase {
+			550: FH_CrossCourt -> Ply2_Move; Ply1_de_stroke
+			82: FH_DownLine -> Ply2_Move; Ply1_ad_stroke
+			753: FH_DownMid -> Ply2_Move; Ply1_mid_stroke
+
+			340: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			11: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply1_At_Net==1]Opp_At_Net -> pcase {
+			551: FH_CrossCourt -> Ply1_de_stroke
+			82: FH_DownLine -> Ply1_ad_stroke
+			753: FH_DownMid -> Ply1_mid_stroke
+
+			343: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			11: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt};
+
+// forehand return ad serveT
+Ply2_Return_AdT = [Ply1_At_Net==0]Opp_At_Baseline -> pcase {
+			102: FH_CrossCourt -> Ply2_Move; Ply1_de_stroke
+			115: FH_InsideOut -> Ply2_Move; Ply1_ad_stroke
+			694: FH_DownMid -> Ply2_Move; Ply1_mid_stroke
+
+			84: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			4: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply1_At_Net==1]Opp_At_Net -> pcase {
+			102: FH_CrossCourt -> Ply1_de_stroke
+			115: FH_InsideOut -> Ply1_ad_stroke
+			694: FH_DownMid -> Ply1_mid_stroke
+
+			84: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			4: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt};
+
+// forehand or backhand return ad serveB
+Ply2_Return_AdB = [Ply1_At_Net==0]Opp_At_Baseline -> pcase {
+			56: To_De -> Ply2_Move; Ply1_de_stroke
+			364: To_Ad -> Ply2_Move; Ply1_ad_stroke
+			614: To_Mid -> Ply2_Move; Ply1_mid_stroke
+
+			140: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			13: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply1_At_Net==1]Opp_At_Net -> pcase {
+			56: To_De -> Ply1_de_stroke
+			364: To_Ad -> Ply1_ad_stroke
+			614: To_Mid -> Ply1_mid_stroke
+
+			140: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			13: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt};
+
+// backhand return ad serveW
+Ply2_Return_AdW = [Ply1_At_Net==0]Opp_At_Baseline -> pcase {
+			1229: BH_CrossCourt -> Ply2_Move; Ply1_ad_stroke
+			77: BH_DownLine -> Ply2_Move; Ply1_de_stroke
+			992: BH_DownMid -> Ply2_Move; Ply1_mid_stroke
+
+			266: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			24: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply1_At_Net==1]Opp_At_Net -> pcase {
+			1232: BH_CrossCourt -> Ply1_ad_stroke
+			78: BH_DownLine -> Ply1_de_stroke
+			1000: BH_DownMid -> Ply1_mid_stroke
+
+			267: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			24: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt};
+
+// deuce stroke 
+Ply2_de_stroke = [Ply1_At_Net==0]Opp_At_Baseline -> pcase {
+			1249: FH_Crosscourt -> Ply2_Move; Ply1_de_stroke
+			392: FH_Downline -> Ply2_Move; Ply1_ad_stroke
+			1119: FH_DownMid -> Ply2_Move; Ply1_mid_stroke
+			0: BH_InsideIn -> Ply2_Move; Ply1_ad_stroke
+			0: BH_InsideOut -> Ply2_Move; Ply1_de_stroke
+			0: BH_DownMid -> Ply2_Move; Ply1_mid_stroke
+
+			867: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			507: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply1_At_Net==1]Opp_At_Net -> pcase {
+			1274: FH_Crosscourt -> Ply1_de_stroke
+			448: FH_Downline -> Ply1_ad_stroke
+			1175: FH_DownMid -> Ply1_mid_stroke
+			0: BH_InsideIn -> Ply1_ad_stroke
+			0: BH_InsideOut -> Ply1_de_stroke
+			0: BH_DownMid -> Ply1_mid_stroke
+
+			947: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			513: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt};
+
+// mid stroke 
+Ply2_mid_stroke = [Ply1_At_Net==0]Opp_At_Baseline -> pcase {
+			1314: FH_InsideOut -> Ply2_Move; Ply1_ad_stroke
+			1887: FH_Crosscourt -> Ply2_Move; Ply1_de_stroke
+			1327: FH_DownMid -> Ply2_Move; Ply1_mid_stroke
+			317: BH_InsideOut -> Ply2_Move; Ply1_de_stroke
+			1282: BH_Crosscourt -> Ply2_Move; Ply1_ad_stroke
+			1451: BH_DownMid -> Ply2_Move; Ply1_mid_stroke
+
+			3232: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			2199: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply1_At_Net==1]Opp_At_Net -> pcase {
+			1342: FH_InsideOut -> Ply1_ad_stroke
+			1891: FH_Crosscourt -> Ply1_de_stroke
+			1343: FH_DownMid -> Ply1_mid_stroke
+			318: BH_InsideOut -> Ply1_de_stroke
+			1282: BH_Crosscourt -> Ply1_ad_stroke
+			1456: BH_DownMid -> Ply1_mid_stroke
+
+			3303: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			2199: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt};
+
+// ad stroke 
+Ply2_ad_stroke = [Ply1_At_Net==0]Opp_At_Baseline -> pcase {
+			89: FH_InsideOut -> Ply2_Move; Ply1_ad_stroke
+			37: FH_InsideIn -> Ply2_Move; Ply1_de_stroke
+			17: FH_DownMid -> Ply2_Move; Ply1_mid_stroke
+			1987: BH_Crosscourt -> Ply2_Move; Ply1_ad_stroke
+			313: BH_Downline -> Ply2_Move; Ply1_de_stroke
+			1556: BH_DownMid -> Ply2_Move; Ply1_mid_stroke
+
+			1217: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			827: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt} []
+
+			[Ply1_At_Net==1]Opp_At_Net -> pcase {
+			89: FH_InsideOut -> Ply1_ad_stroke
+			37: FH_InsideIn -> Ply1_de_stroke
+			17: FH_DownMid -> Ply1_mid_stroke
+			2064: BH_Crosscourt -> Ply1_ad_stroke
+			333: BH_Downline -> Ply1_de_stroke
+			1694: BH_DownMid -> Ply1_mid_stroke
+
+			1355: Winner -> Resume; {nscore++; if (nscore == points) {won = player2} else { turn = (turn+1)%4} }-> NextPt
+			832: Error -> Resume; {fscore++; if (fscore == points) {won = player1} else { turn = (turn+1)%4} }-> NextPt};
+
+Ply2_Serve_Move = pcase {
+			25: Approach{Ply2_At_Net=1} -> Skip
+			18164: Stay -> Skip
+}; 
+
+Ply2_Move = pcase {
+			768: Approach{Ply2_At_Net=1} -> Skip
+			32762: Stay -> Skip
+}; 
+
+#define player1Win won == player1;
+#assert TieBreakGame reaches player1Win with prob;

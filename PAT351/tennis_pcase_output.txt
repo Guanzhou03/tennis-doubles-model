@@ -1,0 +1,40 @@
+=======================================================
+Assertion: TieBreakGame() reaches Team1Win with prob
+********Verification Result********
+The Assertion (TieBreakGame() reaches Team1Win with prob) is Valid with Probability [0.81032, 0.89785];
+
+********Verification Setting********
+Admissible Behavior: All
+Search Engine: Graph-based Probability Computation Based on Value Iteration
+System Abstraction: False
+Maximum difference threshold : 1E-06
+
+
+********Verification Statistics********
+Visited States:65753
+Total Transitions:110080
+MDP Iterations:11421733
+Time Used:5.547742s
+Estimated Memory Used:95927.968KB
+
+
+=======================================================
+Assertion: TieBreakGame() reaches Team2Win with prob
+********Verification Result********
+The Assertion (TieBreakGame() reaches Team2Win with prob) is Valid with Probability [0.10215, 0.18968];
+
+********Verification Setting********
+Admissible Behavior: All
+Search Engine: Graph-based Probability Computation Based on Value Iteration
+System Abstraction: False
+Maximum difference threshold : 1E-06
+
+
+********Verification Statistics********
+Visited States:65753
+Total Transitions:110080
+MDP Iterations:11988037
+Time Used:5.6798474s
+Estimated Memory Used:79751.752KB
+
+

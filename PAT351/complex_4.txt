@@ -1,0 +1,20 @@
+=======================================================
+Assertion: TieBreakGame() reaches player1Win with prob
+********Verification Result********
+The Assertion (TieBreakGame() reaches player1Win with prob) is Valid with Probability [0.34521, 0.40216];
+
+********Verification Setting********
+Admissible Behavior: All
+Search Engine: Graph-based Probability Computation Based on Value Iteration
+System Abstraction: False
+Maximum difference threshold : 1E-06
+
+
+********Verification Statistics********
+Visited States:13678
+Total Transitions:24674
+MDP Iterations:6477838
+Time Used:2.2447563s
+Estimated Memory Used:60328.184KB
+
+

@@ -1,0 +1,19 @@
+﻿#import "PAT.Lib.NewLib";
+var a = 0;
+//var count = 0;
+//var r = 0;
+B() = e1 ->  e2{
+//		r = call(random);
+		if(call(random) > 500){
+//		if(call(dummy, 1)){
+//		a=a+1;
+//		if(false){
+			a=a+1;
+		}
+		else{
+			a=a-1;
+		}
+	} -> e3
+	-> B();
+#define goal a > 10;
+#assert B() reaches goal;

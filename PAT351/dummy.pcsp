@@ -1,0 +1,21 @@
+enum{t1, t2, na}
+var turn = 2;
+var won = na;
+
+dummy = pcase {
+    50: [turn==1]action -> pcase {
+        10: Win{won=t1} -> Skip
+        40: Win{won=t2} -> Skip
+    } [] [turn==2]action -> pcase {
+        0: Win{won=t1} -> Skip
+        0: Win{won=t2} -> Skip
+    }
+    50: Win{won=t1} -> Skip
+};
+
+#define Team1Win won == t1;
+#define Team2Win won == t2;
+
+#assert dummy reaches Team1Win with prob;
+
+

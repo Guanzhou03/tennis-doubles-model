@@ -1,0 +1,20 @@
+=======================================================
+Assertion: dummy() reaches Team1Win with prob
+********Verification Result********
+The Assertion (dummy() reaches Team1Win with prob) is Valid with Probability [0.5, 0.5];
+
+********Verification Setting********
+Admissible Behavior: All
+Search Engine: Graph-based Probability Computation Based on Value Iteration
+System Abstraction: False
+Maximum difference threshold : 1E-06
+
+
+********Verification Statistics********
+Visited States:8
+Total Transitions:8
+MDP Iterations:6
+Time Used:0.0054159s
+Estimated Memory Used:32575.024KB
+
+
