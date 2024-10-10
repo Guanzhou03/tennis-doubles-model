@@ -1,0 +1,354 @@
+{
+  "video_id": "Purcell_ThompsonvsKrawietz_PuetzHighlights_2024US_Open_Final",
+  "fps": 60,
+  "player_descriptons": {
+    "p1": "orange",
+    "p2": "yellow cap",
+    "p3": "black shoes",
+    "p4": "white shoes"
+  },
+  "rallies": [
+    {
+      "video_id": "Purcell_ThompsonvsKrawietz_PuetzHighlights_2024US_Open_Final_193_284",
+      "num_frames": 91,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P3_far_ad_forehand_serve_t_i-formation_in",
+          "relative_player_width": 0.52265625,
+          "relative_player_height": 0.12222222222222222
+        },
+        {
+          "frame": 58,
+          "event": "P2_near_ad_forehand_return_ii_non-serve_win",
+          "relative_player_width": 0.36875,
+          "relative_player_height": 0.6847222222222222
+        }
+      ]
+    },
+    {
+      "video_id": "Purcell_ThompsonvsKrawietz_PuetzHighlights_2024US_Open_Final_595_948",
+      "num_frames": 353,
+      "events": [
+        {
+          "frame": 10,
+          "event": "P1_far_ad_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.51328125,
+          "relative_player_height": 0.11388888888888889
+        },
+        {
+          "frame": 61,
+          "event": "P4_near_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.46875,
+          "relative_player_height": 0.5902777777777778
+        },
+        {
+          "frame": 163,
+          "event": "P1_far_ad_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.5921875,
+          "relative_player_height": 0.2222222222222222
+        },
+        {
+          "frame": 235,
+          "event": "P3_near_deuce_backhand_lob_io_non-serve_in",
+          "relative_player_width": 0.54296875,
+          "relative_player_height": 0.7597222222222222
+        },
+        {
+          "frame": 315,
+          "event": "P1_far_deuce_forehand_smash_cc_non-serve_win",
+          "relative_player_width": 0.44375,
+          "relative_player_height": 0.18333333333333332
+        }
+      ]
+    },
+    {
+      "video_id": "Purcell_ThompsonvsKrawietz_PuetzHighlights_2024US_Open_Final_1432_2100",
+      "num_frames": 668,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P3_far_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.55859375,
+          "relative_player_height": 0.11805555555555555
+        },
+        {
+          "frame": 69,
+          "event": "P2_near_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.3125,
+          "relative_player_height": 0.5861111111111111
+        },
+        {
+          "frame": 138,
+          "event": "P3_far_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.6203125,
+          "relative_player_height": 0.2
+        },
+        {
+          "frame": 218,
+          "event": "P2_near_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.1703125,
+          "relative_player_height": 0.6847222222222222
+        },
+        {
+          "frame": 300,
+          "event": "P3_far_ad_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.6890625,
+          "relative_player_height": 0.2
+        },
+        {
+          "frame": 338,
+          "event": "P1_near_deuce_backhand_volley_ii_non-serve_in",
+          "relative_player_width": 0.57421875,
+          "relative_player_height": 0.49166666666666664
+        },
+        {
+          "frame": 416,
+          "event": "P3_far_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.6109375,
+          "relative_player_height": 0.20833333333333334
+        },
+        {
+          "frame": 457,
+          "event": "P1_near_deuce_forehand_smash_dl_non-serve_in",
+          "relative_player_width": 0.6046875,
+          "relative_player_height": 0.2972222222222222
+        },
+        {
+          "frame": 509,
+          "event": "P3_far_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.54921875,
+          "relative_player_height": 0.1638888888888889
+        },
+        {
+          "frame": 539,
+          "event": "P1_near_deuce_forehand_smash_dl_non-serve_in",
+          "relative_player_width": 0.6296875,
+          "relative_player_height": 0.30694444444444446
+        },
+        {
+          "frame": 631,
+          "event": "P3_far_ad_backhand_swing_cc_non-serve_err",
+          "relative_player_width": 0.69921875,
+          "relative_player_height": 0.20972222222222223
+        }
+      ]
+    },
+    {
+      "video_id": "Purcell_ThompsonvsKrawietz_PuetzHighlights_2024US_Open_Final_2684_2729",
+      "num_frames": 45,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P1_far_ad_forehand_serve_t_conventional_win",
+          "relative_player_width": 0.55625,
+          "relative_player_height": 0.14444444444444443
+        }
+      ]
+    },
+    {
+      "video_id": "Purcell_ThompsonvsKrawietz_PuetzHighlights_2024US_Open_Final_3769_3917",
+      "num_frames": 148,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P4_near_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.42265625,
+          "relative_player_height": 0.5097222222222222
+        },
+        {
+          "frame": 73,
+          "event": "P2_far_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.58671875,
+          "relative_player_height": 0.19027777777777777
+        },
+        {
+          "frame": 101,
+          "event": "P3_near_ad_backhand_volley_cc_non-serve_err",
+          "relative_player_width": 0.42734375,
+          "relative_player_height": 0.35555555555555557
+        }
+      ]
+    },
+    {
+      "video_id": "Purcell_ThompsonvsKrawietz_PuetzHighlights_2024US_Open_Final_4701_4940",
+      "num_frames": 239,
+      "events": [
+        {
+          "frame": 11,
+          "event": "P4_near_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.60859375,
+          "relative_player_height": 0.5888888888888889
+        },
+        {
+          "frame": 52,
+          "event": "P1_far_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.37578125,
+          "relative_player_height": 0.22083333333333333
+        },
+        {
+          "frame": 111,
+          "event": "P4_near_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.60546875,
+          "relative_player_height": 0.475
+        },
+        {
+          "frame": 191,
+          "event": "P1_far_deuce_backhand_swing_ii_non-serve_err",
+          "relative_player_width": 0.43984375,
+          "relative_player_height": 0.24305555555555555
+        }
+      ]
+    },
+    {
+      "video_id": "Purcell_ThompsonvsKrawietz_PuetzHighlights_2024US_Open_Final_5435_5636",
+      "num_frames": 201,
+      "events": [
+        {
+          "frame": 16,
+          "event": "P4_near_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.36953125,
+          "relative_player_height": 0.5111111111111111
+        },
+        {
+          "frame": 62,
+          "event": "P2_far_ad_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.5828125,
+          "relative_player_height": 0.17916666666666667
+        },
+        {
+          "frame": 170,
+          "event": "P3_near_deuce_forehand_smash_dl_non-serve_win",
+          "relative_player_width": 0.584375,
+          "relative_player_height": 0.4597222222222222
+        }
+      ]
+    },
+    {
+      "video_id": "Purcell_ThompsonvsKrawietz_PuetzHighlights_2024US_Open_Final_6081_6428",
+      "num_frames": 347,
+      "events": [
+        {
+          "frame": 10,
+          "event": "P1_near_ad_forehand_serve_t_i-formation_in",
+          "relative_player_width": 0.484375,
+          "relative_player_height": 0.5208333333333334
+        },
+        {
+          "frame": 50,
+          "event": "P4_far_ad_forehand_return_ii_non-serve_in",
+          "relative_player_width": 0.50859375,
+          "relative_player_height": 0.18888888888888888
+        },
+        {
+          "frame": 167,
+          "event": "P1_near_deuce_forehand_smash_cc_non-serve_in",
+          "relative_player_width": 0.553125,
+          "relative_player_height": 0.42916666666666664
+        },
+        {
+          "frame": 204,
+          "event": "P4_far_deuce_forehand_lob_dl_non-serve_in",
+          "relative_player_width": 0.3703125,
+          "relative_player_height": 0.19722222222222222
+        },
+        {
+          "frame": 315,
+          "event": "P1_near_ad_forehand_smash_ii_non-serve_err",
+          "relative_player_width": 0.43828125,
+          "relative_player_height": 0.3861111111111111
+        }
+      ]
+    },
+    {
+      "video_id": "Purcell_ThompsonvsKrawietz_PuetzHighlights_2024US_Open_Final_6942_7226",
+      "num_frames": 284,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P1_far_ad_forehand_serve_t_i-formation_in",
+          "relative_player_width": 0.50078125,
+          "relative_player_height": 0.13055555555555556
+        },
+        {
+          "frame": 61,
+          "event": "P4_near_ad_forehand_return_ii_non-serve_in",
+          "relative_player_width": 0.42265625,
+          "relative_player_height": 0.7430555555555556
+        },
+        {
+          "frame": 170,
+          "event": "P1_far_deuce_forehand_smash_dl_non-serve_in",
+          "relative_player_width": 0.47421875,
+          "relative_player_height": 0.2111111111111111
+        },
+        {
+          "frame": 208,
+          "event": "P4_near_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.39765625,
+          "relative_player_height": 0.7416666666666667
+        },
+        {
+          "frame": 247,
+          "event": "P2_far_deuce_forehand_volley_cc_non-serve_win",
+          "relative_player_width": 0.45625,
+          "relative_player_height": 0.36527777777777776
+        }
+      ]
+    },
+    {
+      "video_id": "Purcell_ThompsonvsKrawietz_PuetzHighlights_2024US_Open_Final_7812_7879",
+      "num_frames": 67,
+      "events": [
+        {
+          "frame": 18,
+          "event": "P1_near_deuce_forehand_serve_w_conventional_win",
+          "relative_player_width": 0.5421875,
+          "relative_player_height": 0.5208333333333334
+        }
+      ]
+    },
+    {
+      "video_id": "Purcell_ThompsonvsKrawietz_PuetzHighlights_2024US_Open_Final_6942_7226",
+      "num_frames": 284,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P1_far_ad_forehand_serve_t_i-formation_err",
+          "relative_player_width": 0.50078125,
+          "relative_player_height": 0.13055555555555556
+        },
+	{
+          "frame": 14,
+          "event": "P1_far_ad_forehand_second-serve_t_i-formation_in",
+          "relative_player_width": 0.50078125,
+          "relative_player_height": 0.13055555555555556
+        },
+        {
+          "frame": 61,
+          "event": "P4_near_ad_forehand_return_ii_non-serve_in",
+          "relative_player_width": 0.42265625,
+          "relative_player_height": 0.7430555555555556
+        },
+        {
+          "frame": 170,
+          "event": "P1_far_deuce_forehand_smash_dl_non-serve_in",
+          "relative_player_width": 0.47421875,
+          "relative_player_height": 0.2111111111111111
+        },
+        {
+          "frame": 208,
+          "event": "P4_near_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.39765625,
+          "relative_player_height": 0.7416666666666667
+        },
+        {
+          "frame": 247,
+          "event": "P2_far_deuce_forehand_volley_cc_non-serve_win",
+          "relative_player_width": 0.45625,
+          "relative_player_height": 0.36527777777777776
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1350 @@
+{
+  "video_id": "VUPKfQgXy8g",
+  "fps": 60,
+  "player_descriptons": {
+    "p1": "black cap black shirt",
+    "p2": "black no cap hairy",
+    "p3": "white shirt dark shoes",
+    "p4": "white shirt white shoes"
+  },
+  "player_hands": {
+    "p1": "Right",
+    "p2": "Right",
+    "p3": "Right",
+    "p4": "Right"
+  },
+  "rallies": [
+    {
+      "video_id": "VUPKfQgXy8g_54030_54702",
+      "num_frames": 672,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P4_near_deuce_forehand_serve_b_conventional_err",
+          "relative_player_width": 0.625,
+          "relative_player_height": 0.4930555555555556
+        },
+        {
+          "frame": 556,
+          "event": "P4_near_deuce_forehand_second-serve_b_conventional_in",
+          "relative_player_width": 0.6453125,
+          "relative_player_height": 0.48333333333333334
+        },
+        {
+          "frame": 611,
+          "event": "P1_far_deuce_backhand_return_ii_non-serve_in",
+          "relative_player_width": 0.40703125,
+          "relative_player_height": 0.225
+        },
+        {
+          "frame": 639,
+          "event": "P3_near_ad_backhand_volley_cc_non-serve_win",
+          "relative_player_width": 0.39765625,
+          "relative_player_height": 0.35833333333333334
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_56483_57211",
+      "num_frames": 728,
+      "events": [
+        {
+          "frame": 10,
+          "event": "P4_near_ad_forehand_serve_t_conventional_err",
+          "relative_player_width": 0.36953125,
+          "relative_player_height": 0.5263888888888889
+        },
+        {
+          "frame": 641,
+          "event": "P4_near_ad_forehand_second-serve_b_conventional_in",
+          "relative_player_width": 0.36328125,
+          "relative_player_height": 0.5111111111111111
+        },
+        {
+          "frame": 690,
+          "event": "P2_far_ad_backhand_return_cc_non-serve_err",
+          "relative_player_width": 0.5421875,
+          "relative_player_height": 0.23333333333333334
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_58708_58845",
+      "num_frames": 137,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P4_near_deuce_forehand_serve_w_conventional_in",
+          "relative_player_width": 0.64765625,
+          "relative_player_height": 0.4986111111111111
+        },
+        {
+          "frame": 61,
+          "event": "P1_far_deuce_forehand_return_dl_non-serve_in",
+          "relative_player_width": 0.39140625,
+          "relative_player_height": 0.24583333333333332
+        },
+        {
+          "frame": 100,
+          "event": "P3_near_ad_forehand_volley_io_non-serve_win",
+          "relative_player_width": 0.37265625,
+          "relative_player_height": 0.3680555555555556
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_60162_60257",
+      "num_frames": 95,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P4_near_ad_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.37890625,
+          "relative_player_height": 0.5041666666666667
+        },
+        {
+          "frame": 62,
+          "event": "P2_far_ad_backhand_return_dl_non-serve_err",
+          "relative_player_width": 0.56328125,
+          "relative_player_height": 0.23055555555555557
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_63868_63982",
+      "num_frames": 114,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P2_near_deuce_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.71015625,
+          "relative_player_height": 0.5027777777777778
+        },
+        {
+          "frame": 67,
+          "event": "P3_far_deuce_backhand_return_ii_non-serve_err",
+          "relative_player_width": 0.40390625,
+          "relative_player_height": 0.23472222222222222
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_64982_65120",
+      "num_frames": 138,
+      "events": [
+        {
+          "frame": 11,
+          "event": "P2_near_ad_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.28984375,
+          "relative_player_height": 0.49166666666666664
+        },
+        {
+          "frame": 55,
+          "event": "P4_far_ad_forehand_return_ii_non-serve_in",
+          "relative_player_width": 0.53828125,
+          "relative_player_height": 0.23194444444444445
+        },
+        {
+          "frame": 90,
+          "event": "P1_near_deuce_forehand_smash_dl_non-serve_win",
+          "relative_player_width": 0.5484375,
+          "relative_player_height": 0.3638888888888889
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_66320_66556",
+      "num_frames": 236,
+      "events": [
+        {
+          "frame": 16,
+          "event": "P2_near_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.71875,
+          "relative_player_height": 0.4777777777777778
+        },
+        {
+          "frame": 60,
+          "event": "P3_far_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.41484375,
+          "relative_player_height": 0.23333333333333334
+        },
+        {
+          "frame": 131,
+          "event": "P2_near_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.615625,
+          "relative_player_height": 0.4013888888888889
+        },
+        {
+          "frame": 205,
+          "event": "P3_far_deuce_backhand_swing_io_non-serve_err",
+          "relative_player_width": 0.45,
+          "relative_player_height": 0.24861111111111112
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_67475_67974",
+      "num_frames": 499,
+      "events": [
+        {
+          "frame": 10,
+          "event": "P2_near_ad_forehand_serve_w_conventional_in",
+          "relative_player_width": 0.30625,
+          "relative_player_height": 0.5777777777777777
+        },
+        {
+          "frame": 432,
+          "event": "P4_far_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.559375,
+          "relative_player_height": 0.23333333333333334
+        },
+        {
+          "frame": 467,
+          "event": "P1_near_ad_backhand_volley_dl_non-serve_err",
+          "relative_player_width": 0.46875,
+          "relative_player_height": 0.36666666666666664
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_69798_70920",
+      "num_frames": 1122,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P2_near_deuce_forehand_serve_w_conventional_err",
+          "relative_player_width": 0.72265625,
+          "relative_player_height": 0.5041666666666667
+        },
+        {
+          "frame": 613,
+          "event": "P2_near_deuce_forehand_second-serve_w_conventional_in",
+          "relative_player_width": 0.73046875,
+          "relative_player_height": 0.4861111111111111
+        },
+        {
+          "frame": 665,
+          "event": "P3_far_deuce_forehand_return_dl_non-serve_in",
+          "relative_player_width": 0.3796875,
+          "relative_player_height": 0.2388888888888889
+        },
+        {
+          "frame": 692,
+          "event": "P1_near_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.3796875,
+          "relative_player_height": 0.35555555555555557
+        },
+        {
+          "frame": 786,
+          "event": "P3_far_deuce_backhand_swing_io_non-serve_in",
+          "relative_player_width": 0.41953125,
+          "relative_player_height": 0.24444444444444444
+        },
+        {
+          "frame": 813,
+          "event": "P2_near_deuce_backhand_volley_io_non-serve_in",
+          "relative_player_width": 0.515625,
+          "relative_player_height": 0.3638888888888889
+        },
+        {
+          "frame": 872,
+          "event": "P3_far_deuce_forehand_lob_dl_non-serve_in",
+          "relative_player_width": 0.43984375,
+          "relative_player_height": 0.2611111111111111
+        },
+        {
+          "frame": 950,
+          "event": "P2_near_ad_backhand_volley_cc_non-serve_in",
+          "relative_player_width": 0.4328125,
+          "relative_player_height": 0.36944444444444446
+        },
+        {
+          "frame": 1032,
+          "event": "P3_far_ad_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.503125,
+          "relative_player_height": 0.22777777777777777
+        },
+        {
+          "frame": 1085,
+          "event": "P1_near_deuce_forehand_smash_cc_non-serve_win",
+          "relative_player_width": 0.5390625,
+          "relative_player_height": 0.3625
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_72850_73392",
+      "num_frames": 542,
+      "events": [
+        {
+          "frame": 18,
+          "event": "P3_far_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.42421875,
+          "relative_player_height": 0.23194444444444445
+        },
+        {
+          "frame": 67,
+          "event": "P1_near_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.7828125,
+          "relative_player_height": 0.5583333333333333
+        },
+        {
+          "frame": 97,
+          "event": "P4_far_ad_forehand_volley_io_non-serve_in",
+          "relative_player_width": 0.5234375,
+          "relative_player_height": 0.25277777777777777
+        },
+        {
+          "frame": 177,
+          "event": "P2_near_ad_backhand_lob_cc_non-serve_in",
+          "relative_player_width": 0.1328125,
+          "relative_player_height": 0.49722222222222223
+        },
+        {
+          "frame": 271,
+          "event": "P3_far_ad_backhand_volley_cc_non-serve_in",
+          "relative_player_width": 0.49140625,
+          "relative_player_height": 0.23194444444444445
+        },
+        {
+          "frame": 352,
+          "event": "P2_near_ad_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.0703125,
+          "relative_player_height": 0.5555555555555556
+        },
+        {
+          "frame": 395,
+          "event": "P3_far_deuce_forehand_volley_dl_non-serve_in",
+          "relative_player_width": 0.40078125,
+          "relative_player_height": 0.27361111111111114
+        },
+        {
+          "frame": 493,
+          "event": "P2_near_ad_forehand_swing_io_non-serve_err",
+          "relative_player_width": 0.2234375,
+          "relative_player_height": 0.4083333333333333
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_74843_75041",
+      "num_frames": 198,
+      "events": [
+        {
+          "frame": 10,
+          "event": "P3_far_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.52109375,
+          "relative_player_height": 0.22777777777777777
+        },
+        {
+          "frame": 64,
+          "event": "P2_near_ad_forehand_return_ii_non-serve_in",
+          "relative_player_width": 0.153125,
+          "relative_player_height": 0.5444444444444444
+        },
+        {
+          "frame": 89,
+          "event": "P4_far_deuce_backhand_volley_ii_non-serve_in",
+          "relative_player_width": 0.4546875,
+          "relative_player_height": 0.2611111111111111
+        },
+        {
+          "frame": 151,
+          "event": "P2_near_ad_forehand_swing_ii_non-serve_err",
+          "relative_player_width": 0.2546875,
+          "relative_player_height": 0.4722222222222222
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_76383_77499",
+      "num_frames": 1116,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P3_far_deuce_forehand_serve_w_conventional_err",
+          "relative_player_width": 0.4265625,
+          "relative_player_height": 0.2222222222222222
+        },
+        {
+          "frame": 873,
+          "event": "P3_far_deuce_forehand_second-serve_t_conventional_in",
+          "relative_player_width": 0.4265625,
+          "relative_player_height": 0.2263888888888889
+        },
+        {
+          "frame": 930,
+          "event": "P1_near_deuce_backhand_return_ii_non-serve_in",
+          "relative_player_width": 0.69453125,
+          "relative_player_height": 0.48055555555555557
+        },
+        {
+          "frame": 956,
+          "event": "P4_far_ad_backhand_volley_cc_non-serve_in",
+          "relative_player_width": 0.50390625,
+          "relative_player_height": 0.2625
+        },
+        {
+          "frame": 981,
+          "event": "P2_near_ad_backhand_lob_dl_non-serve_in",
+          "relative_player_width": 0.38828125,
+          "relative_player_height": 0.36666666666666664
+        },
+        {
+          "frame": 1066,
+          "event": "P3_far_deuce_forehand_smash_dl_non-serve_win",
+          "relative_player_width": 0.41171875,
+          "relative_player_height": 0.2388888888888889
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_79394_79794",
+      "num_frames": 400,
+      "events": [
+        {
+          "frame": 21,
+          "event": "P3_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.49296875,
+          "relative_player_height": 0.225
+        },
+        {
+          "frame": 67,
+          "event": "P2_near_ad_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.2109375,
+          "relative_player_height": 0.5347222222222222
+        },
+        {
+          "frame": 195,
+          "event": "P3_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.3890625,
+          "relative_player_height": 0.2263888888888889
+        },
+        {
+          "frame": 242,
+          "event": "P1_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.52890625,
+          "relative_player_height": 0.4125
+        },
+        {
+          "frame": 332,
+          "event": "P4_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.4671875,
+          "relative_player_height": 0.2611111111111111
+        },
+        {
+          "frame": 353,
+          "event": "P2_near_ad_backhand_volley_dl_non-serve_err",
+          "relative_player_width": 0.4046875,
+          "relative_player_height": 0.37916666666666665
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_84059_84355",
+      "num_frames": 296,
+      "events": [
+        {
+          "frame": 16,
+          "event": "P1_far_deuce_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.4484375,
+          "relative_player_height": 0.23194444444444445
+        },
+        {
+          "frame": 57,
+          "event": "P3_near_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.7109375,
+          "relative_player_height": 0.5111111111111111
+        },
+        {
+          "frame": 89,
+          "event": "P2_far_deuce_forehand_volley_dl_non-serve_in",
+          "relative_player_width": 0.4609375,
+          "relative_player_height": 0.2708333333333333
+        },
+        {
+          "frame": 129,
+          "event": "P4_near_ad_backhand_lob_cc_non-serve_in",
+          "relative_player_width": 0.2609375,
+          "relative_player_height": 0.5263888888888889
+        },
+        {
+          "frame": 221,
+          "event": "P2_far_ad_forehand_smash_ii_non-serve_in",
+          "relative_player_width": 0.50390625,
+          "relative_player_height": 0.2375
+        },
+        {
+          "frame": 259,
+          "event": "P3_near_deuce_forehand_swing_dl_non-serve_err",
+          "relative_player_width": 0.78984375,
+          "relative_player_height": 0.5944444444444444
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_85585_86424",
+      "num_frames": 839,
+      "events": [
+        {
+          "frame": 17,
+          "event": "P1_far_ad_forehand_serve_b_conventional_err",
+          "relative_player_width": 0.50859375,
+          "relative_player_height": 0.23194444444444445
+        },
+        {
+          "frame": 741,
+          "event": "P1_far_ad_forehand_second-serve_b_conventional_in",
+          "relative_player_width": 0.51171875,
+          "relative_player_height": 0.23055555555555557
+        },
+        {
+          "frame": 791,
+          "event": "P4_near_ad_forehand_return_io_non-serve_err",
+          "relative_player_width": 0.15234375,
+          "relative_player_height": 0.48333333333333334
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_87481_87745",
+      "num_frames": 264,
+      "events": [
+        {
+          "frame": 14,
+          "event": "P1_far_deuce_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.4484375,
+          "relative_player_height": 0.22777777777777777
+        },
+        {
+          "frame": 55,
+          "event": "P3_near_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.71875,
+          "relative_player_height": 0.5222222222222223
+        },
+        {
+          "frame": 138,
+          "event": "P1_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.41484375,
+          "relative_player_height": 0.24444444444444444
+        },
+        {
+          "frame": 234,
+          "event": "P4_near_ad_forehand_swing_io_non-serve_err",
+          "relative_player_width": 0.228125,
+          "relative_player_height": 0.5305555555555556
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_88691_89464",
+      "num_frames": 773,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P1_far_ad_forehand_serve_t_conventional_err",
+          "relative_player_width": 0.50859375,
+          "relative_player_height": 0.2361111111111111
+        },
+        {
+          "frame": 730,
+          "event": "P1_far_ad_forehand_second-serve_t_conventional_err",
+          "relative_player_width": 0.50703125,
+          "relative_player_height": 0.23055555555555557
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_90881_90973",
+      "num_frames": 92,
+      "events": [
+        {
+          "frame": 15,
+          "event": "P1_far_deuce_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.4484375,
+          "relative_player_height": 0.24027777777777778
+        },
+        {
+          "frame": 54,
+          "event": "P3_near_deuce_backhand_return_io_non-serve_err",
+          "relative_player_width": 0.7421875,
+          "relative_player_height": 0.5375
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_92985_93832",
+      "num_frames": 847,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P4_near_deuce_forehand_serve_t_conventional_err",
+          "relative_player_width": 0.63984375,
+          "relative_player_height": 0.5208333333333334
+        },
+        {
+          "frame": 684,
+          "event": "P4_near_deuce_forehand_second-serve_t_conventional_in",
+          "relative_player_width": 0.6296875,
+          "relative_player_height": 0.4722222222222222
+        },
+        {
+          "frame": 739,
+          "event": "P1_far_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.4375,
+          "relative_player_height": 0.24027777777777778
+        },
+        {
+          "frame": 770,
+          "event": "P3_near_deuce_forehand_volley_dl_non-serve_in",
+          "relative_player_width": 0.509375,
+          "relative_player_height": 0.36666666666666664
+        },
+        {
+          "frame": 811,
+          "event": "P2_far_ad_backhand_swing_cc_non-serve_err",
+          "relative_player_width": 0.53125,
+          "relative_player_height": 0.25416666666666665
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_97098_97495",
+      "num_frames": 397,
+      "events": [
+        {
+          "frame": 15,
+          "event": "P4_near_ad_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.37265625,
+          "relative_player_height": 0.5166666666666667
+        },
+        {
+          "frame": 60,
+          "event": "P2_far_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.51640625,
+          "relative_player_height": 0.2375
+        },
+        {
+          "frame": 143,
+          "event": "P4_near_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.11171875,
+          "relative_player_height": 0.5652777777777778
+        },
+        {
+          "frame": 227,
+          "event": "P2_far_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.5125,
+          "relative_player_height": 0.22916666666666666
+        },
+        {
+          "frame": 297,
+          "event": "P4_near_ad_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.0921875,
+          "relative_player_height": 0.6222222222222222
+        },
+        {
+          "frame": 339,
+          "event": "P1_far_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.384375,
+          "relative_player_height": 0.26805555555555555
+        },
+        {
+          "frame": 364,
+          "event": "P3_near_deuce_backhand_swing_ii_non-serve_err",
+          "relative_player_width": 0.5296875,
+          "relative_player_height": 0.39861111111111114
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_98789_98842",
+      "num_frames": 53,
+      "events": [
+        {
+          "frame": 11,
+          "event": "P4_near_deuce_forehand_serve_w_conventional_win",
+          "relative_player_width": 0.62109375,
+          "relative_player_height": 0.49027777777777776
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_100376_101165",
+      "num_frames": 789,
+      "events": [
+        {
+          "frame": 11,
+          "event": "P4_near_ad_forehand_serve_t_i-formation_err",
+          "relative_player_width": 0.3890625,
+          "relative_player_height": 0.525
+        },
+        {
+          "frame": 668,
+          "event": "P4_near_ad_forehand_second-serve_b_conventional_in",
+          "relative_player_width": 0.33515625,
+          "relative_player_height": 0.5222222222222223
+        },
+        {
+          "frame": 719,
+          "event": "P2_far_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.528125,
+          "relative_player_height": 0.23194444444444445
+        },
+        {
+          "frame": 748,
+          "event": "P3_near_deuce_backhand_volley_ii_non-serve_win",
+          "relative_player_width": 0.49296875,
+          "relative_player_height": 0.3625
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_102882_103062",
+      "num_frames": 180,
+      "events": [
+        {
+          "frame": 15,
+          "event": "P4_near_deuce_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.6421875,
+          "relative_player_height": 0.49444444444444446
+        },
+        {
+          "frame": 57,
+          "event": "P1_far_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.43359375,
+          "relative_player_height": 0.24027777777777778
+        },
+        {
+          "frame": 131,
+          "event": "P4_near_deuce_forehand_swing_dl_non-serve_err",
+          "relative_player_width": 0.6203125,
+          "relative_player_height": 0.5402777777777777
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_105089_105843",
+      "num_frames": 754,
+      "events": [
+        {
+          "frame": 14,
+          "event": "P4_near_ad_forehand_serve_b_conventional_err",
+          "relative_player_width": 0.3640625,
+          "relative_player_height": 0.5097222222222222
+        },
+        {
+          "frame": 636,
+          "event": "P4_near_ad_forehand_second-serve_w_conventional_in",
+          "relative_player_width": 0.36015625,
+          "relative_player_height": 0.5347222222222222
+        },
+        {
+          "frame": 681,
+          "event": "P2_far_ad_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.5546875,
+          "relative_player_height": 0.23194444444444445
+        },
+        {
+          "frame": 723,
+          "event": "P3_near_deuce_forehand_smash_dl_non-serve_win",
+          "relative_player_width": 0.5546875,
+          "relative_player_height": 0.3680555555555556
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_109875_109981",
+      "num_frames": 106,
+      "events": [
+        {
+          "frame": 21,
+          "event": "P2_near_deuce_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.69140625,
+          "relative_player_height": 0.5041666666666667
+        },
+        {
+          "frame": 62,
+          "event": "P3_far_deuce_backhand_return_io_non-serve_err",
+          "relative_player_width": 0.40859375,
+          "relative_player_height": 0.23194444444444445
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_111071_112150",
+      "num_frames": 1079,
+      "events": [
+        {
+          "frame": 18,
+          "event": "P2_near_ad_forehand_serve_t_i-formation_err",
+          "relative_player_width": 0.4203125,
+          "relative_player_height": 0.5319444444444444
+        },
+        {
+          "frame": 1046,
+          "event": "P2_near_ad_forehand_second-serve_t_conventional_err",
+          "relative_player_width": 0.2734375,
+          "relative_player_height": 0.5375
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_113868_114604",
+      "num_frames": 736,
+      "events": [
+        {
+          "frame": 16,
+          "event": "P2_near_deuce_forehand_serve_b_conventional_err",
+          "relative_player_width": 0.73359375,
+          "relative_player_height": 0.48333333333333334
+        },
+        {
+          "frame": 545,
+          "event": "P2_near_deuce_forehand_second-serve_t_conventional_in",
+          "relative_player_width": 0.71328125,
+          "relative_player_height": 0.4888888888888889
+        },
+        {
+          "frame": 607,
+          "event": "P3_far_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.4203125,
+          "relative_player_height": 0.22777777777777777
+        },
+        {
+          "frame": 662,
+          "event": "P2_near_deuce_backhand_volley_ii_non-serve_in",
+          "relative_player_width": 0.61875,
+          "relative_player_height": 0.4125
+        },
+        {
+          "frame": 704,
+          "event": "P4_far_ad_backhand_volley_cc_non-serve_err",
+          "relative_player_width": 0.5359375,
+          "relative_player_height": 0.25416666666666665
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_115572_115978",
+      "num_frames": 406,
+      "events": [
+        {
+          "frame": 18,
+          "event": "P2_near_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.28046875,
+          "relative_player_height": 0.5138888888888888
+        },
+        {
+          "frame": 63,
+          "event": "P4_far_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.54140625,
+          "relative_player_height": 0.23333333333333334
+        },
+        {
+          "frame": 130,
+          "event": "P2_near_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.371875,
+          "relative_player_height": 0.4666666666666667
+        },
+        {
+          "frame": 216,
+          "event": "P3_far_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.48671875,
+          "relative_player_height": 0.27361111111111114
+        },
+        {
+          "frame": 244,
+          "event": "P2_near_ad_forehand_volley_io_non-serve_in",
+          "relative_player_width": 0.43359375,
+          "relative_player_height": 0.3680555555555556
+        },
+        {
+          "frame": 339,
+          "event": "P4_far_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.553125,
+          "relative_player_height": 0.24027777777777778
+        },
+        {
+          "frame": 367,
+          "event": "P1_near_deuce_forehand_volley_cc_non-serve_err",
+          "relative_player_width": 0.5546875,
+          "relative_player_height": 0.3527777777777778
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_117262_117305_118018",
+      "num_frames": 713,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P2_near_deuce_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.68515625,
+          "relative_player_height": 0.48194444444444445
+        },
+        {
+          "frame": 19,
+          "event": "P2_near_deuce_forehand_serve_t_conventional_err",
+          "relative_player_width": 0.41640625,
+          "relative_player_height": 0.23055555555555557
+        },
+        {
+          "frame": 584,
+          "event": "P2_near_deuce_forehand_second-serve_b_conventional_in",
+          "relative_player_width": 0.72578125,
+          "relative_player_height": 0.47638888888888886
+        },
+        {
+          "frame": 642,
+          "event": "P3_far_deuce_forehand_return_dl_non-serve_in",
+          "relative_player_width": 0.40390625,
+          "relative_player_height": 0.2388888888888889
+        },
+        {
+          "frame": 672,
+          "event": "P1_near_ad_backhand_volley_dl_non-serve_err",
+          "relative_player_width": 0.378125,
+          "relative_player_height": 0.3527777777777778
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_119284_120176",
+      "num_frames": 892,
+      "events": [
+        {
+          "frame": 19,
+          "event": "P2_near_ad_forehand_serve_b_conventional_err",
+          "relative_player_width": 0.275,
+          "relative_player_height": 0.5166666666666667
+        },
+        {
+          "frame": 532,
+          "event": "P2_near_ad_forehand_second-serve_b_conventional_in",
+          "relative_player_width": 0.278125,
+          "relative_player_height": 0.5125
+        },
+        {
+          "frame": 600,
+          "event": "P4_far_ad_forehand_return_ii_non-serve_in",
+          "relative_player_width": 0.5640625,
+          "relative_player_height": 0.23055555555555557
+        },
+        {
+          "frame": 624,
+          "event": "P1_near_deuce_forehand_volley_dl_non-serve_in",
+          "relative_player_width": 0.5671875,
+          "relative_player_height": 0.36527777777777776
+        },
+        {
+          "frame": 699,
+          "event": "P4_far_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.53515625,
+          "relative_player_height": 0.23472222222222222
+        },
+        {
+          "frame": 733,
+          "event": "P1_near_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.54453125,
+          "relative_player_height": 0.375
+        },
+        {
+          "frame": 750,
+          "event": "P3_far_deuce_backhand_volley_io_non-serve_in",
+          "relative_player_width": 0.45234375,
+          "relative_player_height": 0.2625
+        },
+        {
+          "frame": 796,
+          "event": "P1_near_deuce_backhand_volley_ii_non-serve_in",
+          "relative_player_width": 0.52578125,
+          "relative_player_height": 0.3638888888888889
+        },
+        {
+          "frame": 856,
+          "event": "P4_far_ad_backhand_swing_cc_non-serve_win",
+          "relative_player_width": 0.553125,
+          "relative_player_height": 0.2513888888888889
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_122398_122562",
+      "num_frames": 164,
+      "events": [
+        {
+          "frame": 21,
+          "event": "P3_far_deuce_forehand_serve_w_conventional_in",
+          "relative_player_width": 0.42890625,
+          "relative_player_height": 0.23472222222222222
+        },
+        {
+          "frame": 69,
+          "event": "P1_near_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.84375,
+          "relative_player_height": 0.5069444444444444
+        },
+        {
+          "frame": 132,
+          "event": "P3_far_deuce_backhand_volley_io_non-serve_err",
+          "relative_player_width": 0.46171875,
+          "relative_player_height": 0.24861111111111112
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_124041_124182",
+      "num_frames": 141,
+      "events": [
+        {
+          "frame": 10,
+          "event": "P3_far_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.5234375,
+          "relative_player_height": 0.22916666666666666
+        },
+        {
+          "frame": 58,
+          "event": "P2_near_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.26015625,
+          "relative_player_height": 0.5416666666666666
+        },
+        {
+          "frame": 90,
+          "event": "P4_far_ad_backhand_volley_cc_non-serve_win",
+          "relative_player_width": 0.48515625,
+          "relative_player_height": 0.2708333333333333
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_125741_126841",
+      "num_frames": 1100,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P3_far_deuce_forehand_serve_t_conventional_err",
+          "relative_player_width": 0.42890625,
+          "relative_player_height": 0.22916666666666666
+        },
+        {
+          "frame": 800,
+          "event": "P3_far_deuce_forehand_second-serve_t_conventional_in",
+          "relative_player_width": 0.4265625,
+          "relative_player_height": 0.225
+        },
+        {
+          "frame": 857,
+          "event": "P1_near_deuce_backhand_return_ii_non-serve_in",
+          "relative_player_width": 0.68203125,
+          "relative_player_height": 0.48194444444444445
+        },
+        {
+          "frame": 915,
+          "event": "P3_far_ad_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.49296875,
+          "relative_player_height": 0.2388888888888889
+        },
+        {
+          "frame": 967,
+          "event": "P1_near_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.54765625,
+          "relative_player_height": 0.39861111111111114
+        },
+        {
+          "frame": 1061,
+          "event": "P4_far_ad_backhand_swing_dl_non-serve_win",
+          "relative_player_width": 0.49296875,
+          "relative_player_height": 0.2791666666666667
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_130571_130779",
+      "num_frames": 208,
+      "events": [
+        {
+          "frame": 11,
+          "event": "P3_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.496875,
+          "relative_player_height": 0.24305555555555555
+        },
+        {
+          "frame": 171,
+          "event": "P2_near_ad_forehand_return_ii_non-serve_err",
+          "relative_player_width": 0.19375,
+          "relative_player_height": 0.5652777777777778
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_131980_132033",
+      "num_frames": 53,
+      "events": [
+        {
+          "frame": 11,
+          "event": "P3_far_deuce_forehand_serve_w_conventional_win",
+          "relative_player_width": 0.4265625,
+          "relative_player_height": 0.23055555555555557
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_137767_138459",
+      "num_frames": 692,
+      "events": [
+        {
+          "frame": 14,
+          "event": "P1_far_deuce_forehand_serve_b_conventional_err",
+          "relative_player_width": 0.45,
+          "relative_player_height": 0.23194444444444445
+        },
+        {
+          "frame": 597,
+          "event": "P1_far_deuce_forehand_second-serve_t_conventional_in",
+          "relative_player_width": 0.4515625,
+          "relative_player_height": 0.24027777777777778
+        },
+        {
+          "frame": 648,
+          "event": "P3_near_deuce_forehand_return_cc_non-serve_err",
+          "relative_player_width": 0.55703125,
+          "relative_player_height": 0.5152777777777777
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_139650_139800",
+      "num_frames": 150,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P1_far_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.51015625,
+          "relative_player_height": 0.23472222222222222
+        },
+        {
+          "frame": 60,
+          "event": "P4_near_ad_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.1984375,
+          "relative_player_height": 0.5513888888888889
+        },
+        {
+          "frame": 109,
+          "event": "P2_far_deuce_forehand_volley_dl_non-serve_win",
+          "relative_player_width": 0.44375,
+          "relative_player_height": 0.25555555555555554
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_141304_141456",
+      "num_frames": 152,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P1_far_deuce_forehand_serve_w_conventional_in",
+          "relative_player_width": 0.4484375,
+          "relative_player_height": 0.24027777777777778
+        },
+        {
+          "frame": 56,
+          "event": "P3_near_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.81328125,
+          "relative_player_height": 0.5388888888888889
+        },
+        {
+          "frame": 111,
+          "event": "P1_far_deuce_forehand_swing_dl_non-serve_err",
+          "relative_player_width": 0.43359375,
+          "relative_player_height": 0.24583333333333332
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_142620_142671",
+      "num_frames": 51,
+      "events": [
+        {
+          "frame": 15,
+          "event": "P1_far_ad_forehand_serve_b_conventional_win",
+          "relative_player_width": 0.509375,
+          "relative_player_height": 0.2375
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_144615_144790",
+      "num_frames": 175,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P1_far_deuce_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.45,
+          "relative_player_height": 0.22777777777777777
+        },
+        {
+          "frame": 59,
+          "event": "P3_near_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.678125,
+          "relative_player_height": 0.5305555555555556
+        },
+        {
+          "frame": 137,
+          "event": "P1_far_deuce_forehand_swing_dl_non-serve_err",
+          "relative_player_width": 0.41484375,
+          "relative_player_height": 0.24027777777777778
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_146267_147162",
+      "num_frames": 895,
+      "events": [
+        {
+          "frame": 21,
+          "event": "P1_far_ad_forehand_serve_b_conventional_err",
+          "relative_player_width": 0.51015625,
+          "relative_player_height": 0.23194444444444445
+        },
+        {
+          "frame": 787,
+          "event": "P1_far_ad_forehand_second-serve_b_conventional_in",
+          "relative_player_width": 0.50546875,
+          "relative_player_height": 0.23055555555555557
+        },
+        {
+          "frame": 844,
+          "event": "P4_near_ad_backhand_return_cc_non-serve_err",
+          "relative_player_width": 0.19140625,
+          "relative_player_height": 0.5138888888888888
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_148967_149339",
+      "num_frames": 372,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P4_near_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.63671875,
+          "relative_player_height": 0.4861111111111111
+        },
+        {
+          "frame": 60,
+          "event": "P1_far_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.41328125,
+          "relative_player_height": 0.2375
+        },
+        {
+          "frame": 132,
+          "event": "P4_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.7171875,
+          "relative_player_height": 0.5111111111111111
+        },
+        {
+          "frame": 197,
+          "event": "P1_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.4484375,
+          "relative_player_height": 0.2375
+        },
+        {
+          "frame": 274,
+          "event": "P4_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.66796875,
+          "relative_player_height": 0.6083333333333333
+        },
+        {
+          "frame": 340,
+          "event": "P1_far_deuce_forehand_swing_dl_non-serve_err",
+          "relative_player_width": 0.4515625,
+          "relative_player_height": 0.24027777777777778
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_150684_151169",
+      "num_frames": 485,
+      "events": [
+        {
+          "frame": 19,
+          "event": "P4_near_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.36640625,
+          "relative_player_height": 0.5180555555555556
+        },
+        {
+          "frame": 60,
+          "event": "P2_far_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.540625,
+          "relative_player_height": 0.2222222222222222
+        },
+        {
+          "frame": 210,
+          "event": "P4_near_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.115625,
+          "relative_player_height": 0.49166666666666664
+        },
+        {
+          "frame": 265,
+          "event": "P1_far_deuce_backhand_swing_ii_non-serve_in",
+          "relative_player_width": 0.45625,
+          "relative_player_height": 0.24027777777777778
+        },
+        {
+          "frame": 346,
+          "event": "P4_near_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.175,
+          "relative_player_height": 0.46111111111111114
+        },
+        {
+          "frame": 396,
+          "event": "P1_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.43203125,
+          "relative_player_height": 0.24027777777777778
+        },
+        {
+          "frame": 435,
+          "event": "P3_near_deuce_backhand_volley_ii_non-serve_win",
+          "relative_player_width": 0.51328125,
+          "relative_player_height": 0.3527777777777778
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_152874_153005",
+      "num_frames": 131,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P4_near_deuce_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.64296875,
+          "relative_player_height": 0.5402777777777777
+        },
+        {
+          "frame": 52,
+          "event": "P1_far_deuce_backhand_return_ii_non-serve_in",
+          "relative_player_width": 0.42578125,
+          "relative_player_height": 0.2388888888888889
+        },
+        {
+          "frame": 84,
+          "event": "P3_near_ad_backhand_volley_dl_non-serve_win",
+          "relative_player_width": 0.41640625,
+          "relative_player_height": 0.35694444444444445
+        }
+      ]
+    },
+    {
+      "video_id": "VUPKfQgXy8g_154208_154266",
+      "num_frames": 58,
+      "events": [
+        {
+          "frame": 21,
+          "event": "P4_near_ad_forehand_serve_t_i-formation_win",
+          "relative_player_width": 0.39921875,
+          "relative_player_height": 0.5194444444444445
+        }
+      ]
+    }
+  ]
+}

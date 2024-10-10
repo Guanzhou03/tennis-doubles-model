@@ -4,15 +4,20 @@ from collections import defaultdict
 import os
 
 def get_shot_fields(current_shot):
-    label_parts = current_shot['label'].split('_')
-    player = current_shot['player']
-    shot = label_parts[2]
-    specific_shot = label_parts[4]
-    if specific_shot in ['lob', 'smash', 'volley']:
-        shot = specific_shot
-    court = label_parts[1][:2]  # e.g., 'de' or 'ad'
-    side = label_parts[3] if shot != 'serve' else ''  # For serve, no side is needed       
-    return player, shot, court, side
+    # maps the data given to their corresponding indices after splitting with _ 
+    data_indices = {"player_idx": 0, "court_idx": 2, "handedness_idx": 3, "shot_idx": 4, "shot_direction_idx": 5, "formation_idx":6, "outcome_idx": -1}
+    label_parts = current_shot['event'].split('_')
+    isFH = "forehand" in label_parts[data_indices["handedness_idx"]]
+    player = label_parts[data_indices["player_idx"]]
+    shot = label_parts[data_indices["shot_idx"]].replace('-', '')
+    court = label_parts[data_indices["court_idx"]][:2]  # e.g., 'de' or 'ad'
+    outcome = label_parts[data_indices["outcome_idx"]]
+    formation = label_parts[data_indices["formation_idx"]]
+    if 'serve' not in shot:
+        side = "FH" if isFH else "BH"
+    else:
+        side = ''
+    return player, shot.capitalize(), court.capitalize(), side, outcome, formation
 
 def parse_shot_data(json_file):
     # Load JSON data
@@ -23,39 +28,33 @@ def parse_shot_data(json_file):
     shot_counts = defaultdict(lambda: defaultdict(int))
 
     # Loop through each match entry in the JSON file
-    for rally in data:
+    for rally in data['rallies']:
         events = rally['events']
-        service_player, shot, court, side = get_shot_fields(events[0])
-        formation = "T%sC" % (1 if int(service_player[1]) <= 2 else 2)
-        print(service_player, formation)
         # Iterate through events in pairs to capture shot type and its successor state
         for i in range(len(events)):
             current_shot = events[i]
             # Extract player, court, shot type, and outcome from the current shot
-            player, shot, court, side = get_shot_fields(current_shot)
+            player, shot, court, side, outcome, _ = get_shot_fields(current_shot)
             
             # Create the shot type key
-            if shot == 'serve':
-                shot_type = f"{player}_{court.capitalize()}Serve"
-            elif shot == 'secondserve':
-                shot_type = f"{player}_{court.capitalize()}Secondserve"
+            if 'serve' in shot.lower():
+                shot_type = f"{player}_{court.capitalize()}{shot}"
             else:
                 shot_type = f"{player}_{court.capitalize()}{shot.capitalize()}_{side.upper()}"
             if i + 1 < len(events):
                 next_shot = events[i + 1]
             # Get the outcome/next state of the shot (e.g., P3_DeReturn_BH, Error, Ace, etc.)
-            if current_shot['outcome'] == 'err':
+            if outcome == 'err' and shot != "Serve":
                 next_state = 'Error'
-            elif current_shot['outcome'] == 'win':
+            elif outcome == 'win':
                 next_state = 'Win'
             else:
-                next_player, next_shot_type, next_court, next_side = get_shot_fields(next_shot)
-                if 'serve' in next_shot_type:
+                next_player, next_shot_type, next_court, next_side, outcome, _ = get_shot_fields(next_shot)
+                if 'serve' in next_shot_type.lower():
                     next_state = f"{next_player}_{next_court.capitalize()}{next_shot_type.capitalize()}"
                 else:
                     next_state = f"{next_player}_{next_court.capitalize()}{next_shot_type.capitalize()}_{next_side.upper()}"
-            # shot_type += ("_%s" % (formation))
-            # next_state += ("_%s" % (formation))
+
             # Increment the count for this shot type and successor state
             shot_counts[shot_type][next_state] += 1
 
@@ -101,8 +100,6 @@ def generate_pcsp(counts_dict):
     output = '#include "new_env.pcsp";\n'
     for key, value in counts_dict.items():
         player = key[1]
-        is_first_serve = "Serve" in key
-        is_second_serve = "Secondserve" in key
         output += "%s = %sReady -> pcase { \n" % (key, key) 
         
         # Sort the inner dictionary by value (count) in descending order
@@ -110,11 +107,7 @@ def generate_pcsp(counts_dict):
         
         for action, count in sorted_actions:
             if 'Error' in action:
-                if is_first_serve:
-                    new_key = key.replace("Serve", "Secondserve")
-                    output += f"\t{count}: {new_key}\n"
-                else:
-                    output += f"\t{count}: {key}_err -> Error{{call(awardPoint, {player}, true)}} -> NextPt\n" 
+                output += f"\t{count}: {key}_err -> Error{{call(awardPoint, {player}, true)}} -> NextPt\n" 
             elif 'Win' in action:
                 output += f"\t{count}: {key}_win -> Winner{{call(awardPoint, {player}, false)}} -> NextPt\n"
             else:
@@ -123,7 +116,7 @@ def generate_pcsp(counts_dict):
         output += "};\n"
     assertions = '''#define Team1Win won==t1;\n#define Team2Win won==t2;\n#assert TieBreakGame reaches Team1Win with prob;\n#assert TieBreakGame reaches Team2Win with prob;'''
     output += assertions
-    output_filename = 'tennis_pcase_output.pcsp'
+    output_filename = 'base_output.pcsp'
     with open(output_filename, 'w') as f:
         f.write(output)
     return output_filename
