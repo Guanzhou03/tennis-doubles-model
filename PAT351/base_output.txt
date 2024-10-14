@@ -1,7 +1,7 @@
 =======================================================
 Assertion: TieBreakGame() reaches Team1Win with prob
 ********Verification Result********
-The Assertion (TieBreakGame() reaches Team1Win with prob) is Valid with Probability [0.12857, 0.21104];
+The Assertion (TieBreakGame() reaches Team1Win with prob) is Valid with Probability [0.38684, 0.52066];
 
 ********Verification Setting********
 Admissible Behavior: All
@@ -11,17 +11,17 @@ Maximum difference threshold : 1E-06
 
 
 ********Verification Statistics********
-Visited States:34321
-Total Transitions:50152
-MDP Iterations:7175335
-Time Used:3.0888505s
-Estimated Memory Used:62638.752KB
+Visited States:56801
+Total Transitions:107976
+MDP Iterations:14496317
+Time Used:7.081899s
+Estimated Memory Used:75648.112KB
 
 
 =======================================================
 Assertion: TieBreakGame() reaches Team2Win with prob
 ********Verification Result********
-The Assertion (TieBreakGame() reaches Team2Win with prob) is Valid with Probability [0.78896, 0.87143];
+The Assertion (TieBreakGame() reaches Team2Win with prob) is Valid with Probability [0.47934, 0.61315];
 
 ********Verification Setting********
 Admissible Behavior: All
@@ -31,10 +31,10 @@ Maximum difference threshold : 1E-06
 
 
 ********Verification Statistics********
-Visited States:34321
-Total Transitions:50152
-MDP Iterations:6851448
-Time Used:2.7559598s
-Estimated Memory Used:62996.824KB
+Visited States:56801
+Total Transitions:107976
+MDP Iterations:13355874
+Time Used:6.8082593s
+Estimated Memory Used:92513KB
 
 

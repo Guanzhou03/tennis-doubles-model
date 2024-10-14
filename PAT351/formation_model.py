@@ -145,8 +145,6 @@ def eval_pcsp(file_name):
     # os.system('cp %s ../PAT351/%s' % (os.path.join(dir, file_name), file_name))
     # os.chdir('PAT351')
     os.system('mono PAT3.Console.exe -pcsp %s %s.txt' % (file_name, file_name[:-5]))
-    import time
-    time.sleep(5)
     with open('%s.txt' % file_name[:-5]) as f:
         lines = f.readlines()
     # os.system('rm %s' % file_name)
