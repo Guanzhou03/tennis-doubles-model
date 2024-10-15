@@ -4,29 +4,25 @@ from collections import defaultdict
 import os
 import re
 
-# def get_undefined_serves(serves):
-#     output = '\n'
-#     for player in range(1, 5):
-#         if "P%s_DeServe_P%sC" % (player, player) not in serves:
-#             output += "P%s_DeServe_P%sC = pcase {0: P1_AdServe_P1I};\n" % (player, player)
-#         if "P%s_AdServe_P%sC" % (player, player) not in serves:
-#             output += "P%s_AdServe_P%sC = pcase {0: P1_AdServe_P1I};\n" % (player, player)
-#         if "P%s_DeServe_P%sI" % (player, player) not in serves:
-#             output += "P%s_DeServe_P%sI = pcase {0: P1_AdServe_P1I};\n" % (player, player)
-#         if "P%s_AdServe_P%sI" % (player, player) not in serves:
-#             output += "P%s_AdServe_P%sI = pcase {0: P1_AdServe_P1I};\n" % (player, player)
-#     return output
 def get_undefined_serves(serves):
     output = '\n'
     for player in range(1, 5):
-        if "P%s_DeServe_P%sC" % (player, player) not in serves:
-            output += "P%s_DeServe_P%sC = Stop;\n" % (player, player)
-        if "P%s_AdServe_P%sC" % (player, player) not in serves:
-            output += "P%s_AdServe_P%sC = Stop;\n" % (player, player)
-        if "P%s_DeServe_P%sI" % (player, player) not in serves:
-            output += "P%s_DeServe_P%sI = Stop;\n" % (player, player)
-        if "P%s_AdServe_P%sI" % (player, player) not in serves:
-            output += "P%s_AdServe_P%sI = Stop;\n" % (player, player)
+        # Check and assign DeServe_PxC
+        if f"P{player}_DeServe_P{player}C" not in serves:
+            output += f"P{player}_DeServe_P{player}C = P{player}_DeServe_P{player}I;\n"
+        
+        # Check and assign AdServe_PxC
+        if f"P{player}_AdServe_P{player}C" not in serves:
+            output += f"P{player}_AdServe_P{player}C = P{player}_AdServe_P{player}I;\n"
+        
+        # Check and assign DeServe_PxI
+        if f"P{player}_DeServe_P{player}I" not in serves:
+            output += f"P{player}_DeServe_P{player}I = P{player}_DeServe_P{player}C;\n"
+        
+        # Check and assign AdServe_PxI
+        if f"P{player}_AdServe_P{player}I" not in serves:
+            output += f"P{player}_AdServe_P{player}I = P{player}_AdServe_P{player}C;\n"
+    
     return output
             
 def update_formation_text_in_file(file_path, formation_counts):

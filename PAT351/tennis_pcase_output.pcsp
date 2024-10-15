@@ -667,4 +667,4 @@ P3_DeReturn_FH_P1C = P3_DeReturn_FH_P1CReady -> pcase {
 #define Team2Win won==t2;
 #assert TieBreakGame reaches Team1Win with prob;
 #assert TieBreakGame reaches Team2Win with prob;
-P3_DeServe_P3I = Stop;
+P3_DeServe_P3I = P3_DeServe_P3C;

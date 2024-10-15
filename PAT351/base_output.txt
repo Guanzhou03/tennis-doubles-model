@@ -14,8 +14,8 @@ Maximum difference threshold : 1E-06
 Visited States:56801
 Total Transitions:107976
 MDP Iterations:14496317
-Time Used:7.081899s
-Estimated Memory Used:75648.112KB
+Time Used:7.189671s
+Estimated Memory Used:75640.552KB
 
 
 =======================================================
@@ -34,7 +34,7 @@ Maximum difference threshold : 1E-06
 Visited States:56801
 Total Transitions:107976
 MDP Iterations:13355874
-Time Used:6.8082593s
+Time Used:6.8039882s
 Estimated Memory Used:92513KB
 
 
