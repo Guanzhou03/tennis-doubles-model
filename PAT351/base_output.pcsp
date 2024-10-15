@@ -1,249 +1,658 @@
-#include "new_env.pcsp";
-P3_DeServe = P3_DeServeReady -> pcase { 
-	8: P3_DeSecondserve
-	4: P1_DeReturn_FH
-	1: P3_DeServe_win -> Winner{call(awardPoint, 3, false)} -> NextPt
-};
-P3_DeSecondserve = P3_DeSecondserveReady -> pcase { 
-	5: P1_DeReturn_FH
-	2: P1_DeReturn_BH
-	1: P3_DeSecondserve_err -> Error{call(awardPoint, 3, true)} -> NextPt
-};
-P1_DeReturn_FH = P1_DeReturn_FHReady -> pcase { 
-	4: P1_DeReturn_FH_err -> Error{call(awardPoint, 1, true)} -> NextPt
-	2: P4_AdVolley_FH
-	2: P1_DeReturn_FH_win -> Winner{call(awardPoint, 1, false)} -> NextPt
-	1: P3_AdVolley_FH
-	1: P3_DeVolley_BH
-	1: P4_DeSwing_FH
-	1: P4_DeVolley_FH
-	1: P4_AdSmash_FH
-	1: P4_AdVolley_BH
-};
-P4_AdSmash_FH = P4_AdSmash_FHReady -> pcase { 
-	1: P1_DeSwing_BH
-};
-P1_DeSwing_BH = P1_DeSwing_BHReady -> pcase { 
-	4: P1_DeSwing_BH_err -> Error{call(awardPoint, 1, true)} -> NextPt
-	2: P4_AdSwing_FH
-	1: P3_AdVolley_BH
-	1: P3_DeSwing_FH
-};
-P3_AdVolley_BH = P3_AdVolley_BHReady -> pcase { 
-	2: P3_AdVolley_BH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
-	1: P2_AdSwing_BH
-	1: P3_AdVolley_BH_err -> Error{call(awardPoint, 3, true)} -> NextPt
-	1: P1_DeVolley_BH
-};
-P1_DeVolley_BH = P1_DeVolley_BHReady -> pcase { 
-	2: P1_DeVolley_BH_err -> Error{call(awardPoint, 1, true)} -> NextPt
-	1: P4_AdSwing_BH
-	1: P3_AdSwing_FH
-	1: P1_DeVolley_BH_win -> Winner{call(awardPoint, 1, false)} -> NextPt
-	1: P4_AdSwing_FH
-};
+#include "base_env.pcsp";
 P3_AdServe = P3_AdServeReady -> pcase { 
-	5: P2_AdReturn_FH
-	5: P3_AdSecondserve
-	4: P2_AdReturn_BH
-	1: P4_AdSecondserve
-};
-P2_AdReturn_FH = P2_AdReturn_FHReady -> pcase { 
-	5: P2_AdReturn_FH_err -> Error{call(awardPoint, 2, true)} -> NextPt
-	2: P2_AdReturn_FH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
-	1: P4_DeVolley_BH
-	1: P4_AdSwing_FH
-	1: P3_AdVolley_BH
-	1: P3_DeSmash_FH
-	1: P4_AdSwing_BH
-};
-P4_AdVolley_BH = P4_AdVolley_BHReady -> pcase { 
-	3: P4_AdVolley_BH_err -> Error{call(awardPoint, 4, true)} -> NextPt
-	1: P2_AdLob_BH
-	1: P4_AdVolley_BH_win -> Winner{call(awardPoint, 4, false)} -> NextPt
-	1: P1_DeSwing_FH
-};
-P3_AdSecondserve = P3_AdSecondserveReady -> pcase { 
-	3: P3_AdSecondserve_err -> Error{call(awardPoint, 3, true)} -> NextPt
-	1: P2_AdReturn_BH
-	1: P2_AdReturn_FH
+	25: P2_AdReturn_BH
+	14: P2_AdReturn_FH
+	10: P3_AdSecondserve
+	3: P3_AdServe_win -> Winner{call(awardPoint, 3, false)} -> NextPt
 };
 P2_AdReturn_BH = P2_AdReturn_BHReady -> pcase { 
-	4: P2_AdReturn_BH_err -> Error{call(awardPoint, 2, true)} -> NextPt
-	3: P4_AdVolley_BH
-	2: P3_DeSmash_FH
-	1: P3_DeSwing_FH
-	1: P3_DeVolley_BH
-	1: P4_AdSwing_FH
-	1: P3_AdSwing_BH
-	1: P4_AdSwing_BH
+	8: P2_AdReturn_BH_err -> Error{call(awardPoint, 2, true)} -> NextPt
+	8: P3_AdSwing_BH
+	6: P4_AdVolley_BH
+	6: P4_AdSwing_FH
+	3: P4_DeVolley_FH
+	3: P4_AdSwing_BH
+	3: P4_DeSmash_FH
+	3: P3_DeSmash_FH
+	2: P3_DeVolley_FH
+	2: P3_DeSwing_FH
+	2: P3_DeVolley_BH
+	2: P4_AdSmash_FH
+	2: P2_AdReturn_BH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
+	2: P4_DeSmash_BH
+	2: P4_DeSwing_FH
+	1: P3_AdSmash_FH
 	1: P3_DeSmash_BH
 	1: P3_AdLob_FH
 };
-P4_AdSecondserve = P4_AdSecondserveReady -> pcase { 
-	5: P2_AdReturn_BH
-	1: P2_AdReturn_FH
+P4_AdVolley_BH = P4_AdVolley_BHReady -> pcase { 
+	9: P1_DeSwing_FH
+	8: P4_AdVolley_BH_win -> Winner{call(awardPoint, 4, false)} -> NextPt
+	6: P4_AdVolley_BH_err -> Error{call(awardPoint, 4, true)} -> NextPt
+	3: P2_AdSwing_FH
+	2: P2_AdLob_BH
+	1: P2_AdSwing_BH
 };
-P4_AdSwing_BH = P4_AdSwing_BHReady -> pcase { 
-	2: P4_AdSwing_BH_win -> Winner{call(awardPoint, 4, false)} -> NextPt
+P2_AdServe = P2_AdServeReady -> pcase { 
+	16: P4_AdReturn_FH
+	10: P4_AdReturn_BH
+	6: P2_AdSecondserve
+	1: P3_DeReturn_BH
+	1: P3_DeReturn_FH
+	1: P4_DeSecondserve
+};
+P4_AdReturn_FH = P4_AdReturn_FHReady -> pcase { 
+	9: P4_AdReturn_FH_err -> Error{call(awardPoint, 4, true)} -> NextPt
+	4: P1_AdSwing_BH
+	4: P1_DeSmash_FH
+	3: P1_DeVolley_BH
+	3: P2_AdVolley_BH
+	2: P2_AdSmash_FH
+	2: P1_DeVolley_FH
+	2: P2_AdSwing_BH
+	2: P1_AdSwing_FH
+	2: P4_AdReturn_FH_win -> Winner{call(awardPoint, 4, false)} -> NextPt
+	1: P2_DeSwing_FH
+	1: P1_AdSmash_BH
+	1: P2_DeVolley_BH
+	1: P2_DeSmash_BH
+	1: P2_DeVolley_FH
+	1: P2_AdSmash_BH
+	1: P2_DeSmash_FH
+	1: P1_AdVolley_BH
+};
+P1_AdVolley_BH = P1_AdVolley_BHReady -> pcase { 
+	6: P1_AdVolley_BH_win -> Winner{call(awardPoint, 1, false)} -> NextPt
+	5: P1_AdVolley_BH_err -> Error{call(awardPoint, 1, true)} -> NextPt
+	3: P3_DeVolley_BH
+	2: P3_DeSwing_FH
+	2: P4_AdSwing_FH
+	1: P3_AdSwing_BH
+	1: P4_DeSwing_FH
+	1: P3_DeSwing_BH
+	1: P3_AdSwing_FH
+	1: P4_AdVolley_FH
+	1: P4_AdLob_BH
+	1: P4_AdSwing_BH
+};
+P3_DeVolley_BH = P3_DeVolley_BHReady -> pcase { 
+	4: P2_AdSwing_BH
+	4: P3_DeVolley_BH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
+	2: P1_DeSwing_FH
+	2: P3_DeVolley_BH_err -> Error{call(awardPoint, 3, true)} -> NextPt
+	2: P1_DeVolley_BH
+	2: P2_AdVolley_FH
+	2: P1_DeSwing_BH
+	1: P2_AdSwing_FH
+	1: P2_DeVolley_BH
+	1: P2_DeVolley_FH
+	1: P1_AdVolley_FH
 	1: P1_DeVolley_FH
+	1: P2_DeSwing_FH
+	1: P1_AdVolley_BH
+};
+P2_DeServe = P2_DeServeReady -> pcase { 
+	18: P3_DeReturn_BH
+	17: P3_DeReturn_FH
+	5: P2_DeSecondserve
+	2: P4_DeReturn_BH
+	1: P2_DeServe
+};
+P3_DeReturn_BH = P3_DeReturn_BHReady -> pcase { 
+	10: P3_DeReturn_BH_err -> Error{call(awardPoint, 3, true)} -> NextPt
+	5: P1_DeSwing_FH
+	4: P2_DeSwing_FH
+	3: P2_AdSwing_FH
+	3: P3_DeReturn_BH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
+	3: P1_AdSmash_FH
+	2: P2_DeVolley_FH
+	2: P1_AdVolley_FH
+	2: P1_DeVolley_FH
+	2: P2_AdSmash_BH
+	2: P1_DeSwing_BH
+	1: P1_AdSmash_BH
+	1: P2_AdVolley_FH
+	1: P2_DeVolley_BH
+	1: P2_AdSwing_BH
+	1: P1_AdLob_BH
+	1: P2_AdSmash_FH
+	1: P1_AdVolley_BH
+};
+P2_AdSwing_FH = P2_AdSwing_FHReady -> pcase { 
+	8: P2_AdSwing_FH_err -> Error{call(awardPoint, 2, true)} -> NextPt
+	5: P3_DeSwing_FH
+	5: P4_AdVolley_BH
+	3: P2_AdSwing_FH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
+	3: P4_AdSwing_BH
+	3: P4_DeVolley_FH
+	2: P3_AdSwing_BH
+	2: P4_AdSwing_FH
+	2: P3_DeVolley_BH
+	2: P4_DeSwing_FH
+	2: P3_AdVolley_FH
+	2: P3_AdSwing_FH
+	1: P4_AdVolley_FH
+	1: P3_DeSwing_BH
+	1: P3_AdLob_FH
+	1: P4_AdSmash_FH
+	1: P4_DeServe
+	1: P3_AdVolley_BH
+	1: P4_DeSwing_BH
+};
+P3_DeSwing_FH = P3_DeSwing_FHReady -> pcase { 
+	7: P1_DeSwing_FH
+	7: P3_DeSwing_FH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
+	5: P2_DeSwing_FH
+	5: P1_AdVolley_FH
+	4: P2_AdSwing_BH
+	4: P2_AdSwing_FH
+	4: P2_AdVolley_BH
+	2: P1_DeSwing_BH
+	2: P3_DeSwing_FH_err -> Error{call(awardPoint, 3, true)} -> NextPt
+	2: P2_AdSmash_BH
+	1: P2_AdVolley_FH
+	1: P2_AdSmash_FH
+	1: P1_DeVolley_BH
+	1: P1_DeVolley_FH
+	1: P2_DeVolley_FH
+	1: P1_AdSwing_FH
+	1: P2_DeVolley_BH
+	1: P2_DeSmash_FH
+	1: P1_AdSmash_FH
+	1: P1_AdVolley_BH
+};
+P4_AdServe = P4_AdServeReady -> pcase { 
+	24: P2_AdReturn_BH
+	16: P2_AdReturn_FH
+	10: P4_AdSecondserve
+	2: P4_AdServe_win -> Winner{call(awardPoint, 4, false)} -> NextPt
+};
+P2_AdReturn_FH = P2_AdReturn_FHReady -> pcase { 
+	9: P2_AdReturn_FH_err -> Error{call(awardPoint, 2, true)} -> NextPt
+	5: P3_AdVolley_BH
+	4: P4_AdSwing_BH
+	3: P4_DeVolley_FH
+	3: P2_AdReturn_FH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
+	2: P4_DeVolley_BH
+	2: P4_DeSwing_FH
+	2: P3_DeVolley_FH
+	2: P4_DeSmash_FH
+	1: P4_AdVolley_FH
+	1: P4_AdSwing_FH
+	1: P3_AdSwing_BH
+	1: P4_AdVolley_BH
+	1: P3_DeSwing_FH
+	1: P4_AdSmash_FH
+	1: P3_DeSmash_FH
+};
+P3_AdVolley_BH = P3_AdVolley_BHReady -> pcase { 
+	7: P3_AdVolley_BH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
+	4: P2_AdSwing_FH
+	4: P2_AdSwing_BH
+	3: P1_DeSwing_FH
+	2: P1_DeSmash_FH
+	2: P3_AdVolley_BH_err -> Error{call(awardPoint, 3, true)} -> NextPt
+	1: P1_AdSwing_FH
+	1: P1_DeVolley_FH
+	1: P1_DeSwing_BH
+	1: P1_DeVolley_BH
+};
+P2_AdSwing_BH = P2_AdSwing_BHReady -> pcase { 
+	4: P3_AdSwing_BH
+	4: P4_DeSwing_FH
+	4: P4_AdSwing_BH
+	3: P2_AdSwing_BH_err -> Error{call(awardPoint, 2, true)} -> NextPt
+	3: P4_AdVolley_FH
+	3: P3_DeSwing_FH
+	3: P3_DeVolley_BH
+	3: P4_AdSwing_FH
+	2: P4_DeVolley_BH
+	1: P2_AdSwing_BH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
+	1: P3_DeVolley_FH
+	1: P4_AdLob_BH
+	1: P3_AdVolley_BH
+	1: P3_DeSwing_BH
+	1: P4_DeVolley_FH
+};
+P4_DeSwing_FH = P4_DeSwing_FHReady -> pcase { 
+	8: P1_DeSwing_FH
+	5: P1_DeSwing_BH
+	5: P2_DeSwing_FH
+	4: P4_DeSwing_FH_err -> Error{call(awardPoint, 4, true)} -> NextPt
+	4: P4_DeSwing_FH_win -> Winner{call(awardPoint, 4, false)} -> NextPt
+	4: P2_AdSwing_FH
+	3: P1_AdVolley_BH
+	3: P2_AdVolley_BH
+	2: P2_AdSwing_BH
+	2: P2_AdLob_FH
+	1: P2_AdVolley_FH
+	1: P1_DeVolley_BH
+	1: P1_DeVolley_FH
+	1: P2_AdSmash_FH
+	1: P1_AdVolley_FH
+};
+P2_AdLob_FH = P2_AdLob_FHReady -> pcase { 
+	2: P3_AdSmash_FH
+	1: P2_AdLob_FH_err -> Error{call(awardPoint, 2, true)} -> NextPt
+	1: P2_AdLob_FH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
+};
+P3_AdSmash_FH = P3_AdSmash_FHReady -> pcase { 
+	7: P3_AdSmash_FH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
+	1: P2_DeSwing_FH
+	1: P2_AdSwing_BH
+};
+P1_DeServe = P1_DeServeReady -> pcase { 
+	20: P3_DeReturn_BH
+	17: P3_DeReturn_FH
+	11: P1_DeSecondserve
+	1: P1_DeServe_win -> Winner{call(awardPoint, 1, false)} -> NextPt
+};
+P1_DeSwing_FH = P1_DeSwing_FHReady -> pcase { 
+	8: P1_DeSwing_FH_err -> Error{call(awardPoint, 1, true)} -> NextPt
+	7: P4_DeVolley_FH
+	6: P3_DeSwing_FH
+	6: P4_AdVolley_BH
+	6: P4_DeSwing_FH
+	5: P3_AdVolley_BH
+	5: P1_DeSwing_FH_win -> Winner{call(awardPoint, 1, false)} -> NextPt
+	4: P4_AdSwing_FH
+	4: P4_AdSwing_BH
+	3: P3_DeVolley_BH
+	2: P3_DeVolley_FH
+	2: P4_AdSmash_FH
+	2: P4_AdVolley_FH
+	2: P3_AdSwing_FH
+	1: P3_DeSwing_BH
+	1: P3_AdSmash_FH
+	1: P3_DeSmash_FH
+	1: P4_AdSmash_BH
+	1: P4_DeSmash_FH
+};
+P4_DeVolley_FH = P4_DeVolley_FHReady -> pcase { 
+	10: P4_DeVolley_FH_win -> Winner{call(awardPoint, 4, false)} -> NextPt
+	7: P1_DeSwing_FH
+	3: P2_DeSwing_FH
+	2: P1_AdSwing_BH
+	2: P2_AdSwing_BH
+	2: P1_DeVolley_BH
+	2: P1_DeSwing_BH
+	2: P4_DeVolley_FH_err -> Error{call(awardPoint, 4, true)} -> NextPt
+	1: P1_AdVolley_BH
+	1: P1_AdLob_BH
+	1: P2_AdSwing_FH
+	1: P1_DeLob_FH
+};
+P1_AdServe = P1_AdServeReady -> pcase { 
+	20: P4_AdReturn_FH
+	18: P4_AdReturn_BH
+	9: P1_AdSecondserve
+	4: P1_AdServe_win -> Winner{call(awardPoint, 1, false)} -> NextPt
+};
+P3_DeServe = P3_DeServeReady -> pcase { 
+	18: P1_DeReturn_FH
+	14: P3_DeSecondserve
+	12: P1_DeReturn_BH
+	2: P3_DeServe_win -> Winner{call(awardPoint, 3, false)} -> NextPt
+};
+P4_DeServe = P4_DeServeReady -> pcase { 
+	26: P1_DeReturn_FH
+	22: P1_DeReturn_BH
+	8: P4_DeSecondserve
+	2: P4_DeServe_win -> Winner{call(awardPoint, 4, false)} -> NextPt
+};
+P1_DeReturn_BH = P1_DeReturn_BHReady -> pcase { 
+	8: P4_DeSwing_FH
+	5: P1_DeReturn_BH_err -> Error{call(awardPoint, 1, true)} -> NextPt
+	5: P1_DeReturn_BH_win -> Winner{call(awardPoint, 1, false)} -> NextPt
+	4: P3_DeSwing_FH
+	3: P3_AdVolley_BH
+	3: P4_AdVolley_BH
+	2: P3_AdSwing_BH
+	2: P3_DeSmash_FH
+	2: P4_AdSmash_FH
+	2: P4_DeVolley_FH
+	2: P3_AdVolley_FH
+	1: P3_DeVolley_FH
+	1: P4_AdSwing_BH
+	1: P3_AdSmash_BH
+	1: P3_DeLob_FH
+	1: P4_AdVolley_FH
+};
+P1_DeReturn_FH = P1_DeReturn_FHReady -> pcase { 
+	8: P1_DeReturn_FH_err -> Error{call(awardPoint, 1, true)} -> NextPt
+	6: P4_AdVolley_BH
+	6: P4_DeVolley_FH
+	5: P4_AdSmash_FH
+	4: P3_DeSwing_FH
+	4: P1_DeReturn_FH_win -> Winner{call(awardPoint, 1, false)} -> NextPt
+	4: P3_AdSmash_FH
+	4: P4_DeSwing_FH
+	3: P4_AdVolley_FH
+	2: P4_AdSwing_BH
+	2: P3_AdVolley_BH
+	2: P3_AdVolley_FH
+	2: P3_DeVolley_BH
+	2: P4_DeSwing_BH
+	1: P4_AdSwing_FH
+	1: P4_DeSmash_FH
+	1: P3_AdSwing_BH
+};
+P3_AdSwing_FH = P3_AdSwing_FHReady -> pcase { 
+	4: P2_AdSwing_FH
+	2: P2_AdVolley_FH
+	2: P1_AdVolley_BH
+	2: P1_DeSmash_FH
+	1: P2_AdSwing_BH
 	1: P2_AdVolley_BH
 	1: P2_DeLob_FH
+};
+P3_DeLob_FH = P3_DeLob_FHReady -> pcase { 
+	1: P2_AdVolley_BH
+	1: P1_AdSmash_FH
+	1: P2_AdSmash_BH
+};
+P2_AdSmash_BH = P2_AdSmash_BHReady -> pcase { 
+	6: P2_AdSmash_BH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
+	1: P3_DeSwing_FH
+	1: P4_AdSwing_BH
+	1: P4_AdSwing_FH
+};
+P4_AdSwing_FH = P4_AdSwing_FHReady -> pcase { 
+	5: P1_DeSwing_FH
+	5: P2_DeVolley_FH
+	4: P2_AdSwing_FH
+	4: P4_AdSwing_FH_win -> Winner{call(awardPoint, 4, false)} -> NextPt
+	3: P1_DeSwing_BH
+	3: P2_AdVolley_BH
+	2: P1_DeSmash_FH
+	2: P4_AdSwing_FH_err -> Error{call(awardPoint, 4, true)} -> NextPt
+	2: P1_AdVolley_FH
+	2: P2_DeSwing_FH
+	2: P1_DeVolley_BH
+	2: P1_DeVolley_FH
+	2: P1_AdSmash_FH
+	1: P2_AdSmash_FH
+	1: P1_AdSmash_BH
+	1: P2_DeVolley_BH
+	1: P1_AdLob_BH
+	1: P2_AdSwing_BH
+	1: P1_AdSwing_FH
+	1: P1_AdVolley_BH
+	1: P1_AdSwing_BH
+	1: P2_AdSmash_BH
+	1: P2_DeSmash_FH
+};
+P4_AdVolley_FH = P4_AdVolley_FHReady -> pcase { 
+	3: P4_AdVolley_FH_win -> Winner{call(awardPoint, 4, false)} -> NextPt
+	3: P4_AdVolley_FH_err -> Error{call(awardPoint, 4, true)} -> NextPt
+	2: P2_AdSwing_FH
+	2: P2_AdLob_BH
+	1: P2_AdSwing_BH
+	1: P1_DeSwing_FH
+	1: P1_DeLob_BH
+	1: P1_AdVolley_FH
+	1: P1_DeSwing_BH
+	1: P2_AdVolley_FH
+};
+P3_DeReturn_FH = P3_DeReturn_FHReady -> pcase { 
+	6: P3_DeReturn_FH_err -> Error{call(awardPoint, 3, true)} -> NextPt
+	5: P2_DeSwing_FH
+	4: P2_AdVolley_FH
+	4: P2_AdVolley_BH
+	4: P1_AdVolley_BH
+	3: P1_DeSwing_FH
+	3: P2_DeVolley_FH
+	3: P1_AdVolley_FH
+	2: P2_AdSwing_BH
+	2: P1_DeVolley_FH
+	2: P1_AdSwing_BH
+	2: P1_DeSwing_BH
+	1: P2_DeVolley_BH
+	1: P3_DeReturn_FH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
+	1: P2_AdSmash_FH
+	1: P2_AdSmash_BH
+	1: P2_AdSwing_FH
+};
+P1_AdSwing_BH = P1_AdSwing_BHReady -> pcase { 
+	4: P1_AdSwing_BH_err -> Error{call(awardPoint, 1, true)} -> NextPt
+	3: P4_AdSwing_FH
+	3: P3_DeSwing_BH
+	2: P3_AdVolley_BH
+	1: P3_AdLob_BH
+	1: P3_DeVolley_FH
+	1: P3_DeLob_BH
+	1: P4_DeVolley_FH
+};
+P3_DeSwing_BH = P3_DeSwing_BHReady -> pcase { 
+	3: P1_DeSwing_FH
+	3: P3_DeSwing_BH_err -> Error{call(awardPoint, 3, true)} -> NextPt
+	3: P3_DeSwing_BH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
+	3: P1_AdSwing_FH
+	2: P2_DeVolley_BH
+	2: P2_AdVolley_BH
+	2: P2_AdVolley_FH
+	1: P2_DeVolley_FH
+	1: P1_AdVolley_BH
+	1: P1_AdSwing_BH
+	1: P2_DeSwing_FH
+	1: P2_AdSwing_FH
 	1: P1_DeVolley_BH
 	1: P1_AdLob_FH
-	1: P1_AdSmash_FH
 };
-P2_AdVolley_BH = P2_AdVolley_BHReady -> pcase { 
-	2: P3_DeVolley_BH
-	2: P3_DeSwing_FH
-	1: P3_AdSwing_BH
-	1: P2_AdVolley_BH_err -> Error{call(awardPoint, 2, true)} -> NextPt
+P1_AdLob_FH = P1_AdLob_FHReady -> pcase { 
+	1: P4_DeSwing_FH
+	1: P3_AdLob_BH
+};
+P3_AdLob_BH = P3_AdLob_BHReady -> pcase { 
+	1: P1_AdSwing_BH
+	1: P2_DeLob_FH
+	1: P3_AdLob_BH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
+	1: P2_AdSmash_FH
+	1: P2_DeSmash_FH
+};
+P2_DeSmash_FH = P2_DeSmash_FHReady -> pcase { 
+	8: P2_DeSmash_FH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
 	1: P4_AdLob_FH
 	1: P4_AdSwing_BH
+};
+P3_AdSwing_BH = P3_AdSwing_BHReady -> pcase { 
+	4: P2_AdSwing_FH
+	3: P3_AdSwing_BH_err -> Error{call(awardPoint, 3, true)} -> NextPt
+	3: P1_DeSwing_FH
+	2: P1_DeSmash_FH
+	2: P1_DeVolley_BH
+	2: P2_AdVolley_FH
+	2: P2_AdLob_FH
+	1: P3_AdSwing_BH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
+	1: P2_DeLob_FH
+	1: P2_AdSwing_BH
+	1: P1_AdVolley_BH
+	1: P2_AdSmash_BH
+	1: P2_AdVolley_BH
+};
+P2_AdVolley_BH = P2_AdVolley_BHReady -> pcase { 
+	6: P2_AdVolley_BH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
+	3: P3_DeSwing_FH
+	3: P3_DeVolley_BH
+	2: P4_AdSwing_FH
+	2: P3_DeVolley_FH
+	2: P2_AdVolley_BH_err -> Error{call(awardPoint, 2, true)} -> NextPt
+	2: P4_AdSwing_BH
+	1: P3_AdSwing_BH
+	1: P4_DeVolley_FH
+	1: P4_DeSwing_FH
+	1: P4_DeSwing_BH
+	1: P4_AdLob_FH
 	1: P4_AdVolley_FH
 	1: P3_DeSwing_BH
 };
-P4_AdLob_FH = P4_AdLob_FHReady -> pcase { 
-	2: P2_AdSmash_FH
+P4_DeSwing_BH = P4_DeSwing_BHReady -> pcase { 
+	2: P1_DeSwing_FH
+	1: P1_DeSwing_BH
+	1: P1_DeSmash_FH
 };
-P2_AdSmash_FH = P2_AdSmash_FHReady -> pcase { 
-	1: P3_DeSwing_FH
-	1: P3_DeSwing_BH
-	1: P2_AdSmash_FH_err -> Error{call(awardPoint, 2, true)} -> NextPt
-	1: P2_AdSmash_FH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
-	1: P4_AdSwing_FH
-};
-P3_DeSwing_BH = P3_DeSwing_BHReady -> pcase { 
-	3: P3_DeSwing_BH_err -> Error{call(awardPoint, 3, true)} -> NextPt
-	2: P2_AdVolley_FH
-	1: P2_DeVolley_BH
-	1: P2_AdSwing_FH
-	1: P2_AdVolley_BH
-	1: P3_DeSwing_BH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
-	1: P1_DeVolley_BH
-};
-P2_AdSwing_FH = P2_AdSwing_FHReady -> pcase { 
-	4: P2_AdSwing_FH_err -> Error{call(awardPoint, 2, true)} -> NextPt
-	1: P4_AdSwing_BH
-};
-P4_DeServe = P4_DeServeReady -> pcase { 
-	6: P1_DeReturn_BH
-	4: P4_DeSecondserve
-	4: P1_DeReturn_FH
-	1: P4_DeServe_win -> Winner{call(awardPoint, 4, false)} -> NextPt
-};
-P1_DeReturn_BH = P1_DeReturn_BHReady -> pcase { 
-	3: P4_DeSwing_FH
-	2: P3_AdVolley_BH
-	1: P4_AdVolley_BH
-	1: P3_DeVolley_FH
+P1_DeSmash_FH = P1_DeSmash_FHReady -> pcase { 
+	8: P1_DeSmash_FH_win -> Winner{call(awardPoint, 1, false)} -> NextPt
+	2: P4_AdSwing_FH
+	1: P4_AdLob_BH
+	1: P3_AdSwing_FH
 	1: P3_AdSwing_BH
-	1: P4_DeVolley_FH
+	1: P4_DeLob_FH
 	1: P3_DeSmash_FH
-	1: P1_DeReturn_BH_err -> Error{call(awardPoint, 1, true)} -> NextPt
+	1: P4_DeVolley_BH
 };
-P4_DeSwing_FH = P4_DeSwing_FHReady -> pcase { 
-	2: P4_DeSwing_FH_err -> Error{call(awardPoint, 4, true)} -> NextPt
-	2: P1_DeSwing_FH
-	1: P2_AdVolley_BH
-	1: P2_AdSwing_FH
-	1: P1_AdVolley_FH
-};
-P1_DeServe = P1_DeServeReady -> pcase { 
-	7: P3_DeReturn_BH
-	6: P3_DeReturn_FH
-	2: P1_DeSecondserve
-	1: P1_DeServe_win -> Winner{call(awardPoint, 1, false)} -> NextPt
-};
-P3_DeReturn_BH = P3_DeReturn_BHReady -> pcase { 
-	6: P3_DeReturn_BH_err -> Error{call(awardPoint, 3, true)} -> NextPt
-	2: P1_DeSwing_FH
-	2: P1_DeSwing_BH
-	1: P2_DeVolley_FH
-	1: P2_DeVolley_BH
-};
-P1_AdServe = P1_AdServeReady -> pcase { 
-	8: P4_AdReturn_FH
-	6: P1_AdSecondserve
-	3: P1_AdServe_win -> Winner{call(awardPoint, 1, false)} -> NextPt
-	2: P4_AdReturn_BH
-};
-P4_AdReturn_FH = P4_AdReturn_FHReady -> pcase { 
-	4: P1_DeSmash_FH
-	3: P4_AdReturn_FH_err -> Error{call(awardPoint, 4, true)} -> NextPt
-	1: P1_DeVolley_FH
-	1: P1_AdSwing_BH
-	1: P1_DeVolley_BH
-	1: P1_AdSwing_FH
-	1: P2_DeVolley_FH
-	1: P2_AdSmash_BH
-	1: P2_DeSmash_FH
-};
-P3_DeReturn_FH = P3_DeReturn_FHReady -> pcase { 
-	3: P3_DeReturn_FH_err -> Error{call(awardPoint, 3, true)} -> NextPt
-	2: P1_AdVolley_BH
-	2: P1_DeSwing_BH
-	2: P2_AdVolley_BH
-	1: P2_DeVolley_FH
-	1: P1_DeSwing_FH
-	1: P1_AdVolley_FH
+P4_DeVolley_BH = P4_DeVolley_BHReady -> pcase { 
 	1: P2_AdSwing_BH
+	1: P2_AdVolley_FH
+	1: P2_AdSwing_FH
+	1: P1_DeSwing_FH
+	1: P4_DeVolley_BH_err -> Error{call(awardPoint, 4, true)} -> NextPt
+	1: P4_DeVolley_BH_win -> Winner{call(awardPoint, 4, false)} -> NextPt
 };
-P1_AdSecondserve = P1_AdSecondserveReady -> pcase { 
-	2: P4_AdReturn_FH
-	2: P1_AdSecondserve_err -> Error{call(awardPoint, 1, true)} -> NextPt
-	2: P4_AdReturn_BH
+P2_DeSwing_FH = P2_DeSwing_FHReady -> pcase { 
+	5: P3_DeSwing_FH
+	5: P4_DeSwing_FH
+	4: P2_DeSwing_FH_err -> Error{call(awardPoint, 2, true)} -> NextPt
+	3: P4_DeVolley_FH
+	2: P4_AdSwing_FH
+	2: P2_DeSwing_FH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
+	2: P3_AdVolley_BH
+	2: P3_DeVolley_FH
+	2: P3_DeVolley_BH
+	1: P3_DeSmash_FH
+	1: P3_DeSwing_BH
+};
+P4_DeSmash_BH = P4_DeSmash_BHReady -> pcase { 
+	1: P4_DeSmash_BH_win -> Winner{call(awardPoint, 4, false)} -> NextPt
+	1: P1_DeSwing_FH
+};
+P4_AdSmash_BH = P4_AdSmash_BHReady -> pcase { 
+	1: P4_AdSmash_BH_win -> Winner{call(awardPoint, 4, false)} -> NextPt
+};
+P1_DeLob_FH = P1_DeLob_FHReady -> pcase { 
+	1: P1_DeLob_FH_win -> Winner{call(awardPoint, 1, false)} -> NextPt
+	1: P4_AdSwing_FH
+	1: P1_DeLob_FH_err -> Error{call(awardPoint, 1, true)} -> NextPt
+	1: P3_AdVolley_BH
+};
+P4_AdSmash_FH = P4_AdSmash_FHReady -> pcase { 
+	8: P4_AdSmash_FH_win -> Winner{call(awardPoint, 4, false)} -> NextPt
+	2: P1_DeSwing_BH
+	1: P1_DeLob_BH
+	1: P2_DeLob_BH
+	1: P2_DeSwing_FH
+	1: P2_AdSwing_FH
+	1: P2_AdLob_BH
+};
+P4_DeSmash_FH = P4_DeSmash_FHReady -> pcase { 
+	7: P4_DeSmash_FH_win -> Winner{call(awardPoint, 4, false)} -> NextPt
+	1: P1_DeSwing_FH
+	1: P1_AdSwing_BH
 };
 P4_AdReturn_BH = P4_AdReturn_BHReady -> pcase { 
-	2: P2_DeVolley_FH
-	1: P1_AdVolley_BH
-	1: P2_AdSwing_BH
-	1: P4_AdReturn_BH_err -> Error{call(awardPoint, 4, true)} -> NextPt
-	1: P2_AdSmash_FH
-	1: P1_AdSmash_FH
-	1: P2_AdVolley_BH
-};
-P4_AdSwing_FH = P4_AdSwing_FHReady -> pcase { 
-	4: P2_DeVolley_FH
-	2: P1_DeVolley_FH
-	1: P4_AdSwing_FH_err -> Error{call(awardPoint, 4, true)} -> NextPt
+	4: P2_AdVolley_BH
+	4: P1_AdVolley_BH
+	3: P1_AdSwing_FH
+	3: P2_DeVolley_FH
+	3: P1_AdSwing_BH
+	2: P2_DeSmash_FH
+	2: P4_AdReturn_BH_err -> Error{call(awardPoint, 4, true)} -> NextPt
+	2: P2_AdSwing_BH
+	2: P2_DeSmash_BH
+	2: P4_AdReturn_BH_win -> Winner{call(awardPoint, 4, false)} -> NextPt
+	1: P1_DeVolley_FH
+	1: P2_DeVolley_BH
+	1: P1_DeSmash_FH
 	1: P2_AdSwing_FH
 	1: P1_DeSwing_BH
-	1: P1_DeSwing_FH
-	1: P2_AdVolley_BH
+	1: P2_AdSmash_FH
 	1: P1_AdSmash_FH
-	1: P1_AdVolley_FH
+};
+P3_DeSecondserve = P3_DeSecondserveReady -> pcase { 
+	10: P1_DeReturn_FH
+	3: P1_DeReturn_BH
+	1: P3_DeSecondserve_err -> Error{call(awardPoint, 3, true)} -> NextPt
+};
+P1_DeSwing_BH = P1_DeSwing_BHReady -> pcase { 
+	5: P4_DeSwing_FH
+	4: P1_DeSwing_BH_err -> Error{call(awardPoint, 1, true)} -> NextPt
+	3: P4_AdSwing_FH
+	3: P3_AdVolley_BH
+	2: P3_DeSwing_FH
+	2: P3_DeVolley_BH
+	1: P3_AdSmash_FH
+	1: P3_AdSwing_FH
+	1: P4_AdVolley_FH
+	1: P3_DeVolley_FH
+	1: P3_DeSmash_FH
+	1: P3_AdSmash_BH
+	1: P4_DeVolley_FH
+};
+P1_DeVolley_BH = P1_DeVolley_BHReady -> pcase { 
+	5: P1_DeVolley_BH_win -> Winner{call(awardPoint, 1, false)} -> NextPt
+	3: P4_AdSwing_FH
+	3: P1_DeVolley_BH_err -> Error{call(awardPoint, 1, true)} -> NextPt
+	3: P3_AdSwing_FH
+	2: P4_AdSwing_BH
+	1: P3_DeVolley_FH
+	1: P4_AdLob_FH
+};
+P3_AdSecondserve = P3_AdSecondserveReady -> pcase { 
+	4: P2_AdReturn_FH
+	3: P2_AdReturn_BH
+	3: P3_AdSecondserve_err -> Error{call(awardPoint, 3, true)} -> NextPt
+};
+P4_AdSwing_BH = P4_AdSwing_BHReady -> pcase { 
+	5: P1_DeVolley_FH
+	4: P4_AdSwing_BH_err -> Error{call(awardPoint, 4, true)} -> NextPt
+	3: P1_DeSwing_FH
+	3: P4_AdSwing_BH_win -> Winner{call(awardPoint, 4, false)} -> NextPt
+	3: P1_DeVolley_BH
+	2: P2_AdSwing_FH
+	1: P1_DeSmash_FH
+	1: P2_DeVolley_BH
+	1: P2_DeSmash_FH
+	1: P2_AdSmash_FH
+	1: P1_AdSwing_FH
+	1: P1_AdSwing_BH
+	1: P2_DeVolley_FH
+	1: P2_AdSwing_BH
+	1: P2_AdVolley_BH
+	1: P2_DeLob_FH
+	1: P1_AdLob_FH
+	1: P1_AdSmash_FH
+};
+P4_AdLob_FH = P4_AdLob_FHReady -> pcase { 
+	2: P2_AdSmash_FH
+	1: P2_DeSmash_FH
+	1: P1_DeLob_FH
+};
+P2_AdSmash_FH = P2_AdSmash_FHReady -> pcase { 
+	7: P2_AdSmash_FH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
+	3: P3_DeSwing_FH
+	1: P3_AdSwing_FH
+	1: P3_DeSwing_BH
+	1: P2_AdSmash_FH_err -> Error{call(awardPoint, 2, true)} -> NextPt
+	1: P4_AdSwing_FH
+};
+P1_AdSecondserve = P1_AdSecondserveReady -> pcase { 
+	4: P4_AdReturn_BH
+	3: P4_AdReturn_FH
+	2: P1_AdSecondserve_err -> Error{call(awardPoint, 1, true)} -> NextPt
 };
 P2_DeLob_FH = P2_DeLob_FHReady -> pcase { 
+	1: P4_DeSwing_FH
+	1: P2_DeLob_FH_err -> Error{call(awardPoint, 2, true)} -> NextPt
+	1: P2_DeLob_FH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
 	1: P3_DeSwing_FH
 };
-P3_DeSwing_FH = P3_DeSwing_FHReady -> pcase { 
-	3: P1_AdVolley_FH
-	2: P2_AdVolley_BH
-	1: P1_DeSwing_FH
-	1: P3_DeSwing_FH_err -> Error{call(awardPoint, 3, true)} -> NextPt
-	1: P3_DeSwing_FH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
-	1: P2_AdSmash_BH
-	1: P2_DeSmash_FH
-	1: P2_DeSwing_FH
-	1: P1_AdSmash_FH
-};
 P4_DeSecondserve = P4_DeSecondserveReady -> pcase { 
-	3: P1_DeReturn_BH
-	1: P1_DeReturn_FH
-};
-P4_DeVolley_FH = P4_DeVolley_FHReady -> pcase { 
-	1: P1_DeSwing_BH
-	1: P4_DeVolley_FH_err -> Error{call(awardPoint, 4, true)} -> NextPt
-};
-P4_AdServe = P4_AdServeReady -> pcase { 
-	6: P2_AdReturn_BH
-	5: P4_AdSecondserve
-	5: P2_AdReturn_FH
-	1: P4_AdServe_win -> Winner{call(awardPoint, 4, false)} -> NextPt
+	6: P1_DeReturn_BH
+	3: P1_DeReturn_FH
 };
 P3_DeSmash_FH = P3_DeSmash_FHReady -> pcase { 
-	4: P3_DeSmash_FH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
+	10: P3_DeSmash_FH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
+	2: P2_AdSwing_FH
 	1: P2_AdLob_BH
 	1: P3_DeSmash_FH_err -> Error{call(awardPoint, 3, true)} -> NextPt
 	1: P1_DeLob_FH
@@ -251,173 +660,169 @@ P3_DeSmash_FH = P3_DeSmash_FHReady -> pcase {
 P2_AdLob_BH = P2_AdLob_BHReady -> pcase { 
 	2: P3_DeSmash_FH
 	1: P3_AdVolley_BH
+	1: P3_AdSmash_BH
+	1: P4_DeSwing_FH
+	1: P4_DeSmash_FH
 };
 P3_DeSmash_BH = P3_DeSmash_BHReady -> pcase { 
 	1: P1_DeSwing_BH
 };
-P2_DeServe = P2_DeServeReady -> pcase { 
-	4: P3_DeReturn_FH
-	3: P3_DeReturn_BH
-	3: P2_DeSecondserve
-	1: P2_DeServe
+P4_AdSecondserve = P4_AdSecondserveReady -> pcase { 
+	5: P2_AdReturn_BH
+	5: P2_AdReturn_FH
 };
 P1_AdVolley_FH = P1_AdVolley_FHReady -> pcase { 
+	3: P3_DeSwing_BH
 	3: P3_DeSwing_FH
-	1: P3_DeSwing_BH
-	1: P1_AdVolley_FH_err -> Error{call(awardPoint, 1, true)} -> NextPt
+	2: P4_DeVolley_FH
+	2: P1_AdVolley_FH_win -> Winner{call(awardPoint, 1, false)} -> NextPt
+	2: P1_AdVolley_FH_err -> Error{call(awardPoint, 1, true)} -> NextPt
+	1: P4_AdSwing_BH
+	1: P4_AdVolley_FH
 	1: P3_AdLob_BH
 };
-P3_DeVolley_BH = P3_DeVolley_BHReady -> pcase { 
-	2: P3_DeVolley_BH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
-	1: P1_DeVolley_BH
-	1: P3_DeVolley_BH_err -> Error{call(awardPoint, 3, true)} -> NextPt
-	1: P2_AdVolley_FH
-	1: P1_DeVolley_FH
-	1: P2_DeSwing_FH
-	1: P1_AdVolley_BH
-};
 P2_AdVolley_FH = P2_AdVolley_FHReady -> pcase { 
+	2: P2_AdVolley_FH_err -> Error{call(awardPoint, 2, true)} -> NextPt
+	2: P3_AdSwing_BH
+	2: P3_AdSwing_FH
+	2: P3_DeSwing_BH
+	2: P2_AdVolley_FH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
 	2: P4_AdSwing_FH
+	2: P3_DeSwing_FH
+	1: P4_AdVolley_BH
+	1: P3_DeVolley_BH
 	1: P4_AdLob_BH
-	1: P3_DeSwing_BH
-	1: P3_DeSwing_FH
 };
 P4_AdLob_BH = P4_AdLob_BHReady -> pcase { 
-	1: P2_AdSmash_FH
+	2: P2_AdSmash_FH
+	1: P4_AdLob_BH_err -> Error{call(awardPoint, 4, true)} -> NextPt
+	1: P2_DeVolley_FH
+	1: P1_DeSwing_FH
+	1: P1_AdSwing_FH
 	1: P2_DeSmash_FH
 };
-P2_DeSmash_FH = P2_DeSmash_FHReady -> pcase { 
-	1: P2_DeSmash_FH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
-	1: P4_AdLob_FH
-	1: P4_AdSwing_BH
-};
-P2_AdServe = P2_AdServeReady -> pcase { 
-	4: P4_AdReturn_BH
-	3: P4_AdReturn_FH
-	2: P2_AdSecondserve
-};
 P1_AdSmash_FH = P1_AdSmash_FHReady -> pcase { 
-	3: P1_AdSmash_FH_win -> Winner{call(awardPoint, 1, false)} -> NextPt
+	8: P1_AdSmash_FH_win -> Winner{call(awardPoint, 1, false)} -> NextPt
 	1: P1_AdSmash_FH_err -> Error{call(awardPoint, 1, true)} -> NextPt
 	1: P4_DeVolley_BH
 	1: P3_DeLob_FH
 	1: P3_DeSwing_BH
 };
-P4_AdVolley_FH = P4_AdVolley_FHReady -> pcase { 
-	1: P2_AdLob_BH
-	1: P4_AdVolley_FH_err -> Error{call(awardPoint, 4, true)} -> NextPt
-	1: P2_AdVolley_FH
-};
 P1_DeSecondserve = P1_DeSecondserveReady -> pcase { 
-	1: P3_DeReturn_FH
-	1: P3_DeReturn_BH
+	6: P3_DeReturn_FH
+	5: P3_DeReturn_BH
 };
 P2_DeVolley_FH = P2_DeVolley_FHReady -> pcase { 
-	3: P2_DeVolley_FH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
-	2: P3_DeSwing_BH
-	2: P3_DeSwing_FH
+	6: P2_DeVolley_FH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
+	3: P3_DeSwing_BH
+	3: P3_DeSwing_FH
+	1: P4_DeLob_FH
+	1: P3_DeVolley_FH
+	1: P4_AdSwing_BH
 	1: P4_AdLob_BH
+	1: P4_AdLob_FH
+	1: P3_DeVolley_BH
+	1: P3_AdLob_BH
 	1: P2_DeVolley_FH_err -> Error{call(awardPoint, 2, true)} -> NextPt
 };
-P2_AdSmash_BH = P2_AdSmash_BHReady -> pcase { 
-	1: P4_AdSwing_BH
-	1: P2_AdSmash_BH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
-};
 P1_AdSwing_FH = P1_AdSwing_FHReady -> pcase { 
-	1: P4_AdSwing_FH
-};
-P1_AdLob_FH = P1_AdLob_FHReady -> pcase { 
-	1: P4_DeSwing_FH
-};
-P3_AdLob_BH = P3_AdLob_BHReady -> pcase { 
-	1: P2_AdSmash_FH
-};
-P1_DeSwing_FH = P1_DeSwing_FHReady -> pcase { 
-	3: P1_DeSwing_FH_err -> Error{call(awardPoint, 1, true)} -> NextPt
-	2: P4_DeSwing_FH
-	1: P4_AdSwing_FH
-	1: P4_AdSwing_BH
-	1: P3_DeVolley_BH
+	3: P3_DeSwing_BH
+	2: P4_AdLob_BH
+	2: P4_AdSwing_FH
+	2: P3_DeVolley_FH
+	2: P1_AdSwing_FH_win -> Winner{call(awardPoint, 1, false)} -> NextPt
 	1: P3_DeSmash_FH
-};
-P1_DeLob_FH = P1_DeLob_FHReady -> pcase { 
-	1: P1_DeLob_FH_err -> Error{call(awardPoint, 1, true)} -> NextPt
-};
-P2_AdSwing_BH = P2_AdSwing_BHReady -> pcase { 
-	2: P3_AdSwing_BH
-	1: P3_DeVolley_FH
-	1: P2_AdSwing_BH_err -> Error{call(awardPoint, 2, true)} -> NextPt
-	1: P3_DeSwing_BH
+	1: P4_AdSwing_BH
 };
 P1_DeVolley_FH = P1_DeVolley_FHReady -> pcase { 
+	6: P1_DeVolley_FH_win -> Winner{call(awardPoint, 1, false)} -> NextPt
+	3: P4_AdSwing_FH
+	2: P3_DeSwing_BH
 	2: P1_DeVolley_FH_err -> Error{call(awardPoint, 1, true)} -> NextPt
-	1: P3_DeSwing_BH
-	1: P4_AdSwing_FH
+	1: P3_AdLob_BH
+	1: P3_AdSwing_BH
 	1: P3_DeVolley_BH
-};
-P2_DeSwing_FH = P2_DeSwing_FHReady -> pcase { 
-	2: P3_DeVolley_BH
-};
-P1_AdVolley_BH = P1_AdVolley_BHReady -> pcase { 
-	3: P1_AdVolley_BH_err -> Error{call(awardPoint, 1, true)} -> NextPt
-	1: P3_DeSwing_BH
+	1: P3_DeSwing_FH
+	1: P4_DeVolley_FH
+	1: P4_DeSwing_FH
 };
 P3_AdLob_FH = P3_AdLob_FHReady -> pcase { 
+	1: P1_DeLob_FH
 	1: P1_AdSmash_FH
 };
-P4_DeVolley_BH = P4_DeVolley_BHReady -> pcase { 
+P3_DeVolley_FH = P3_DeVolley_FHReady -> pcase { 
+	6: P3_DeVolley_FH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
+	3: P2_AdSwing_BH
+	2: P2_AdSwing_FH
+	2: P1_AdVolley_BH
+	1: P1_DeSwing_FH
+	1: P1_DeVolley_FH
+	1: P3_DeVolley_FH_err -> Error{call(awardPoint, 3, true)} -> NextPt
+	1: P2_DeSwing_BH
+	1: P2_DeVolley_FH
+	1: P2_DeSmash_FH
+};
+P3_AdSmash_BH = P3_AdSmash_BHReady -> pcase { 
+	2: P3_AdSmash_BH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
+	1: P1_DeSwing_FH
+};
+P3_AdVolley_FH = P3_AdVolley_FHReady -> pcase { 
+	3: P3_AdVolley_FH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
+	1: P1_DeSwing_BH
 	1: P2_AdSwing_FH
-	1: P4_DeVolley_BH_err -> Error{call(awardPoint, 4, true)} -> NextPt
+	1: P2_AdSwing_BH
 };
-P3_DeLob_FH = P3_DeLob_FHReady -> pcase { 
-	1: P2_AdVolley_BH
-	1: P1_AdSmash_FH
+P2_DeSmash_BH = P2_DeSmash_BHReady -> pcase { 
+	2: P2_DeSmash_BH_win -> Winner{call(awardPoint, 2, false)} -> NextPt
+	1: P4_AdSwing_FH
 };
-P1_AdSwing_BH = P1_AdSwing_BHReady -> pcase { 
-	1: P3_DeLob_BH
+P2_DeVolley_BH = P2_DeVolley_BHReady -> pcase { 
+	3: P4_AdSwing_FH
+	2: P2_DeVolley_BH_err -> Error{call(awardPoint, 2, true)} -> NextPt
+	1: P3_DeSwing_BH
+	1: P3_DeVolley_FH
+	1: P3_DeLob_FH
+	1: P4_AdVolley_BH
+	1: P3_DeSmash_FH
+};
+P4_DeReturn_BH = P4_DeReturn_BHReady -> pcase { 
+	2: P1_AdVolley_BH
+};
+P1_AdLob_BH = P1_AdLob_BHReady -> pcase { 
+	1: P3_DeSmash_FH
+	1: P4_AdSmash_FH
+	1: P4_DeSmash_FH
 };
 P3_DeLob_BH = P3_DeLob_BHReady -> pcase { 
 	1: P1_DeSmash_FH
 };
-P1_DeSmash_FH = P1_DeSmash_FHReady -> pcase { 
-	3: P1_DeSmash_FH_win -> Winner{call(awardPoint, 1, false)} -> NextPt
-	2: P4_AdSwing_FH
-	1: P3_AdSwing_FH
-	1: P3_AdSwing_BH
-	1: P4_DeLob_FH
-};
-P3_AdSwing_BH = P3_AdSwing_BHReady -> pcase { 
-	1: P1_DeSmash_FH
-	1: P2_AdVolley_FH
-	1: P1_DeSwing_FH
-	1: P2_AdSwing_BH
-	1: P1_DeVolley_BH
-	1: P3_AdSwing_BH_err -> Error{call(awardPoint, 3, true)} -> NextPt
-};
-P3_AdSwing_FH = P3_AdSwing_FHReady -> pcase { 
-	2: P1_DeSmash_FH
-};
 P4_DeLob_FH = P4_DeLob_FHReady -> pcase { 
-	1: P1_AdSmash_FH
+	2: P1_AdSmash_FH
 };
-P3_AdVolley_FH = P3_AdVolley_FHReady -> pcase { 
-	1: P3_AdVolley_FH_win -> Winner{call(awardPoint, 3, false)} -> NextPt
+P2_DeLob_BH = P2_DeLob_BHReady -> pcase { 
+	1: P4_AdSmash_FH
+};
+P1_AdSmash_BH = P1_AdSmash_BHReady -> pcase { 
+	1: P3_DeSwing_FH
+	1: P1_AdSmash_BH_win -> Winner{call(awardPoint, 1, false)} -> NextPt
+	1: P4_AdSwing_BH
+};
+P1_DeLob_BH = P1_DeLob_BHReady -> pcase { 
+	1: P1_DeLob_BH_err -> Error{call(awardPoint, 1, true)} -> NextPt
+	1: P4_AdVolley_FH
 };
 P2_DeSecondserve = P2_DeSecondserveReady -> pcase { 
-	2: P3_DeReturn_FH
+	4: P3_DeReturn_FH
 	1: P3_DeReturn_BH
 };
-P2_DeVolley_BH = P2_DeVolley_BHReady -> pcase { 
-	1: P3_DeLob_FH
-	1: P4_AdVolley_BH
-};
-P3_DeVolley_FH = P3_DeVolley_FHReady -> pcase { 
-	1: P2_AdSwing_FH
-	1: P2_AdSwing_BH
-};
 P2_AdSecondserve = P2_AdSecondserveReady -> pcase { 
+	2: P4_AdReturn_FH
+	2: P4_AdReturn_BH
+	1: P2_AdSecondserve_win -> Winner{call(awardPoint, 2, false)} -> NextPt
 	1: P2_AdSecondserve_err -> Error{call(awardPoint, 2, true)} -> NextPt
-	1: P4_AdReturn_FH
+};
+P2_DeSwing_BH = P2_DeSwing_BHReady -> pcase { 
+	1: P4_DeSwing_FH
 };
 #define Team1Win won==t1;
 #define Team2Win won==t2;

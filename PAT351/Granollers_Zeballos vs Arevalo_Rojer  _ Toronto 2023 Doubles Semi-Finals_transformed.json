@@ -1,0 +1,756 @@
+{
+  "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals",
+  "fps": 25,
+  "player_descriptons": {
+    "p1": "Rojer (White shirt, white cap, left-handed)",
+    "p2": "Arevalo (Green shirt)",
+    "p3": "Granollers (White shirt, no cap)",
+    "p4": "Zeballos (White shirt, pink shoes)"
+  },
+  "player_hands": {
+    "p1": "Left",
+    "p2": "Right",
+    "p3": "Right",
+    "p4": "Right"
+  },
+  "rallies": [
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_5064_5174",
+      "num_frames": 110,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P4_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.5359375,
+          "relative_player_height": 0.175
+        },
+        {
+          "frame": 37,
+          "event": "P2_near_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.2015625,
+          "relative_player_height": 0.7486111111111111
+        },
+        {
+          "frame": 77,
+          "event": "P3_far_ad_forehand_smash_io_non-serve_win",
+          "relative_player_width": 0.57578125,
+          "relative_player_height": 0.30416666666666664
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_5272_5403",
+      "num_frames": 131,
+      "events": [
+        {
+          "frame": 10,
+          "event": "P1_far_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.43828125,
+          "relative_player_height": 0.20972222222222223
+        },
+        {
+          "frame": 26,
+          "event": "P3_near_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.69375,
+          "relative_player_height": 0.6930555555555555
+        },
+        {
+          "frame": 38,
+          "event": "P2_far_ad_forehand_volley_ii_non-serve_in",
+          "relative_player_width": 0.56640625,
+          "relative_player_height": 0.30694444444444446
+        },
+        {
+          "frame": 65,
+          "event": "P3_near_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.76171875,
+          "relative_player_height": 0.6958333333333333
+        },
+        {
+          "frame": 93,
+          "event": "P2_far_ad_backhand_smash_dl_non-serve_win",
+          "relative_player_width": 0.6609375,
+          "relative_player_height": 0.2847222222222222
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_5489_5602",
+      "num_frames": 113,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P1_far_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.6125,
+          "relative_player_height": 0.25416666666666665
+        },
+        {
+          "frame": 32,
+          "event": "P4_near_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.20859375,
+          "relative_player_height": 0.7152777777777778
+        },
+        {
+          "frame": 59,
+          "event": "P1_far_ad_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.65234375,
+          "relative_player_height": 0.22083333333333333
+        },
+        {
+          "frame": 76,
+          "event": "P3_near_deuce_forehand_volley_cc_non-serve_win",
+          "relative_player_width": 0.6671875,
+          "relative_player_height": 0.5291666666666667
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_5715_5819",
+      "num_frames": 104,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P2_near_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.4390625,
+          "relative_player_height": 0.6736111111111112
+        },
+        {
+          "frame": 32,
+          "event": "P4_far_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.63828125,
+          "relative_player_height": 0.2111111111111111
+        },
+        {
+          "frame": 43,
+          "event": "P1_near_deuce_forehand_smash_io_non-serve_in",
+          "relative_player_width": 0.53984375,
+          "relative_player_height": 0.49166666666666664
+        },
+        {
+          "frame": 71,
+          "event": "P3_far_deuce_forehand_smash_dl_non-serve_win",
+          "relative_player_width": 0.3640625,
+          "relative_player_height": 0.2986111111111111
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_5926_6052",
+      "num_frames": 126,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P1_far_ad_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.58984375,
+          "relative_player_height": 0.21388888888888888
+        },
+        {
+          "frame": 37,
+          "event": "P4_near_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.26875,
+          "relative_player_height": 0.7708333333333334
+        },
+        {
+          "frame": 79,
+          "event": "P1_far_ad_forehand_swing_cc_non-serve_win",
+          "relative_player_width": 0.62890625,
+          "relative_player_height": 0.29583333333333334
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_6164_6551",
+      "num_frames": 387,
+      "events": [
+        {
+          "frame": 11,
+          "event": "P3_near_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.465625,
+          "relative_player_height": 0.7194444444444444
+        },
+        {
+          "frame": 30,
+          "event": "P2_far_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.58984375,
+          "relative_player_height": 0.2
+        },
+        {
+          "frame": 62,
+          "event": "P4_near_ad_forehand_smash_io_non-serve_in",
+          "relative_player_width": 0.4390625,
+          "relative_player_height": 0.5083333333333333
+        },
+        {
+          "frame": 102,
+          "event": "P2_far_ad_backhand_lob_dl_non-serve_in",
+          "relative_player_width": 0.79765625,
+          "relative_player_height": 0.14027777777777778
+        },
+        {
+          "frame": 229,
+          "event": "P4_near_deuce_forehand_smash_cc_non-serve_in",
+          "relative_player_width": 0.57578125,
+          "relative_player_height": 0.8291666666666667
+        },
+        {
+          "frame": 259,
+          "event": "P1_far_deuce_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.3890625,
+          "relative_player_height": 0.18194444444444444
+        },
+        {
+          "frame": 294,
+          "event": "P4_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.7984375,
+          "relative_player_height": 0.8055555555555556
+        },
+        {
+          "frame": 328,
+          "event": "P1_far_deuce_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.30390625,
+          "relative_player_height": 0.24583333333333332
+        },
+        {
+          "frame": 339,
+          "event": "P3_near_ad_backhand_smash_dl_non-serve_win",
+          "relative_player_width": 0.29453125,
+          "relative_player_height": 0.5138888888888888
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_6572_6715",
+      "num_frames": 143,
+      "events": [
+        {
+          "frame": 16,
+          "event": "P2_near_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.6703125,
+          "relative_player_height": 0.7361111111111112
+        },
+        {
+          "frame": 33,
+          "event": "P3_far_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.34765625,
+          "relative_player_height": 0.21944444444444444
+        },
+        {
+          "frame": 69,
+          "event": "P2_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.59453125,
+          "relative_player_height": 0.6013888888888889
+        },
+        {
+          "frame": 93,
+          "event": "P3_far_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.3953125,
+          "relative_player_height": 0.2763888888888889
+        },
+        {
+          "frame": 112,
+          "event": "P2_near_deuce_forehand_smash_dl_non-serve_win",
+          "relative_player_width": 0.5265625,
+          "relative_player_height": 0.5097222222222222
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_6795_6851",
+      "num_frames": 56,
+      "events": [
+        {
+          "frame": 10,
+          "event": "P2_near_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.3796875,
+          "relative_player_height": 0.7583333333333333
+        },
+        {
+          "frame": 24,
+          "event": "P4_far_ad_backhand_return_cc_non-serve_win",
+          "relative_player_width": 0.6390625,
+          "relative_player_height": 0.25416666666666665
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_6939_7124",
+      "num_frames": 185,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P2_near_ad_forehand_serve_b_i-formation_err",
+          "relative_player_width": 0.465625,
+          "relative_player_height": 0.7347222222222223
+        },
+        {
+          "frame": 104,
+          "event": "P4_far_deuce_forehand_second-serve_w_conventional_in",
+          "relative_player_width": 0.45078125,
+          "relative_player_height": 0.2152777777777778
+        },
+        {
+          "frame": 123,
+          "event": "P1_near_deuce_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.8265625,
+          "relative_player_height": 0.7347222222222223
+        },
+        {
+          "frame": 148,
+          "event": "P3_far_ad_forehand_volley_io_non-serve_win",
+          "relative_player_width": 0.65703125,
+          "relative_player_height": 0.3236111111111111
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_7187_7278",
+      "num_frames": 91,
+      "events": [
+        {
+          "frame": 18,
+          "event": "P4_far_ad_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.51640625,
+          "relative_player_height": 0.1875
+        },
+        {
+          "frame": 42,
+          "event": "P2_near_ad_backhand_return_dl_non-serve_win",
+          "relative_player_width": 0.246875,
+          "relative_player_height": 0.6986111111111111
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_7432_7511",
+      "num_frames": 79,
+      "events": [
+        {
+          "frame": 10,
+          "event": "P1_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.58125,
+          "relative_player_height": 0.225
+        },
+        {
+          "frame": 32,
+          "event": "P4_near_ad_forehand_return_io_non-serve_win",
+          "relative_player_width": 0.20546875,
+          "relative_player_height": 0.7194444444444444
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_7651_8191",
+      "num_frames": 540,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P4_far_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.4484375,
+          "relative_player_height": 0.2152777777777778
+        },
+        {
+          "frame": 32,
+          "event": "P1_near_deuce_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.82421875,
+          "relative_player_height": 0.775
+        },
+        {
+          "frame": 97,
+          "event": "P4_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.33046875,
+          "relative_player_height": 0.24305555555555555
+        },
+        {
+          "frame": 124,
+          "event": "P2_near_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.3765625,
+          "relative_player_height": 0.7694444444444445
+        },
+        {
+          "frame": 152,
+          "event": "P4_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.44765625,
+          "relative_player_height": 0.21388888888888888
+        },
+        {
+          "frame": 184,
+          "event": "P1_near_deuce_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.73125,
+          "relative_player_height": 0.7208333333333333
+        },
+        {
+          "frame": 219,
+          "event": "P4_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.40625,
+          "relative_player_height": 0.2375
+        },
+        {
+          "frame": 247,
+          "event": "P1_near_deuce_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.8578125,
+          "relative_player_height": 0.7916666666666666
+        },
+        {
+          "frame": 275,
+          "event": "P4_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.30078125,
+          "relative_player_height": 0.2152777777777778
+        },
+        {
+          "frame": 305,
+          "event": "P1_near_deuce_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.8703125,
+          "relative_player_height": 0.7472222222222222
+        },
+        {
+          "frame": 345,
+          "event": "P4_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.23984375,
+          "relative_player_height": 0.23194444444444445
+        },
+        {
+          "frame": 358,
+          "event": "P2_near_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.33984375,
+          "relative_player_height": 0.5208333333333334
+        },
+        {
+          "frame": 394,
+          "event": "P4_far_deuce_backhand_swing_ii_non-serve_in",
+          "relative_player_width": 0.390625,
+          "relative_player_height": 0.2847222222222222
+        },
+        {
+          "frame": 432,
+          "event": "P1_near_deuce_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.540625,
+          "relative_player_height": 0.7013888888888888
+        },
+        {
+          "frame": 445,
+          "event": "P4_far_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.4421875,
+          "relative_player_height": 0.31805555555555554
+        },
+        {
+          "frame": 468,
+          "event": "P1_near_deuce_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.68984375,
+          "relative_player_height": 0.7361111111111112
+        },
+        {
+          "frame": 490,
+          "event": "P4_far_deuce_forehand_volley_cc_non-serve_err",
+          "relative_player_width": 0.40703125,
+          "relative_player_height": 0.3194444444444444
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_8258_8343",
+      "num_frames": 85,
+      "events": [
+        {
+          "frame": 21,
+          "event": "P1_near_deuce_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.54375,
+          "relative_player_height": 0.7430555555555556
+        },
+        {
+          "frame": 38,
+          "event": "P3_far_deuce_backhand_return_io_non-serve_win",
+          "relative_player_width": 0.36171875,
+          "relative_player_height": 0.1875
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_8411_8530",
+      "num_frames": 119,
+      "events": [
+        {
+          "frame": 16,
+          "event": "P1_far_ad_forehand_serve_w_conventional_in",
+          "relative_player_width": 0.578125,
+          "relative_player_height": 0.3055555555555556
+        },
+        {
+          "frame": 35,
+          "event": "P4_near_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.1609375,
+          "relative_player_height": 0.7763888888888889
+        },
+        {
+          "frame": 46,
+          "event": "P2_far_deuce_backhand_smash_ii_non-serve_in",
+          "relative_player_width": 0.434375,
+          "relative_player_height": 0.3458333333333333
+        },
+        {
+          "frame": 66,
+          "event": "P4_near_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.26171875,
+          "relative_player_height": 0.7361111111111112
+        },
+        {
+          "frame": 82,
+          "event": "P2_far_ad_backhand_smash_cc_non-serve_win",
+          "relative_player_width": 0.53359375,
+          "relative_player_height": 0.33611111111111114
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_8591_8715",
+      "num_frames": 124,
+      "events": [
+        {
+          "frame": 17,
+          "event": "P4_far_deuce_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.475,
+          "relative_player_height": 0.23194444444444445
+        },
+        {
+          "frame": 42,
+          "event": "P1_near_deuce_forehand_return_ii_non-serve_in",
+          "relative_player_width": 0.71171875,
+          "relative_player_height": 0.8222222222222222
+        },
+        {
+          "frame": 76,
+          "event": "P4_far_ad_backhand_swing_cc_non-serve_win",
+          "relative_player_width": 0.63828125,
+          "relative_player_height": 0.18194444444444444
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_8803_9029",
+      "num_frames": 226,
+      "events": [
+        {
+          "frame": 14,
+          "event": "P2_near_deuce_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.53359375,
+          "relative_player_height": 0.6305555555555555
+        },
+        {
+          "frame": 32,
+          "event": "P3_far_deuce_forehand_return_dl_non-serve_in",
+          "relative_player_width": 0.371875,
+          "relative_player_height": 0.19722222222222222
+        },
+        {
+          "frame": 94,
+          "event": "P2_near_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.3671875,
+          "relative_player_height": 0.6361111111111111
+        },
+        {
+          "frame": 118,
+          "event": "P3_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.38359375,
+          "relative_player_height": 0.2263888888888889
+        },
+        {
+          "frame": 151,
+          "event": "P2_near_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.29375,
+          "relative_player_height": 0.6861111111111111
+        },
+        {
+          "frame": 181,
+          "event": "P4_far_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.640625,
+          "relative_player_height": 0.19722222222222222
+        },
+        {
+          "frame": 196,
+          "event": "P1_near_deuce_forehand_volley_ii_non-serve_win",
+          "relative_player_width": 0.56640625,
+          "relative_player_height": 0.47638888888888886
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_9087_9290",
+      "num_frames": 203,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P1_far_ad_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.5375,
+          "relative_player_height": 0.20416666666666666
+        },
+        {
+          "frame": 30,
+          "event": "P4_near_ad_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.196875,
+          "relative_player_height": 0.7138888888888889
+        },
+        {
+          "frame": 60,
+          "event": "P1_far_deuce_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.3828125,
+          "relative_player_height": 0.2222222222222222
+        },
+        {
+          "frame": 107,
+          "event": "P4_near_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.1109375,
+          "relative_player_height": 0.7041666666666667
+        },
+        {
+          "frame": 119,
+          "event": "P2_far_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.5078125,
+          "relative_player_height": 0.3236111111111111
+        },
+        {
+          "frame": 143,
+          "event": "P4_near_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.3234375,
+          "relative_player_height": 0.725
+        },
+        {
+          "frame": 160,
+          "event": "P2_far_deuce_forehand_smash_dl_non-serve_win",
+          "relative_player_width": 0.39375,
+          "relative_player_height": 0.3125
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_9304_9378",
+      "num_frames": 74,
+      "events": [
+        {
+          "frame": 15,
+          "event": "P1_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.546875,
+          "relative_player_height": 0.21666666666666667
+        },
+        {
+          "frame": 36,
+          "event": "P4_near_ad_forehand_return_ii_non-serve_err",
+          "relative_player_width": 0.21796875,
+          "relative_player_height": 0.6958333333333333
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_9462_9541",
+      "num_frames": 79,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P3_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.51953125,
+          "relative_player_height": 0.2111111111111111
+        },
+        {
+          "frame": 31,
+          "event": "P2_near_ad_forehand_return_ii_non-serve_in",
+          "relative_player_width": 0.259375,
+          "relative_player_height": 0.7125
+        },
+        {
+          "frame": 43,
+          "event": "P4_far_deuce_forehand_volley_dl_non-serve_win",
+          "relative_player_width": 0.40390625,
+          "relative_player_height": 0.325
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_9650_9736",
+      "num_frames": 86,
+      "events": [
+        {
+          "frame": 15,
+          "event": "P4_near_deuce_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.546875,
+          "relative_player_height": 0.6083333333333333
+        },
+        {
+          "frame": 35,
+          "event": "P1_far_deuce_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.3578125,
+          "relative_player_height": 0.225
+        },
+        {
+          "frame": 53,
+          "event": "P3_near_ad_backhand_smash_cc_non-serve_win",
+          "relative_player_width": 0.35078125,
+          "relative_player_height": 0.4930555555555556
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_9852_9922",
+      "num_frames": 70,
+      "events": [
+        {
+          "frame": 11,
+          "event": "P1_far_deuce_forehand_serve_t_i-formation_in",
+          "relative_player_width": 0.47265625,
+          "relative_player_height": 0.20277777777777778
+        },
+        {
+          "frame": 28,
+          "event": "P3_near_deuce_backhand_return_ii_non-serve_win",
+          "relative_player_width": 0.65390625,
+          "relative_player_height": 0.6444444444444445
+        }
+      ]
+    },
+    {
+      "video_id": "Granollers_Zeballos vs Arevalo_Rojer  _ Toronto 2023 Doubles Semi-Finals_10044_10202",
+      "num_frames": 158,
+      "events": [
+        {
+          "frame": 11,
+          "event": "P2_near_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.65234375,
+          "relative_player_height": 0.7013888888888888
+        },
+        {
+          "frame": 31,
+          "event": "P3_far_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.37109375,
+          "relative_player_height": 0.24861111111111112
+        },
+        {
+          "frame": 66,
+          "event": "P2_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.74765625,
+          "relative_player_height": 0.6847222222222222
+        },
+        {
+          "frame": 84,
+          "event": "P3_far_deuce_forehand_volley_dl_non-serve_in",
+          "relative_player_width": 0.42421875,
+          "relative_player_height": 0.2833333333333333
+        },
+        {
+          "frame": 96,
+          "event": "P1_near_ad_backhand_volley_ii_non-serve_in",
+          "relative_player_width": 0.3953125,
+          "relative_player_height": 0.5375
+        },
+        {
+          "frame": 107,
+          "event": "P3_far_deuce_backhand_volley_ii_non-serve_in",
+          "relative_player_width": 0.4484375,
+          "relative_player_height": 0.3055555555555556
+        },
+        {
+          "frame": 117,
+          "event": "P1_near_ad_forehand_volley_dl_non-serve_err",
+          "relative_player_width": 0.3796875,
+          "relative_player_height": 0.5541666666666667
+        }
+      ]
+    }
+  ]
+}

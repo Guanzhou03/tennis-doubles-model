@@ -1,0 +1,1020 @@
+{
+  "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights",
+  "fps": 25,
+  "player_descriptons": {
+    "p1": "Olympic shirt red shoes",
+    "p2": "Olympic shirt black shoes",
+    "p3": "Dark green shirt",
+    "p4": "Light green shirt"
+  },
+  "player_hands": {
+    "p1": "Right",
+    "p2": "Right",
+    "p3": "Right",
+    "p4": "Right"
+  },
+  "rallies": [
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_60_238",
+      "num_frames": 178,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P4_far_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.5640625,
+          "relative_player_height": 0.23194444444444445
+        },
+        {
+          "frame": 41,
+          "event": "P2_near_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.365625,
+          "relative_player_height": 0.6333333333333333
+        },
+        {
+          "frame": 82,
+          "event": "P4_far_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.62734375,
+          "relative_player_height": 0.3
+        },
+        {
+          "frame": 110,
+          "event": "P1_near_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.4625,
+          "relative_player_height": 0.6861111111111111
+        },
+        {
+          "frame": 129,
+          "event": "P3_far_ad_backhand_volley_cc_non-serve_win",
+          "relative_player_width": 0.50546875,
+          "relative_player_height": 0.41944444444444445
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_315_672",
+      "num_frames": 357,
+      "events": [
+        {
+          "frame": 15,
+          "event": "P2_far_deuce_forehand_serve_w_conventional_in",
+          "relative_player_width": 0.43515625,
+          "relative_player_height": 0.24027777777777778
+        },
+        {
+          "frame": 35,
+          "event": "P3_near_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.79921875,
+          "relative_player_height": 0.6555555555555556
+        },
+        {
+          "frame": 57,
+          "event": "P2_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.42421875,
+          "relative_player_height": 0.3875
+        },
+        {
+          "frame": 95,
+          "event": "P4_near_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.56875,
+          "relative_player_height": 0.6388888888888888
+        },
+        {
+          "frame": 107,
+          "event": "P1_far_ad_backhand_volley_cc_non-serve_in",
+          "relative_player_width": 0.628125,
+          "relative_player_height": 0.3486111111111111
+        },
+        {
+          "frame": 159,
+          "event": "P4_near_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.3484375,
+          "relative_player_height": 0.6888888888888889
+        },
+        {
+          "frame": 176,
+          "event": "P1_far_ad_backhand_volley_cc_non-serve_in",
+          "relative_player_width": 0.596875,
+          "relative_player_height": 0.4152777777777778
+        },
+        {
+          "frame": 209,
+          "event": "P4_near_ad_backhand_lob_cc_non-serve_in",
+          "relative_player_width": 0.28515625,
+          "relative_player_height": 0.6263888888888889
+        },
+        {
+          "frame": 284,
+          "event": "P1_far_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.553125,
+          "relative_player_height": 0.2388888888888889
+        },
+        {
+          "frame": 301,
+          "event": "P3_near_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.6328125,
+          "relative_player_height": 0.49722222222222223
+        },
+        {
+          "frame": 309,
+          "event": "P2_far_deuce_forehand_volley_cc_non-serve_win",
+          "relative_player_width": 0.50078125,
+          "relative_player_height": 0.38333333333333336
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_755_925",
+      "num_frames": 170,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P2_far_deuce_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.47890625,
+          "relative_player_height": 0.17916666666666667
+        },
+        {
+          "frame": 30,
+          "event": "P3_near_deuce_forehand_return_dl_non-serve_in",
+          "relative_player_width": 0.69140625,
+          "relative_player_height": 0.7361111111111112
+        },
+        {
+          "frame": 57,
+          "event": "P2_far_ad_backhand_volley_cc_non-serve_in",
+          "relative_player_width": 0.57421875,
+          "relative_player_height": 0.36527777777777776
+        },
+        {
+          "frame": 88,
+          "event": "P4_near_ad_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.24453125,
+          "relative_player_height": 0.6625
+        },
+        {
+          "frame": 103,
+          "event": "P1_far_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.33203125,
+          "relative_player_height": 0.38055555555555554
+        },
+        {
+          "frame": 138,
+          "event": "P4_near_deuce_forehand_swing_cc_non-serve_win",
+          "relative_player_width": 0.60625,
+          "relative_player_height": 0.6402777777777777
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_1003_1319",
+      "num_frames": 316,
+      "events": [
+        {
+          "frame": 10,
+          "event": "P3_near_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.63125,
+          "relative_player_height": 0.5361111111111111
+        },
+        {
+          "frame": 30,
+          "event": "P1_far_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.39921875,
+          "relative_player_height": 0.22361111111111112
+        },
+        {
+          "frame": 62,
+          "event": "P4_near_deuce_backhand_swing_io_non-serve_in",
+          "relative_player_width": 0.5796875,
+          "relative_player_height": 0.6625
+        },
+        {
+          "frame": 90,
+          "event": "P1_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.43515625,
+          "relative_player_height": 0.26666666666666666
+        },
+        {
+          "frame": 106,
+          "event": "P4_near_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.63984375,
+          "relative_player_height": 0.5958333333333333
+        },
+        {
+          "frame": 159,
+          "event": "P1_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.3328125,
+          "relative_player_height": 0.22777777777777777
+        },
+        {
+          "frame": 171,
+          "event": "P4_near_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.44609375,
+          "relative_player_height": 0.46944444444444444
+        },
+        {
+          "frame": 201,
+          "event": "P1_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.3484375,
+          "relative_player_height": 0.28194444444444444
+        },
+        {
+          "frame": 214,
+          "event": "P4_near_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.28203125,
+          "relative_player_height": 0.475
+        },
+        {
+          "frame": 250,
+          "event": "P1_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.44296875,
+          "relative_player_height": 0.3111111111111111
+        },
+        {
+          "frame": 265,
+          "event": "P3_near_deuce_forehand_volley_dl_non-serve_win",
+          "relative_player_width": 0.6140625,
+          "relative_player_height": 0.45555555555555555
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_1366_1609",
+      "num_frames": 243,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P1_near_ad_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.465625,
+          "relative_player_height": 0.4861111111111111
+        },
+        {
+          "frame": 29,
+          "event": "P4_far_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.51328125,
+          "relative_player_height": 0.24861111111111112
+        },
+        {
+          "frame": 66,
+          "event": "P1_near_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.2703125,
+          "relative_player_height": 0.6652777777777777
+        },
+        {
+          "frame": 99,
+          "event": "P4_far_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.521875,
+          "relative_player_height": 0.23333333333333334
+        },
+        {
+          "frame": 131,
+          "event": "P1_near_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.17890625,
+          "relative_player_height": 0.7388888888888889
+        },
+        {
+          "frame": 165,
+          "event": "P4_far_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.575,
+          "relative_player_height": 0.2569444444444444
+        },
+        {
+          "frame": 177,
+          "event": "P2_near_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.65625,
+          "relative_player_height": 0.4875
+        },
+        {
+          "frame": 197,
+          "event": "P3_far_deuce_backhand_volley_io_non-serve_in",
+          "relative_player_width": 0.465625,
+          "relative_player_height": 0.3375
+        },
+        {
+          "frame": 204,
+          "event": "P2_near_deuce_backhand_volley_io_non-serve_err",
+          "relative_player_width": 0.56171875,
+          "relative_player_height": 0.5152777777777777
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_1788_1923",
+      "num_frames": 135,
+      "events": [
+        {
+          "frame": 11,
+          "event": "P4_far_deuce_forehand_serve_w_conventional_in",
+          "relative_player_width": 0.39765625,
+          "relative_player_height": 0.19444444444444445
+        },
+        {
+          "frame": 28,
+          "event": "P1_near_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.8078125,
+          "relative_player_height": 0.6222222222222222
+        },
+        {
+          "frame": 54,
+          "event": "P4_far_deuce_backhand_swing_io_non-serve_in",
+          "relative_player_width": 0.43359375,
+          "relative_player_height": 0.2791666666666667
+        },
+        {
+          "frame": 85,
+          "event": "P1_near_deuce_backhand_swing_ii_non-serve_in",
+          "relative_player_width": 0.66484375,
+          "relative_player_height": 0.6930555555555555
+        },
+        {
+          "frame": 98,
+          "event": "P3_far_ad_backhand_volley_dl_non-serve_win",
+          "relative_player_width": 0.6734375,
+          "relative_player_height": 0.39305555555555555
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_2046_2201",
+      "num_frames": 155,
+      "events": [
+        {
+          "frame": 11,
+          "event": "P2_far_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.47734375,
+          "relative_player_height": 0.18055555555555555
+        },
+        {
+          "frame": 28,
+          "event": "P4_near_deuce_backhand_return_ii_non-serve_in",
+          "relative_player_width": 0.6296875,
+          "relative_player_height": 0.6777777777777778
+        },
+        {
+          "frame": 42,
+          "event": "P1_far_ad_backhand_volley_cc_non-serve_in",
+          "relative_player_width": 0.57109375,
+          "relative_player_height": 0.34444444444444444
+        },
+        {
+          "frame": 71,
+          "event": "P4_near_ad_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.18046875,
+          "relative_player_height": 0.6430555555555556
+        },
+        {
+          "frame": 83,
+          "event": "P2_far_deuce_forehand_volley_dl_non-serve_in",
+          "relative_player_width": 0.3453125,
+          "relative_player_height": 0.3611111111111111
+        },
+        {
+          "frame": 113,
+          "event": "P3_near_ad_backhand_lob_dl_non-serve_win",
+          "relative_player_width": 0.46171875,
+          "relative_player_height": 0.6638888888888889
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_2303_2699",
+      "num_frames": 396,
+      "events": [
+        {
+          "frame": 14,
+          "event": "P4_far_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.42734375,
+          "relative_player_height": 0.19305555555555556
+        },
+        {
+          "frame": 35,
+          "event": "P1_near_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.5765625,
+          "relative_player_height": 0.6
+        },
+        {
+          "frame": 73,
+          "event": "P4_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.38203125,
+          "relative_player_height": 0.25416666666666665
+        },
+        {
+          "frame": 98,
+          "event": "P1_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.73671875,
+          "relative_player_height": 0.6541666666666667
+        },
+        {
+          "frame": 121,
+          "event": "P4_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.41640625,
+          "relative_player_height": 0.28055555555555556
+        },
+        {
+          "frame": 136,
+          "event": "P2_near_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.39765625,
+          "relative_player_height": 0.47638888888888886
+        },
+        {
+          "frame": 181,
+          "event": "P4_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.440625,
+          "relative_player_height": 0.25972222222222224
+        },
+        {
+          "frame": 207,
+          "event": "P1_near_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.78671875,
+          "relative_player_height": 0.6763888888888889
+        },
+        {
+          "frame": 220,
+          "event": "P3_far_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.653125,
+          "relative_player_height": 0.39444444444444443
+        },
+        {
+          "frame": 251,
+          "event": "P1_near_deuce_backhand_swing_io_non-serve_in",
+          "relative_player_width": 0.63046875,
+          "relative_player_height": 0.6888888888888889
+        },
+        {
+          "frame": 287,
+          "event": "P4_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.334375,
+          "relative_player_height": 0.2791666666666667
+        },
+        {
+          "frame": 321,
+          "event": "P2_near_ad_forehand_smash_io_non-serve_in",
+          "relative_player_width": 0.3453125,
+          "relative_player_height": 0.4041666666666667
+        },
+        {
+          "frame": 337,
+          "event": "P3_far_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.5125,
+          "relative_player_height": 0.3333333333333333
+        },
+        {
+          "frame": 352,
+          "event": "P1_near_ad_backhand_volley_dl_non-serve_win",
+          "relative_player_width": 0.45234375,
+          "relative_player_height": 0.44305555555555554
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_2739_3085",
+      "num_frames": 346,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P4_far_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.5796875,
+          "relative_player_height": 0.20972222222222223
+        },
+        {
+          "frame": 39,
+          "event": "P2_near_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.37578125,
+          "relative_player_height": 0.5958333333333333
+        },
+        {
+          "frame": 64,
+          "event": "P4_far_ad_backhand_volley_cc_non-serve_in",
+          "relative_player_width": 0.60234375,
+          "relative_player_height": 0.3111111111111111
+        },
+        {
+          "frame": 79,
+          "event": "P2_near_ad_backhand_lob_dl_non-serve_in",
+          "relative_player_width": 0.40546875,
+          "relative_player_height": 0.5666666666666667
+        },
+        {
+          "frame": 148,
+          "event": "P4_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.34375,
+          "relative_player_height": 0.25555555555555554
+        },
+        {
+          "frame": 184,
+          "event": "P1_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.58984375,
+          "relative_player_height": 0.6388888888888888
+        },
+        {
+          "frame": 211,
+          "event": "P4_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.38984375,
+          "relative_player_height": 0.25277777777777777
+        },
+        {
+          "frame": 239,
+          "event": "P1_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.73203125,
+          "relative_player_height": 0.6972222222222222
+        },
+        {
+          "frame": 252,
+          "event": "P3_far_deuce_backhand_volley_io_non-serve_in",
+          "relative_player_width": 0.49140625,
+          "relative_player_height": 0.4097222222222222
+        },
+        {
+          "frame": 293,
+          "event": "P1_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.7421875,
+          "relative_player_height": 0.6652777777777777
+        },
+        {
+          "frame": 305,
+          "event": "P3_far_ad_backhand_volley_cc_non-serve_err",
+          "relative_player_width": 0.51875,
+          "relative_player_height": 0.37222222222222223
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_3250_3303",
+      "num_frames": 53,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P4_far_deuce_forehand_serve_t_i-formation_win",
+          "relative_player_width": 0.47890625,
+          "relative_player_height": 0.21388888888888888
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_3486_3741",
+      "num_frames": 255,
+      "events": [
+        {
+          "frame": 15,
+          "event": "P4_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.509375,
+          "relative_player_height": 0.2
+        },
+        {
+          "frame": 30,
+          "event": "P2_near_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.384375,
+          "relative_player_height": 0.6625
+        },
+        {
+          "frame": 69,
+          "event": "P4_far_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.62734375,
+          "relative_player_height": 0.27361111111111114
+        },
+        {
+          "frame": 104,
+          "event": "P2_near_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.25390625,
+          "relative_player_height": 0.7013888888888888
+        },
+        {
+          "frame": 123,
+          "event": "P3_far_deuce_backhand_volley_ii_non-serve_in",
+          "relative_player_width": 0.4875,
+          "relative_player_height": 0.37916666666666665
+        },
+        {
+          "frame": 160,
+          "event": "P2_near_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.19140625,
+          "relative_player_height": 0.6319444444444444
+        },
+        {
+          "frame": 203,
+          "event": "P4_far_ad_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.6734375,
+          "relative_player_height": 0.30277777777777776
+        },
+        {
+          "frame": 219,
+          "event": "P1_near_deuce_forehand_volley_cc_non-serve_win",
+          "relative_player_width": 0.69921875,
+          "relative_player_height": 0.5430555555555555
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_3811_3971",
+      "num_frames": 160,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P3_near_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.390625,
+          "relative_player_height": 0.5097222222222222
+        },
+        {
+          "frame": 37,
+          "event": "P2_far_ad_forehand_return_ii_non-serve_in",
+          "relative_player_width": 0.55625,
+          "relative_player_height": 0.25555555555555554
+        },
+        {
+          "frame": 112,
+          "event": "P3_near_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.69140625,
+          "relative_player_height": 0.6847222222222222
+        },
+        {
+          "frame": 122,
+          "event": "P2_far_ad_backhand_volley_cc_non-serve_win",
+          "relative_player_width": 0.63984375,
+          "relative_player_height": 0.3861111111111111
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_4020_4344",
+      "num_frames": 324,
+      "events": [
+        {
+          "frame": 21,
+          "event": "P3_near_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.63046875,
+          "relative_player_height": 0.65
+        },
+        {
+          "frame": 40,
+          "event": "P1_far_deuce_forehand_return_dl_non-serve_in",
+          "relative_player_width": 0.40546875,
+          "relative_player_height": 0.22916666666666666
+        },
+        {
+          "frame": 79,
+          "event": "P3_near_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.2296875,
+          "relative_player_height": 0.7583333333333333
+        },
+        {
+          "frame": 106,
+          "event": "P2_far_ad_backhand_smash_dl_non-serve_in",
+          "relative_player_width": 0.5515625,
+          "relative_player_height": 0.29583333333333334
+        },
+        {
+          "frame": 153,
+          "event": "P3_near_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.7671875,
+          "relative_player_height": 0.9611111111111111
+        },
+        {
+          "frame": 273,
+          "event": "P1_far_ad_forehand_swing_io_non-serve_win",
+          "relative_player_width": 0.61796875,
+          "relative_player_height": 0.20277777777777778
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_4701_4861",
+      "num_frames": 160,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P2_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.47578125,
+          "relative_player_height": 0.2013888888888889
+        },
+        {
+          "frame": 39,
+          "event": "P3_near_deuce_backhand_return_ii_non-serve_in",
+          "relative_player_width": 0.5921875,
+          "relative_player_height": 0.6222222222222222
+        },
+        {
+          "frame": 54,
+          "event": "P1_far_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.67109375,
+          "relative_player_height": 0.3861111111111111
+        },
+        {
+          "frame": 92,
+          "event": "P3_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.65234375,
+          "relative_player_height": 0.5277777777777778
+        },
+        {
+          "frame": 101,
+          "event": "P2_far_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.53671875,
+          "relative_player_height": 0.38472222222222224
+        },
+        {
+          "frame": 113,
+          "event": "P3_near_deuce_backhand_volley_io_non-serve_in",
+          "relative_player_width": 0.53671875,
+          "relative_player_height": 0.55
+        },
+        {
+          "frame": 128,
+          "event": "P2_far_deuce_forehand_volley_cc_non-serve_win",
+          "relative_player_width": 0.453125,
+          "relative_player_height": 0.40555555555555556
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_4977_5148",
+      "num_frames": 171,
+      "events": [
+        {
+          "frame": 19,
+          "event": "P2_far_ad_forehand_serve_t_i-formation_in",
+          "relative_player_width": 0.515625,
+          "relative_player_height": 0.18333333333333332
+        },
+        {
+          "frame": 41,
+          "event": "P4_near_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.47109375,
+          "relative_player_height": 0.6
+        },
+        {
+          "frame": 71,
+          "event": "P2_far_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.5828125,
+          "relative_player_height": 0.25277777777777777
+        },
+        {
+          "frame": 109,
+          "event": "P4_near_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.23046875,
+          "relative_player_height": 0.6527777777777778
+        },
+        {
+          "frame": 121,
+          "event": "P1_far_deuce_backhand_volley_io_non-serve_win",
+          "relative_player_width": 0.49140625,
+          "relative_player_height": 0.3597222222222222
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_5239_5418",
+      "num_frames": 179,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P2_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.48046875,
+          "relative_player_height": 0.1875
+        },
+        {
+          "frame": 32,
+          "event": "P3_near_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.66171875,
+          "relative_player_height": 0.6180555555555556
+        },
+        {
+          "frame": 53,
+          "event": "P2_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.35625,
+          "relative_player_height": 0.35138888888888886
+        },
+        {
+          "frame": 99,
+          "event": "P3_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.70859375,
+          "relative_player_height": 0.5458333333333333
+        },
+        {
+          "frame": 109,
+          "event": "P2_far_deuce_backhand_volley_io_non-serve_in",
+          "relative_player_width": 0.4875,
+          "relative_player_height": 0.38333333333333336
+        },
+        {
+          "frame": 132,
+          "event": "P3_near_deuce_forehand_smash_cc_non-serve_win",
+          "relative_player_width": 0.63125,
+          "relative_player_height": 0.5263888888888889
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_5454_5655",
+      "num_frames": 201,
+      "events": [
+        {
+          "frame": 21,
+          "event": "P4_far_ad_forehand_serve_w_conventional_in",
+          "relative_player_width": 0.5890625,
+          "relative_player_height": 0.21388888888888888
+        },
+        {
+          "frame": 42,
+          "event": "P2_near_ad_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.11796875,
+          "relative_player_height": 0.6138888888888889
+        },
+        {
+          "frame": 77,
+          "event": "P3_far_deuce_forehand_smash_dl_non-serve_in",
+          "relative_player_width": 0.39921875,
+          "relative_player_height": 0.2625
+        },
+        {
+          "frame": 92,
+          "event": "P2_near_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.2234375,
+          "relative_player_height": 0.5666666666666667
+        },
+        {
+          "frame": 149,
+          "event": "P4_far_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.6703125,
+          "relative_player_height": 0.20555555555555555
+        },
+        {
+          "frame": 164,
+          "event": "P2_near_ad_backhand_volley_cc_non-serve_win",
+          "relative_player_width": 0.421875,
+          "relative_player_height": 0.5138888888888888
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_5752_5899",
+      "num_frames": 147,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P3_near_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.340625,
+          "relative_player_height": 0.6416666666666667
+        },
+        {
+          "frame": 32,
+          "event": "P2_far_ad_forehand_return_ii_non-serve_in",
+          "relative_player_width": 0.646875,
+          "relative_player_height": 0.25555555555555554
+        },
+        {
+          "frame": 43,
+          "event": "P4_near_deuce_forehand_volley_dl_non-serve_in",
+          "relative_player_width": 0.6484375,
+          "relative_player_height": 0.5138888888888888
+        },
+        {
+          "frame": 69,
+          "event": "P1_far_ad_backhand_lob_dl_non-serve_in",
+          "relative_player_width": 0.525,
+          "relative_player_height": 0.2847222222222222
+        },
+        {
+          "frame": 103,
+          "event": "P4_near_deuce_forehand_smash_cc_non-serve_win",
+          "relative_player_width": 0.584375,
+          "relative_player_height": 0.5402777777777777
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_5968_6164",
+      "num_frames": 196,
+      "events": [
+        {
+          "frame": 16,
+          "event": "P4_far_ad_forehand_serve_w_conventional_in",
+          "relative_player_width": 0.60546875,
+          "relative_player_height": 0.24861111111111112
+        },
+        {
+          "frame": 39,
+          "event": "P2_near_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.10390625,
+          "relative_player_height": 0.6
+        },
+        {
+          "frame": 117,
+          "event": "P4_far_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.58125,
+          "relative_player_height": 0.2
+        },
+        {
+          "frame": 144,
+          "event": "P2_near_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.334375,
+          "relative_player_height": 0.7152777777777778
+        },
+        {
+          "frame": 158,
+          "event": "P3_far_deuce_backhand_volley_ii_non-serve_win",
+          "relative_player_width": 0.45859375,
+          "relative_player_height": 0.38333333333333336
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_6371_6454",
+      "num_frames": 83,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P1_near_ad_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.45625,
+          "relative_player_height": 0.6513888888888889
+        },
+        {
+          "frame": 36,
+          "event": "P4_far_ad_forehand_return_io_non-serve_err",
+          "relative_player_width": 0.55234375,
+          "relative_player_height": 0.2375
+        }
+      ]
+    },
+    {
+      "video_id": "Korda_Thompson_vs_Behar_Pavlasek_Madrid_2024_Doubles_Final_Highlights_6561_7083",
+      "num_frames": 522,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P2_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.52421875,
+          "relative_player_height": 0.2125
+        },
+        {
+          "frame": 36,
+          "event": "P4_near_ad_forehand_return_ii_non-serve_in",
+          "relative_player_width": 0.3421875,
+          "relative_player_height": 0.5902777777777778
+        },
+        {
+          "frame": 55,
+          "event": "P1_far_deuce_backhand_volley_ii_non-serve_in",
+          "relative_player_width": 0.46015625,
+          "relative_player_height": 0.38472222222222224
+        },
+        {
+          "frame": 80,
+          "event": "P4_near_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.47265625,
+          "relative_player_height": 0.6888888888888889
+        },
+        {
+          "frame": 93,
+          "event": "P1_far_deuce_backhand_volley_ii_non-serve_in",
+          "relative_player_width": 0.48984375,
+          "relative_player_height": 0.37222222222222223
+        },
+        {
+          "frame": 124,
+          "event": "P4_near_ad_forehand_lob_ii_non-serve_in",
+          "relative_player_width": 0.3484375,
+          "relative_player_height": 0.6569444444444444
+        },
+        {
+          "frame": 199,
+          "event": "P1_far_deuce_forehand_lob_dl_non-serve_in",
+          "relative_player_width": 0.38125,
+          "relative_player_height": 0.1875
+        },
+        {
+          "frame": 309,
+          "event": "P4_near_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.4,
+          "relative_player_height": 0.7458333333333333
+        },
+        {
+          "frame": 338,
+          "event": "P1_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.41328125,
+          "relative_player_height": 0.19444444444444445
+        },
+        {
+          "frame": 376,
+          "event": "P4_near_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.3796875,
+          "relative_player_height": 0.6875
+        },
+        {
+          "frame": 404,
+          "event": "P1_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.39609375,
+          "relative_player_height": 0.21666666666666667
+        },
+        {
+          "frame": 440,
+          "event": "P4_near_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.2734375,
+          "relative_player_height": 0.6569444444444444
+        },
+        {
+          "frame": 471,
+          "event": "P1_far_deuce_forehand_swing_cc_non-serve_err",
+          "relative_player_width": 0.42734375,
+          "relative_player_height": 0.2263888888888889
+        }
+      ]
+    }
+  ]
+}

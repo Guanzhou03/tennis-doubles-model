@@ -1,0 +1,1086 @@
+{
+  "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final",
+  "fps": 25,
+  "player_descriptons": {
+    "p1": "Salisbury (White shirt)",
+    "p2": "Ram (Red shirt)",
+    "p3": "Venus (grey shirt, blue pants)",
+    "p4": "Puetz (Yellow shirt)"
+  },
+  "player_hands": {
+    "p1": "Right",
+    "p2": "Right",
+    "p3": "Right",
+    "p4": "Right"
+  },
+  "rallies": [
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_54_132",
+      "num_frames": 78,
+      "events": [
+        {
+          "frame": 15,
+          "event": "P3_far_ad_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.5234375,
+          "relative_player_height": 0.14722222222222223
+        },
+        {
+          "frame": 29,
+          "event": "P2_near_ad_backhand_return_dl_non-serve_win",
+          "relative_player_width": 0.26875,
+          "relative_player_height": 0.6888888888888889
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_381_499",
+      "num_frames": 118,
+      "events": [
+        {
+          "frame": 14,
+          "event": "P3_far_deuce_forehand_serve_w_conventional_in",
+          "relative_player_width": 0.44296875,
+          "relative_player_height": 0.1736111111111111
+        },
+        {
+          "frame": 33,
+          "event": "P1_near_deuce_forehand_return_dl_non-serve_in",
+          "relative_player_width": 0.83828125,
+          "relative_player_height": 0.7305555555555555
+        },
+        {
+          "frame": 87,
+          "event": "P4_far_ad_forehand_smash_ii_non-serve_win",
+          "relative_player_width": 0.45078125,
+          "relative_player_height": 0.21666666666666667
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_633_718",
+      "num_frames": 85,
+      "events": [
+        {
+          "frame": 21,
+          "event": "P2_far_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.46484375,
+          "relative_player_height": 0.13333333333333333
+        },
+        {
+          "frame": 41,
+          "event": "P3_near_deuce_forehand_return_cc_non-serve_win",
+          "relative_player_width": 0.7609375,
+          "relative_player_height": 0.6888888888888889
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_981_1074",
+      "num_frames": 93,
+      "events": [
+        {
+          "frame": 18,
+          "event": "P2_far_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.41171875,
+          "relative_player_height": 0.17916666666666667
+        },
+        {
+          "frame": 35,
+          "event": "P3_near_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.72890625,
+          "relative_player_height": 0.6847222222222222
+        },
+        {
+          "frame": 46,
+          "event": "P1_far_ad_forehand_volley_io_non-serve_in",
+          "relative_player_width": 0.56171875,
+          "relative_player_height": 0.2833333333333333
+        },
+        {
+          "frame": 60,
+          "event": "P4_near_ad_forehand_volley_io_non-serve_win",
+          "relative_player_width": 0.39609375,
+          "relative_player_height": 0.4513888888888889
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_1496_1586",
+      "num_frames": 90,
+      "events": [
+        {
+          "frame": 16,
+          "event": "P4_near_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.44609375,
+          "relative_player_height": 0.5986111111111111
+        },
+        {
+          "frame": 33,
+          "event": "P2_far_ad_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.6046875,
+          "relative_player_height": 0.1527777777777778
+        },
+        {
+          "frame": 58,
+          "event": "P3_near_deuce_forehand_volley_cc_non-serve_win",
+          "relative_player_width": 0.5875,
+          "relative_player_height": 0.425
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_2024_2368",
+      "num_frames": 344,
+      "events": [
+        {
+          "frame": 18,
+          "event": "P1_near_deuce_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.63984375,
+          "relative_player_height": 0.6125
+        },
+        {
+          "frame": 36,
+          "event": "P3_far_deuce_backhand_return_ii_non-serve_in",
+          "relative_player_width": 0.3734375,
+          "relative_player_height": 0.14027777777777778
+        },
+        {
+          "frame": 112,
+          "event": "P1_near_ad_backhand_lob_cc_non-serve_in",
+          "relative_player_width": 0.2140625,
+          "relative_player_height": 0.7194444444444444
+        },
+        {
+          "frame": 168,
+          "event": "P4_far_ad_forehand_smash_ii_non-serve_in",
+          "relative_player_width": 0.6703125,
+          "relative_player_height": 0.18055555555555555
+        },
+        {
+          "frame": 187,
+          "event": "P2_near_deuce_backhand_lob_io_non-serve_in",
+          "relative_player_width": 0.73359375,
+          "relative_player_height": 0.8180555555555555
+        },
+        {
+          "frame": 233,
+          "event": "P4_far_ad_forehand_smash_ii_non-serve_in",
+          "relative_player_width": 0.5484375,
+          "relative_player_height": 0.16944444444444445
+        },
+        {
+          "frame": 254,
+          "event": "P2_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.79140625,
+          "relative_player_height": 0.8208333333333333
+        },
+        {
+          "frame": 305,
+          "event": "P3_far_deuce_forehand_smash_cc_non-serve_win",
+          "relative_player_width": 0.46640625,
+          "relative_player_height": 0.20972222222222223
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_2541_2628",
+      "num_frames": 87,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P1_near_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.43046875,
+          "relative_player_height": 0.6097222222222223
+        },
+        {
+          "frame": 38,
+          "event": "P4_far_ad_backhand_return_dl_non-serve_win",
+          "relative_player_width": 0.58671875,
+          "relative_player_height": 0.12777777777777777
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_2757_2930",
+      "num_frames": 173,
+      "events": [
+        {
+          "frame": 15,
+          "event": "P1_near_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.4,
+          "relative_player_height": 0.5875
+        },
+        {
+          "frame": 34,
+          "event": "P4_far_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.6,
+          "relative_player_height": 0.15416666666666667
+        },
+        {
+          "frame": 55,
+          "event": "P1_near_ad_backhand_volley_cc_non-serve_in",
+          "relative_player_width": 0.3859375,
+          "relative_player_height": 0.5083333333333333
+        },
+        {
+          "frame": 91,
+          "event": "P4_far_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.734375,
+          "relative_player_height": 0.14305555555555555
+        },
+        {
+          "frame": 125,
+          "event": "P1_near_ad_forehand_smash_ii_non-serve_win",
+          "relative_player_width": 0.38984375,
+          "relative_player_height": 0.4638888888888889
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_3072_3147",
+      "num_frames": 75,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P3_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.51640625,
+          "relative_player_height": 0.1125
+        },
+        {
+          "frame": 30,
+          "event": "P2_near_ad_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.271875,
+          "relative_player_height": 0.6097222222222223
+        },
+        {
+          "frame": 43,
+          "event": "P4_far_deuce_forehand_smash_cc_non-serve_win",
+          "relative_player_width": 0.42109375,
+          "relative_player_height": 0.2375
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_3271_3416",
+      "num_frames": 145,
+      "events": [
+        {
+          "frame": 10,
+          "event": "P2_far_deuce_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.459375,
+          "relative_player_height": 0.14444444444444443
+        },
+        {
+          "frame": 31,
+          "event": "P3_near_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.77109375,
+          "relative_player_height": 0.6375
+        },
+        {
+          "frame": 57,
+          "event": "P2_far_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.33203125,
+          "relative_player_height": 0.19722222222222222
+        },
+        {
+          "frame": 94,
+          "event": "P3_near_deuce_forehand_swing_dl_non-serve_win",
+          "relative_player_width": 0.77421875,
+          "relative_player_height": 0.49027777777777776
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_3567_3638",
+      "num_frames": 71,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P4_near_deuce_forehand_serve_t_i-formation_in",
+          "relative_player_width": 0.5515625,
+          "relative_player_height": 0.6277777777777778
+        },
+        {
+          "frame": 32,
+          "event": "P1_far_deuce_backhand_return_io_non-serve_win",
+          "relative_player_width": 0.4359375,
+          "relative_player_height": 0.1763888888888889
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_3782_3908",
+      "num_frames": 126,
+      "events": [
+        {
+          "frame": 11,
+          "event": "P4_near_ad_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.45078125,
+          "relative_player_height": 0.5986111111111111
+        },
+        {
+          "frame": 27,
+          "event": "P2_far_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.60859375,
+          "relative_player_height": 0.19444444444444445
+        },
+        {
+          "frame": 41,
+          "event": "P3_near_deuce_backhand_volley_ii_non-serve_in",
+          "relative_player_width": 0.54453125,
+          "relative_player_height": 0.46111111111111114
+        },
+        {
+          "frame": 79,
+          "event": "P2_far_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.6375,
+          "relative_player_height": 0.2569444444444444
+        },
+        {
+          "frame": 89,
+          "event": "P3_near_ad_backhand_volley_dl_non-serve_win",
+          "relative_player_width": 0.453125,
+          "relative_player_height": 0.48194444444444445
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_4248_4334",
+      "num_frames": 86,
+      "events": [
+        {
+          "frame": 11,
+          "event": "P1_near_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.63515625,
+          "relative_player_height": 0.6111111111111112
+        },
+        {
+          "frame": 29,
+          "event": "P3_far_deuce_backhand_return_ii_non-serve_in",
+          "relative_player_width": 0.3984375,
+          "relative_player_height": 0.2111111111111111
+        },
+        {
+          "frame": 44,
+          "event": "P2_near_ad_backhand_smash_dl_non-serve_win",
+          "relative_player_width": 0.42734375,
+          "relative_player_height": 0.45
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_4473_4562",
+      "num_frames": 89,
+      "events": [
+        {
+          "frame": 14,
+          "event": "P1_near_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.6375,
+          "relative_player_height": 0.6458333333333334
+        },
+        {
+          "frame": 34,
+          "event": "P3_far_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.3484375,
+          "relative_player_height": 0.17222222222222222
+        },
+        {
+          "frame": 45,
+          "event": "P2_near_ad_forehand_smash_io_non-serve_win",
+          "relative_player_width": 0.43046875,
+          "relative_player_height": 0.4527777777777778
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_4772_5075",
+      "num_frames": 303,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P3_far_deuce_forehand_serve_t_i-formation_in",
+          "relative_player_width": 0.45859375,
+          "relative_player_height": 0.15416666666666667
+        },
+        {
+          "frame": 37,
+          "event": "P1_near_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.65078125,
+          "relative_player_height": 0.6236111111111111
+        },
+        {
+          "frame": 90,
+          "event": "P3_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.44609375,
+          "relative_player_height": 0.21805555555555556
+        },
+        {
+          "frame": 108,
+          "event": "P1_near_deuce_backhand_swing_io_non-serve_in",
+          "relative_player_width": 0.578125,
+          "relative_player_height": 0.7055555555555556
+        },
+        {
+          "frame": 130,
+          "event": "P4_far_ad_forehand_volley_io_non-serve_in",
+          "relative_player_width": 0.5125,
+          "relative_player_height": 0.2611111111111111
+        },
+        {
+          "frame": 140,
+          "event": "P2_near_ad_backhand_lob_cc_non-serve_in",
+          "relative_player_width": 0.35234375,
+          "relative_player_height": 0.5291666666666667
+        },
+        {
+          "frame": 174,
+          "event": "P3_far_ad_backhand_smash_dl_non-serve_in",
+          "relative_player_width": 0.5,
+          "relative_player_height": 0.18888888888888888
+        },
+        {
+          "frame": 196,
+          "event": "P1_near_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.64140625,
+          "relative_player_height": 0.6402777777777777
+        },
+        {
+          "frame": 218,
+          "event": "P3_far_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.584375,
+          "relative_player_height": 0.25833333333333336
+        },
+        {
+          "frame": 249,
+          "event": "P2_near_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.259375,
+          "relative_player_height": 0.6763888888888889
+        },
+        {
+          "frame": 262,
+          "event": "P3_far_ad_forehand_volley_ii_non-serve_win",
+          "relative_player_width": 0.5171875,
+          "relative_player_height": 0.2916666666666667
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_5225_5316",
+      "num_frames": 91,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P3_near_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.44296875,
+          "relative_player_height": 0.5847222222222223
+        },
+        {
+          "frame": 27,
+          "event": "P2_far_ad_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.5984375,
+          "relative_player_height": 0.1763888888888889
+        },
+        {
+          "frame": 50,
+          "event": "P4_near_deuce_forehand_volley_dl_non-serve_win",
+          "relative_player_width": 0.5171875,
+          "relative_player_height": 0.44027777777777777
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_5592_5680",
+      "num_frames": 88,
+      "events": [
+        {
+          "frame": 15,
+          "event": "P3_near_deuce_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.5359375,
+          "relative_player_height": 0.6027777777777777
+        },
+        {
+          "frame": 37,
+          "event": "P1_far_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.4140625,
+          "relative_player_height": 0.2013888888888889
+        },
+        {
+          "frame": 52,
+          "event": "P4_near_deuce_forehand_smash_cc_non-serve_win",
+          "relative_player_width": 0.51015625,
+          "relative_player_height": 0.45416666666666666
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_5845_5919",
+      "num_frames": 74,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P2_far_deuce_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.45234375,
+          "relative_player_height": 0.17083333333333334
+        },
+        {
+          "frame": 36,
+          "event": "P3_near_deuce_backhand_return_io_non-serve_win",
+          "relative_player_width": 0.665625,
+          "relative_player_height": 0.6597222222222222
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_6214_6396",
+      "num_frames": 182,
+      "events": [
+        {
+          "frame": 21,
+          "event": "P2_near_ad_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.33515625,
+          "relative_player_height": 0.6138888888888889
+        },
+        {
+          "frame": 38,
+          "event": "P4_far_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.58984375,
+          "relative_player_height": 0.1875
+        },
+        {
+          "frame": 58,
+          "event": "P1_near_ad_backhand_smash_cc_non-serve_in",
+          "relative_player_width": 0.47109375,
+          "relative_player_height": 0.4597222222222222
+        },
+        {
+          "frame": 85,
+          "event": "P4_far_ad_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.60625,
+          "relative_player_height": 0.16527777777777777
+        },
+        {
+          "frame": 131,
+          "event": "P2_near_deuce_forehand_smash_dl_non-serve_win",
+          "relative_player_width": 0.59921875,
+          "relative_player_height": 0.47638888888888886
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_6753_6868",
+      "num_frames": 115,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P2_near_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.45234375,
+          "relative_player_height": 0.5888888888888889
+        },
+        {
+          "frame": 39,
+          "event": "P4_far_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.6,
+          "relative_player_height": 0.23472222222222222
+        },
+        {
+          "frame": 59,
+          "event": "P2_near_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.403125,
+          "relative_player_height": 0.5472222222222223
+        },
+        {
+          "frame": 83,
+          "event": "P3_far_deuce_forehand_volley_cc_non-serve_win",
+          "relative_player_width": 0.4359375,
+          "relative_player_height": 0.29444444444444445
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_7180_7283",
+      "num_frames": 103,
+      "events": [
+        {
+          "frame": 19,
+          "event": "P2_near_deuce_forehand_serve_t_i-formation_in",
+          "relative_player_width": 0.5515625,
+          "relative_player_height": 0.6402777777777777
+        },
+        {
+          "frame": 39,
+          "event": "P3_far_deuce_backhand_return_ii_non-serve_in",
+          "relative_player_width": 0.43828125,
+          "relative_player_height": 0.19305555555555556
+        },
+        {
+          "frame": 53,
+          "event": "P1_near_ad_forehand_smash_ii_non-serve_win",
+          "relative_player_width": 0.403125,
+          "relative_player_height": 0.4486111111111111
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_7426_7514",
+      "num_frames": 88,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P1_far_deuce_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.453125,
+          "relative_player_height": 0.175
+        },
+        {
+          "frame": 29,
+          "event": "P3_near_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.71796875,
+          "relative_player_height": 0.6666666666666666
+        },
+        {
+          "frame": 41,
+          "event": "P2_far_ad_forehand_smash_ii_non-serve_win",
+          "relative_player_width": 0.5203125,
+          "relative_player_height": 0.31527777777777777
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_7772_7868",
+      "num_frames": 96,
+      "events": [
+        {
+          "frame": 21,
+          "event": "P1_far_deuce_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.4625,
+          "relative_player_height": 0.16805555555555557
+        },
+        {
+          "frame": 41,
+          "event": "P3_near_deuce_forehand_return_dl_non-serve_in",
+          "relative_player_width": 0.7671875,
+          "relative_player_height": 0.6486111111111111
+        },
+        {
+          "frame": 59,
+          "event": "P1_far_ad_backhand_volley_cc_non-serve_win",
+          "relative_player_width": 0.6046875,
+          "relative_player_height": 0.21944444444444444
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_8095_8209",
+      "num_frames": 114,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P1_far_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.5765625,
+          "relative_player_height": 0.1597222222222222
+        },
+        {
+          "frame": 31,
+          "event": "P4_near_ad_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.221875,
+          "relative_player_height": 0.725
+        },
+        {
+          "frame": 70,
+          "event": "P1_far_deuce_forehand_smash_dl_non-serve_win",
+          "relative_player_width": 0.46953125,
+          "relative_player_height": 0.19305555555555556
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_8367_8500",
+      "num_frames": 133,
+      "events": [
+        {
+          "frame": 16,
+          "event": "P4_far_ad_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.51640625,
+          "relative_player_height": 0.16944444444444445
+        },
+        {
+          "frame": 35,
+          "event": "P2_near_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.24375,
+          "relative_player_height": 0.6513888888888889
+        },
+        {
+          "frame": 95,
+          "event": "P4_far_ad_forehand_swing_ii_non-serve_win",
+          "relative_player_width": 0.64921875,
+          "relative_player_height": 0.21666666666666667
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_8686_8782",
+      "num_frames": 96,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P4_far_ad_forehand_serve_t_i-formation_in",
+          "relative_player_width": 0.515625,
+          "relative_player_height": 0.175
+        },
+        {
+          "frame": 37,
+          "event": "P2_near_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.3234375,
+          "relative_player_height": 0.6611111111111111
+        },
+        {
+          "frame": 49,
+          "event": "P3_far_ad_backhand_volley_cc_non-serve_win",
+          "relative_player_width": 0.5046875,
+          "relative_player_height": 0.2986111111111111
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_8878_9114",
+      "num_frames": 236,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P2_near_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.44921875,
+          "relative_player_height": 0.6236111111111111
+        },
+        {
+          "frame": 30,
+          "event": "P4_far_ad_forehand_return_ii_non-serve_in",
+          "relative_player_width": 0.609375,
+          "relative_player_height": 0.175
+        },
+        {
+          "frame": 72,
+          "event": "P2_near_deuce_backhand_volley_ii_non-serve_in",
+          "relative_player_width": 0.54296875,
+          "relative_player_height": 0.5430555555555555
+        },
+        {
+          "frame": 107,
+          "event": "P4_far_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.58984375,
+          "relative_player_height": 0.18194444444444444
+        },
+        {
+          "frame": 125,
+          "event": "P2_near_deuce_forehand_volley_dl_non-serve_in",
+          "relative_player_width": 0.609375,
+          "relative_player_height": 0.5097222222222222
+        },
+        {
+          "frame": 160,
+          "event": "P4_far_ad_forehand_lob_ii_non-serve_in",
+          "relative_player_width": 0.5421875,
+          "relative_player_height": 0.19583333333333333
+        },
+        {
+          "frame": 185,
+          "event": "P2_near_deuce_forehand_smash_dl_non-serve_win",
+          "relative_player_width": 0.5734375,
+          "relative_player_height": 0.4625
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_9263_9347",
+      "num_frames": 84,
+      "events": [
+        {
+          "frame": 15,
+          "event": "P2_near_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.63203125,
+          "relative_player_height": 0.6097222222222223
+        },
+        {
+          "frame": 37,
+          "event": "P3_far_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.3984375,
+          "relative_player_height": 0.18055555555555555
+        },
+        {
+          "frame": 53,
+          "event": "P1_near_ad_forehand_smash_ii_non-serve_win",
+          "relative_player_width": 0.46171875,
+          "relative_player_height": 0.4361111111111111
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_9482_9559",
+      "num_frames": 77,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P1_far_deuce_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.471875,
+          "relative_player_height": 0.1597222222222222
+        },
+        {
+          "frame": 33,
+          "event": "P3_near_deuce_forehand_return_dl_non-serve_in",
+          "relative_player_width": 0.67890625,
+          "relative_player_height": 0.6847222222222222
+        },
+        {
+          "frame": 46,
+          "event": "P2_far_ad_backhand_smash_dl_non-serve_win",
+          "relative_player_width": 0.603125,
+          "relative_player_height": 0.2861111111111111
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_9710_9806",
+      "num_frames": 96,
+      "events": [
+        {
+          "frame": 15,
+          "event": "P1_far_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.4140625,
+          "relative_player_height": 0.15833333333333333
+        },
+        {
+          "frame": 34,
+          "event": "P3_near_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.7296875,
+          "relative_player_height": 0.6222222222222222
+        },
+        {
+          "frame": 54,
+          "event": "P1_far_deuce_forehand_volley_dl_non-serve_win",
+          "relative_player_width": 0.39296875,
+          "relative_player_height": 0.25
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_9950_10049",
+      "num_frames": 99,
+      "events": [
+        {
+          "frame": 14,
+          "event": "P1_far_ad_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.5328125,
+          "relative_player_height": 0.15694444444444444
+        },
+        {
+          "frame": 30,
+          "event": "P4_near_ad_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.225,
+          "relative_player_height": 0.6777777777777778
+        },
+        {
+          "frame": 67,
+          "event": "P2_far_deuce_forehand_smash_dl_non-serve_win",
+          "relative_player_width": 0.465625,
+          "relative_player_height": 0.2638888888888889
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_10214_10343",
+      "num_frames": 129,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P2_near_deuce_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.54296875,
+          "relative_player_height": 0.5875
+        },
+        {
+          "frame": 29,
+          "event": "P4_far_deuce_backhand_return_ii_non-serve_in",
+          "relative_player_width": 0.43125,
+          "relative_player_height": 0.2263888888888889
+        },
+        {
+          "frame": 40,
+          "event": "P1_near_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.4203125,
+          "relative_player_height": 0.4583333333333333
+        },
+        {
+          "frame": 53,
+          "event": "P4_far_ad_forehand_volley_io_non-serve_in",
+          "relative_player_width": 0.5125,
+          "relative_player_height": 0.31805555555555554
+        },
+        {
+          "frame": 65,
+          "event": "P1_near_ad_forehand_volley_ii_non-serve_in",
+          "relative_player_width": 0.4078125,
+          "relative_player_height": 0.4708333333333333
+        },
+        {
+          "frame": 81,
+          "event": "P4_far_deuce_forehand_volley_dl_non-serve_win",
+          "relative_player_width": 0.440625,
+          "relative_player_height": 0.2833333333333333
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_10736_11014",
+      "num_frames": 278,
+      "events": [
+        {
+          "frame": 21,
+          "event": "P3_far_deuce_forehand_serve_w_conventional_in",
+          "relative_player_width": 0.43984375,
+          "relative_player_height": 0.14305555555555555
+        },
+        {
+          "frame": 39,
+          "event": "P1_near_deuce_forehand_return_dl_non-serve_in",
+          "relative_player_width": 0.8484375,
+          "relative_player_height": 0.7055555555555556
+        },
+        {
+          "frame": 66,
+          "event": "P4_far_ad_forehand_smash_ii_non-serve_in",
+          "relative_player_width": 0.63828125,
+          "relative_player_height": 0.23055555555555557
+        },
+        {
+          "frame": 82,
+          "event": "P1_near_deuce_backhand_swing_io_non-serve_in",
+          "relative_player_width": 0.690625,
+          "relative_player_height": 0.6013888888888889
+        },
+        {
+          "frame": 106,
+          "event": "P3_far_deuce_backhand_volley_io_non-serve_in",
+          "relative_player_width": 0.4375,
+          "relative_player_height": 0.275
+        },
+        {
+          "frame": 136,
+          "event": "P2_near_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.43828125,
+          "relative_player_height": 0.6694444444444444
+        },
+        {
+          "frame": 149,
+          "event": "P4_far_ad_forehand_smash_ii_non-serve_in",
+          "relative_player_width": 0.5671875,
+          "relative_player_height": 0.26944444444444443
+        },
+        {
+          "frame": 178,
+          "event": "P2_near_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.4359375,
+          "relative_player_height": 0.6166666666666667
+        },
+        {
+          "frame": 190,
+          "event": "P4_far_ad_backhand_volley_cc_non-serve_in",
+          "relative_player_width": 0.55703125,
+          "relative_player_height": 0.29583333333333334
+        },
+        {
+          "frame": 238,
+          "event": "P2_near_ad_forehand_swing_ii_non-serve_win",
+          "relative_player_width": 0.4375,
+          "relative_player_height": 0.6236111111111111
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_11234_11379",
+      "num_frames": 145,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P4_far_ad_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.5046875,
+          "relative_player_height": 0.15138888888888888
+        },
+        {
+          "frame": 32,
+          "event": "P2_near_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.26484375,
+          "relative_player_height": 0.6375
+        },
+        {
+          "frame": 95,
+          "event": "P4_far_ad_forehand_swing_ii_non-serve_win",
+          "relative_player_width": 0.57734375,
+          "relative_player_height": 0.2222222222222222
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_11506_11580",
+      "num_frames": 74,
+      "events": [
+        {
+          "frame": 17,
+          "event": "P4_near_deuce_forehand_serve_t_i-formation_in",
+          "relative_player_width": 0.56484375,
+          "relative_player_height": 0.6513888888888889
+        },
+        {
+          "frame": 32,
+          "event": "P1_far_deuce_backhand_return_io_non-serve_win",
+          "relative_player_width": 0.40234375,
+          "relative_player_height": 0.1486111111111111
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_11856_11950",
+      "num_frames": 94,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P2_far_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.41796875,
+          "relative_player_height": 0.1638888888888889
+        },
+        {
+          "frame": 36,
+          "event": "P3_near_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.7546875,
+          "relative_player_height": 0.65
+        },
+        {
+          "frame": 50,
+          "event": "P1_far_ad_forehand_smash_io_non-serve_win",
+          "relative_player_width": 0.54453125,
+          "relative_player_height": 0.2777777777777778
+        }
+      ]
+    },
+    {
+      "video_id": "Rajeev Ram_Joe Salisbury vs Tim Puetz_Michael Venus _ Cincinnati 2022 Doubles Final_12119_12218",
+      "num_frames": 99,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P1_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.52421875,
+          "relative_player_height": 0.1527777777777778
+        },
+        {
+          "frame": 29,
+          "event": "P4_near_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.271875,
+          "relative_player_height": 0.6722222222222223
+        },
+        {
+          "frame": 61,
+          "event": "P2_far_deuce_backhand_smash_ii_non-serve_win",
+          "relative_player_width": 0.45859375,
+          "relative_player_height": 0.24861111111111112
+        }
+      ]
+    }
+  ]
+}

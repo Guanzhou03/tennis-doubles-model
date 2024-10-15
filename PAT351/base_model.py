@@ -95,7 +95,7 @@ def eval_pcsp(file_name):
 
 
 def generate_pcsp(counts_dict):
-    output = '#include "new_env.pcsp";\n'
+    output = '#include "base_env.pcsp";\n'
     for key, value in counts_dict.items():
         player = key[1]
         output += "%s = %sReady -> pcase { \n" % (key, key) 

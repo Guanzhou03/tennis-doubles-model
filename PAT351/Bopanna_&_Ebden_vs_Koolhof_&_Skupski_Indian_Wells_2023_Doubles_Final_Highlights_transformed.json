@@ -1,0 +1,1104 @@
+{
+  "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights",
+  "fps": 25,
+  "player_descriptons": {
+    "p1": "grey ",
+    "p2": "blue shorts",
+    "p3": "blue shirt",
+    "p4": "white shoes"
+  },
+  "player_hands": {
+    "p1": "Right",
+    "p2": "Right",
+    "p3": "Right",
+    "p4": "Right"
+  },
+  "rallies": [
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_0_72",
+      "num_frames": 72,
+      "events": [
+        {
+          "frame": 5,
+          "event": "P3_near_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.47421875,
+          "relative_player_height": 0.5861111111111111
+        },
+        {
+          "frame": 29,
+          "event": "P2_far_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.61484375,
+          "relative_player_height": 0.2013888888888889
+        },
+        {
+          "frame": 41,
+          "event": "P4_near_ad_backhand_volley_dl_non-serve_win",
+          "relative_player_width": 0.4515625,
+          "relative_player_height": 0.3638888888888889
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_140_226",
+      "num_frames": 86,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P2_near_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.36875,
+          "relative_player_height": 0.5833333333333334
+        },
+        {
+          "frame": 30,
+          "event": "P4_far_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.5859375,
+          "relative_player_height": 0.19166666666666668
+        },
+        {
+          "frame": 44,
+          "event": "P1_near_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.49140625,
+          "relative_player_height": 0.38333333333333336
+        },
+        {
+          "frame": 55,
+          "event": "P3_far_deuce_backhand_volley_io_non-serve_win",
+          "relative_player_width": 0.465625,
+          "relative_player_height": 0.24861111111111112
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_422_604",
+      "num_frames": 182,
+      "events": [
+        {
+          "frame": 15,
+          "event": "P2_near_deuce_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.5203125,
+          "relative_player_height": 0.4930555555555556
+        },
+        {
+          "frame": 34,
+          "event": "P3_far_deuce_backhand_return_ii_non-serve_in",
+          "relative_player_width": 0.47734375,
+          "relative_player_height": 0.20416666666666666
+        },
+        {
+          "frame": 109,
+          "event": "P2_near_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.34453125,
+          "relative_player_height": 0.6472222222222223
+        },
+        {
+          "frame": 140,
+          "event": "P3_far_deuce_forehand_swing_cc_non-serve_win",
+          "relative_player_width": 0.36875,
+          "relative_player_height": 0.18055555555555555
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_759_875",
+      "num_frames": 116,
+      "events": [
+        {
+          "frame": 14,
+          "event": "P4_far_ad_forehand_serve_t_i-formation_in",
+          "relative_player_width": 0.525,
+          "relative_player_height": 0.14583333333333334
+        },
+        {
+          "frame": 32,
+          "event": "P2_near_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.45,
+          "relative_player_height": 0.6305555555555555
+        },
+        {
+          "frame": 50,
+          "event": "P3_far_ad_backhand_volley_cc_non-serve_in",
+          "relative_player_width": 0.5171875,
+          "relative_player_height": 0.35833333333333334
+        },
+        {
+          "frame": 84,
+          "event": "P2_near_ad_backhand_swing_dl_non-serve_err",
+          "relative_player_width": 0.1125,
+          "relative_player_height": 0.7111111111111111
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_1038_1228",
+      "num_frames": 190,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P4_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.5265625,
+          "relative_player_height": 0.15833333333333333
+        },
+        {
+          "frame": 38,
+          "event": "P2_near_ad_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.27890625,
+          "relative_player_height": 0.5694444444444444
+        },
+        {
+          "frame": 71,
+          "event": "P4_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.3796875,
+          "relative_player_height": 0.23472222222222222
+        },
+        {
+          "frame": 103,
+          "event": "P2_near_ad_forehand_lob_io_non-serve_in",
+          "relative_player_width": 0.23046875,
+          "relative_player_height": 0.7347222222222223
+        },
+        {
+          "frame": 142,
+          "event": "P3_far_ad_forehand_smash_ii_non-serve_win",
+          "relative_player_width": 0.60546875,
+          "relative_player_height": 0.19166666666666668
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_1365_1488",
+      "num_frames": 123,
+      "events": [
+        {
+          "frame": 21,
+          "event": "P1_far_deuce_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.4484375,
+          "relative_player_height": 0.15
+        },
+        {
+          "frame": 38,
+          "event": "P3_near_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.55234375,
+          "relative_player_height": 0.5722222222222222
+        },
+        {
+          "frame": 67,
+          "event": "P1_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.40703125,
+          "relative_player_height": 0.2847222222222222
+        },
+        {
+          "frame": 83,
+          "event": "P4_near_deuce_forehand_volley_dl_non-serve_win",
+          "relative_player_width": 0.6,
+          "relative_player_height": 0.39861111111111114
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_1622_1704",
+      "num_frames": 82,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P1_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.5265625,
+          "relative_player_height": 0.15694444444444444
+        },
+        {
+          "frame": 32,
+          "event": "P4_near_ad_forehand_return_ii_non-serve_win",
+          "relative_player_width": 0.396875,
+          "relative_player_height": 0.6069444444444444
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_1823_1882",
+      "num_frames": 59,
+      "events": [
+        {
+          "frame": 17,
+          "event": "P3_near_deuce_forehand_serve_t_i-formation_win",
+          "relative_player_width": 0.53671875,
+          "relative_player_height": 0.6597222222222222
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_2030_2214",
+      "num_frames": 184,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P4_far_deuce_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.48046875,
+          "relative_player_height": 0.125
+        },
+        {
+          "frame": 39,
+          "event": "P1_near_deuce_backhand_return_ii_non-serve_in",
+          "relative_player_width": 0.62578125,
+          "relative_player_height": 0.6194444444444445
+        },
+        {
+          "frame": 53,
+          "event": "P3_far_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.60703125,
+          "relative_player_height": 0.35
+        },
+        {
+          "frame": 80,
+          "event": "P1_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.62578125,
+          "relative_player_height": 0.6902777777777778
+        },
+        {
+          "frame": 101,
+          "event": "P4_far_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.3875,
+          "relative_player_height": 0.30972222222222223
+        },
+        {
+          "frame": 140,
+          "event": "P1_near_deuce_forehand_swing_cc_non-serve_win",
+          "relative_player_width": 0.80234375,
+          "relative_player_height": 0.49027777777777776
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_2294_2373",
+      "num_frames": 79,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P3_near_deuce_forehand_serve_w_conventional_in",
+          "relative_player_width": 0.6,
+          "relative_player_height": 0.65
+        },
+        {
+          "frame": 30,
+          "event": "P1_far_deuce_forehand_return_dl_non-serve_in",
+          "relative_player_width": 0.3328125,
+          "relative_player_height": 0.17916666666666667
+        },
+        {
+          "frame": 41,
+          "event": "P4_near_ad_backhand_volley_dl_non-serve_win",
+          "relative_player_width": 0.396875,
+          "relative_player_height": 0.4083333333333333
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_2829_2954",
+      "num_frames": 125,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P3_near_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.596875,
+          "relative_player_height": 0.6138888888888889
+        },
+        {
+          "frame": 32,
+          "event": "P1_far_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.40859375,
+          "relative_player_height": 0.19583333333333333
+        },
+        {
+          "frame": 61,
+          "event": "P3_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.69921875,
+          "relative_player_height": 0.6291666666666667
+        },
+        {
+          "frame": 88,
+          "event": "P1_far_deuce_forehand_swing_cc_non-serve_win",
+          "relative_player_width": 0.3046875,
+          "relative_player_height": 0.24166666666666667
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_3174_3425",
+      "num_frames": 251,
+      "events": [
+        {
+          "frame": 21,
+          "event": "P3_near_ad_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.4640625,
+          "relative_player_height": 0.4861111111111111
+        },
+        {
+          "frame": 43,
+          "event": "P2_far_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.67109375,
+          "relative_player_height": 0.16805555555555557
+        },
+        {
+          "frame": 57,
+          "event": "P4_near_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.4625,
+          "relative_player_height": 0.3763888888888889
+        },
+        {
+          "frame": 84,
+          "event": "P1_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.328125,
+          "relative_player_height": 0.2777777777777778
+        },
+        {
+          "frame": 159,
+          "event": "P3_near_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.4,
+          "relative_player_height": 0.7263888888888889
+        },
+        {
+          "frame": 193,
+          "event": "P2_far_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.69765625,
+          "relative_player_height": 0.1875
+        },
+        {
+          "frame": 204,
+          "event": "P4_near_deuce_forehand_volley_cc_non-serve_win",
+          "relative_player_width": 0.65,
+          "relative_player_height": 0.375
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_3575_3734",
+      "num_frames": 159,
+      "events": [
+        {
+          "frame": 18,
+          "event": "P3_near_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.5875,
+          "relative_player_height": 0.5972222222222222
+        },
+        {
+          "frame": 38,
+          "event": "P1_far_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.42890625,
+          "relative_player_height": 0.19027777777777777
+        },
+        {
+          "frame": 69,
+          "event": "P3_near_deuce_forehand_lob_dl_non-serve_in",
+          "relative_player_width": 0.928125,
+          "relative_player_height": 0.6972222222222222
+        },
+        {
+          "frame": 99,
+          "event": "P2_far_ad_backhand_smash_cc_non-serve_in",
+          "relative_player_width": 0.67890625,
+          "relative_player_height": 0.22083333333333333
+        },
+        {
+          "frame": 121,
+          "event": "P4_near_ad_forehand_swing_io_non-serve_win",
+          "relative_player_width": 0.45,
+          "relative_player_height": 0.4583333333333333
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_4005_4074",
+      "num_frames": 69,
+      "events": [
+        {
+          "frame": 21,
+          "event": "P3_near_ad_forehand_serve_w_i-formation_win",
+          "relative_player_width": 0.45234375,
+          "relative_player_height": 0.5180555555555556
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_4227_4321",
+      "num_frames": 94,
+      "events": [
+        {
+          "frame": 16,
+          "event": "P3_near_deuce_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.5328125,
+          "relative_player_height": 0.5958333333333333
+        },
+        {
+          "frame": 35,
+          "event": "P1_far_deuce_backhand_return_ii_non-serve_in",
+          "relative_player_width": 0.43515625,
+          "relative_player_height": 0.19583333333333333
+        },
+        {
+          "frame": 46,
+          "event": "P4_near_ad_forehand_volley_io_non-serve_err",
+          "relative_player_width": 0.42890625,
+          "relative_player_height": 0.3625
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_4495_4778",
+      "num_frames": 283,
+      "events": [
+        {
+          "frame": 16,
+          "event": "P1_far_deuce_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.47421875,
+          "relative_player_height": 0.13055555555555556
+        },
+        {
+          "frame": 33,
+          "event": "P3_near_deuce_forehand_return_dl_non-serve_in",
+          "relative_player_width": 0.796875,
+          "relative_player_height": 0.6375
+        },
+        {
+          "frame": 95,
+          "event": "P1_far_ad_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.6765625,
+          "relative_player_height": 0.20416666666666666
+        },
+        {
+          "frame": 121,
+          "event": "P3_near_deuce_backhand_swing_ii_non-serve_in",
+          "relative_player_width": 0.51953125,
+          "relative_player_height": 0.6666666666666666
+        },
+        {
+          "frame": 148,
+          "event": "P1_far_ad_forehand_lob_io_non-serve_in",
+          "relative_player_width": 0.58984375,
+          "relative_player_height": 0.21388888888888888
+        },
+        {
+          "frame": 212,
+          "event": "P3_near_ad_backhand_lob_dl_non-serve_in",
+          "relative_player_width": 0.06015625,
+          "relative_player_height": 0.7083333333333334
+        },
+        {
+          "frame": 242,
+          "event": "P2_far_deuce_forehand_smash_cc_non-serve_win",
+          "relative_player_width": 0.378125,
+          "relative_player_height": 0.2652777777777778
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_5017_5082",
+      "num_frames": 65,
+      "events": [
+        {
+          "frame": 13,
+          "event": "P4_far_deuce_forehand_serve_w_conventional_in",
+          "relative_player_width": 0.45234375,
+          "relative_player_height": 0.15138888888888888
+        },
+        {
+          "frame": 31,
+          "event": "P1_near_deuce_forehand_return_dl_non-serve_win",
+          "relative_player_width": 0.81875,
+          "relative_player_height": 0.6569444444444444
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_5232_5511",
+      "num_frames": 279,
+      "events": [
+        {
+          "frame": 18,
+          "event": "P4_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.534375,
+          "relative_player_height": 0.1736111111111111
+        },
+        {
+          "frame": 43,
+          "event": "P2_near_ad_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.3078125,
+          "relative_player_height": 0.5875
+        },
+        {
+          "frame": 77,
+          "event": "P4_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.33671875,
+          "relative_player_height": 0.22777777777777777
+        },
+        {
+          "frame": 110,
+          "event": "P2_near_ad_forehand_lob_io_non-serve_in",
+          "relative_player_width": 0.2328125,
+          "relative_player_height": 0.7194444444444444
+        },
+        {
+          "frame": 149,
+          "event": "P3_far_ad_forehand_smash_io_non-serve_in",
+          "relative_player_width": 0.56328125,
+          "relative_player_height": 0.1986111111111111
+        },
+        {
+          "frame": 187,
+          "event": "P2_near_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.24296875,
+          "relative_player_height": 0.6347222222222222
+        },
+        {
+          "frame": 213,
+          "event": "P3_far_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.73515625,
+          "relative_player_height": 0.23194444444444445
+        },
+        {
+          "frame": 234,
+          "event": "P2_near_ad_backhand_volley_dl_non-serve_err",
+          "relative_player_width": 0.4,
+          "relative_player_height": 0.5069444444444444
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_5706_5937",
+      "num_frames": 231,
+      "events": [
+        {
+          "frame": 11,
+          "event": "P4_far_deuce_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.48515625,
+          "relative_player_height": 0.12083333333333333
+        },
+        {
+          "frame": 29,
+          "event": "P1_near_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.80625,
+          "relative_player_height": 0.6597222222222222
+        },
+        {
+          "frame": 46,
+          "event": "P4_far_deuce_forehand_volley_dl_non-serve_in",
+          "relative_player_width": 0.4046875,
+          "relative_player_height": 0.30833333333333335
+        },
+        {
+          "frame": 88,
+          "event": "P2_near_ad_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.23671875,
+          "relative_player_height": 0.6138888888888889
+        },
+        {
+          "frame": 101,
+          "event": "P4_far_deuce_forehand_volley_dl_non-serve_in",
+          "relative_player_width": 0.3421875,
+          "relative_player_height": 0.3333333333333333
+        },
+        {
+          "frame": 136,
+          "event": "P2_near_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.42734375,
+          "relative_player_height": 0.6027777777777777
+        },
+        {
+          "frame": 162,
+          "event": "P4_far_deuce_backhand_swing_io_non-serve_in",
+          "relative_player_width": 0.47265625,
+          "relative_player_height": 0.3388888888888889
+        },
+        {
+          "frame": 190,
+          "event": "P1_near_deuce_forehand_smash_cc_non-serve_in",
+          "relative_player_width": 0.60234375,
+          "relative_player_height": 0.5125
+        },
+        {
+          "frame": 200,
+          "event": "P4_far_deuce_backhand_volley_ii_non-serve_win",
+          "relative_player_width": 0.46171875,
+          "relative_player_height": 0.33194444444444443
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_6111_6222",
+      "num_frames": 111,
+      "events": [
+        {
+          "frame": 11,
+          "event": "P2_near_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.62265625,
+          "relative_player_height": 0.5041666666666667
+        },
+        {
+          "frame": 33,
+          "event": "P3_far_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.40625,
+          "relative_player_height": 0.19166666666666668
+        },
+        {
+          "frame": 66,
+          "event": "P2_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.72890625,
+          "relative_player_height": 0.6375
+        },
+        {
+          "frame": 77,
+          "event": "P4_far_deuce_forehand_volley_dl_non-serve_win",
+          "relative_player_width": 0.4703125,
+          "relative_player_height": 0.3527777777777778
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_6398_6719",
+      "num_frames": 321,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P3_near_deuce_forehand_serve_w_conventional_in",
+          "relative_player_width": 0.60859375,
+          "relative_player_height": 0.5402777777777777
+        },
+        {
+          "frame": 38,
+          "event": "P1_far_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.309375,
+          "relative_player_height": 0.2013888888888889
+        },
+        {
+          "frame": 66,
+          "event": "P3_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.73046875,
+          "relative_player_height": 0.6527777777777778
+        },
+        {
+          "frame": 108,
+          "event": "P1_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.4328125,
+          "relative_player_height": 0.17222222222222222
+        },
+        {
+          "frame": 139,
+          "event": "P3_near_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.6421875,
+          "relative_player_height": 0.7861111111111111
+        },
+        {
+          "frame": 177,
+          "event": "P2_far_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.584375,
+          "relative_player_height": 0.20833333333333334
+        },
+        {
+          "frame": 207,
+          "event": "P3_near_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.66484375,
+          "relative_player_height": 0.7847222222222222
+        },
+        {
+          "frame": 241,
+          "event": "P2_far_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.62265625,
+          "relative_player_height": 0.2013888888888889
+        },
+        {
+          "frame": 270,
+          "event": "P3_near_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.7421875,
+          "relative_player_height": 0.7861111111111111
+        },
+        {
+          "frame": 286,
+          "event": "P1_far_ad_backhand_volley_cc_non-serve_win",
+          "relative_player_width": 0.6421875,
+          "relative_player_height": 0.3333333333333333
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_6885_7005",
+      "num_frames": 120,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P3_near_ad_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.4625,
+          "relative_player_height": 0.5430555555555555
+        },
+        {
+          "frame": 41,
+          "event": "P2_far_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.675,
+          "relative_player_height": 0.20972222222222223
+        },
+        {
+          "frame": 55,
+          "event": "P4_near_deuce_backhand_smash_io_non-serve_in",
+          "relative_player_width": 0.49765625,
+          "relative_player_height": 0.3347222222222222
+        },
+        {
+          "frame": 67,
+          "event": "P1_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.4,
+          "relative_player_height": 0.24583333333333332
+        },
+        {
+          "frame": 77,
+          "event": "P4_near_ad_backhand_smash_dl_non-serve_win",
+          "relative_player_width": 0.43359375,
+          "relative_player_height": 0.32222222222222224
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_7111_7253",
+      "num_frames": 142,
+      "events": [
+        {
+          "frame": 19,
+          "event": "P3_near_ad_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.471875,
+          "relative_player_height": 0.6111111111111112
+        },
+        {
+          "frame": 39,
+          "event": "P2_far_ad_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.65703125,
+          "relative_player_height": 0.17777777777777778
+        },
+        {
+          "frame": 67,
+          "event": "P3_near_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.6703125,
+          "relative_player_height": 0.7138888888888889
+        },
+        {
+          "frame": 99,
+          "event": "P2_far_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.58046875,
+          "relative_player_height": 0.23194444444444445
+        },
+        {
+          "frame": 110,
+          "event": "P4_near_deuce_forehand_volley_cc_non-serve_win",
+          "relative_player_width": 0.58828125,
+          "relative_player_height": 0.4013888888888889
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_7433_7540",
+      "num_frames": 107,
+      "events": [
+        {
+          "frame": 16,
+          "event": "P3_near_deuce_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.5296875,
+          "relative_player_height": 0.5444444444444444
+        },
+        {
+          "frame": 34,
+          "event": "P1_far_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.3453125,
+          "relative_player_height": 0.19305555555555556
+        },
+        {
+          "frame": 65,
+          "event": "P3_near_deuce_forehand_swing_cc_non-serve_win",
+          "relative_player_width": 0.7890625,
+          "relative_player_height": 0.6194444444444445
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_7714_7799",
+      "num_frames": 85,
+      "events": [
+        {
+          "frame": 19,
+          "event": "P4_far_ad_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.528125,
+          "relative_player_height": 0.1597222222222222
+        },
+        {
+          "frame": 41,
+          "event": "P2_near_ad_backhand_return_cc_non-serve_err",
+          "relative_player_width": 0.20234375,
+          "relative_player_height": 0.6236111111111111
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_7856_8057",
+      "num_frames": 201,
+      "events": [
+        {
+          "frame": 18,
+          "event": "P4_far_deuce_forehand_serve_w_conventional_in",
+          "relative_player_width": 0.45703125,
+          "relative_player_height": 0.14305555555555555
+        },
+        {
+          "frame": 37,
+          "event": "P1_near_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.79140625,
+          "relative_player_height": 0.6458333333333334
+        },
+        {
+          "frame": 54,
+          "event": "P4_far_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.4546875,
+          "relative_player_height": 0.26666666666666666
+        },
+        {
+          "frame": 86,
+          "event": "P1_near_deuce_forehand_lob_dl_non-serve_in",
+          "relative_player_width": 0.703125,
+          "relative_player_height": 0.6666666666666666
+        },
+        {
+          "frame": 119,
+          "event": "P3_far_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.6609375,
+          "relative_player_height": 0.3013888888888889
+        },
+        {
+          "frame": 163,
+          "event": "P1_near_deuce_forehand_swing_cc_non-serve_win",
+          "relative_player_width": 0.76171875,
+          "relative_player_height": 0.5375
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_8225_8371",
+      "num_frames": 146,
+      "events": [
+        {
+          "frame": 18,
+          "event": "P4_far_deuce_forehand_serve_t_i-formation_in",
+          "relative_player_width": 0.471875,
+          "relative_player_height": 0.14722222222222223
+        },
+        {
+          "frame": 34,
+          "event": "P1_near_deuce_backhand_return_ii_non-serve_in",
+          "relative_player_width": 0.615625,
+          "relative_player_height": 0.7083333333333334
+        },
+        {
+          "frame": 53,
+          "event": "P4_far_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.60703125,
+          "relative_player_height": 0.31666666666666665
+        },
+        {
+          "frame": 105,
+          "event": "P1_near_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.5390625,
+          "relative_player_height": 0.43472222222222223
+        },
+        {
+          "frame": 116,
+          "event": "P4_far_ad_backhand_volley_dl_non-serve_err",
+          "relative_player_width": 0.57890625,
+          "relative_player_height": 0.3138888888888889
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_8595_8648",
+      "num_frames": 53,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P3_far_ad_forehand_serve_w_i-formation_win",
+          "relative_player_width": 0.51796875,
+          "relative_player_height": 0.17083333333333334
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_8719_8824",
+      "num_frames": 105,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P3_far_deuce_forehand_serve_t_i-formation_in",
+          "relative_player_width": 0.4796875,
+          "relative_player_height": 0.13472222222222222
+        },
+        {
+          "frame": 36,
+          "event": "P1_near_deuce_backhand_return_ii_non-serve_in",
+          "relative_player_width": 0.5875,
+          "relative_player_height": 0.7041666666666667
+        },
+        {
+          "frame": 58,
+          "event": "P4_far_ad_forehand_smash_ii_non-serve_win",
+          "relative_player_width": 0.51953125,
+          "relative_player_height": 0.3013888888888889
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_8944_9226",
+      "num_frames": 282,
+      "events": [
+        {
+          "frame": 14,
+          "event": "P4_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.5359375,
+          "relative_player_height": 0.19444444444444445
+        },
+        {
+          "frame": 30,
+          "event": "P2_near_ad_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.290625,
+          "relative_player_height": 0.6805555555555556
+        },
+        {
+          "frame": 48,
+          "event": "P4_far_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.3828125,
+          "relative_player_height": 0.3055555555555556
+        },
+        {
+          "frame": 89,
+          "event": "P2_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.5296875,
+          "relative_player_height": 0.5611111111111111
+        },
+        {
+          "frame": 102,
+          "event": "P4_far_deuce_forehand_volley_dl_non-serve_in",
+          "relative_player_width": 0.378125,
+          "relative_player_height": 0.3055555555555556
+        },
+        {
+          "frame": 133,
+          "event": "P1_near_ad_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.3515625,
+          "relative_player_height": 0.6611111111111111
+        },
+        {
+          "frame": 151,
+          "event": "P4_far_deuce_forehand_volley_dl_non-serve_in",
+          "relative_player_width": 0.40625,
+          "relative_player_height": 0.35694444444444445
+        },
+        {
+          "frame": 177,
+          "event": "P1_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.50546875,
+          "relative_player_height": 0.7069444444444445
+        },
+        {
+          "frame": 213,
+          "event": "P4_far_deuce_forehand_smash_dl_non-serve_in",
+          "relative_player_width": 0.39921875,
+          "relative_player_height": 0.18888888888888888
+        },
+        {
+          "frame": 232,
+          "event": "P1_near_ad_backhand_swing_cc_non-serve_err",
+          "relative_player_width": 0.3453125,
+          "relative_player_height": 0.7472222222222222
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_9363_9483",
+      "num_frames": 120,
+      "events": [
+        {
+          "frame": 15,
+          "event": "P4_near_deuce_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.5484375,
+          "relative_player_height": 0.5402777777777777
+        },
+        {
+          "frame": 38,
+          "event": "P1_far_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.39921875,
+          "relative_player_height": 0.19166666666666668
+        },
+        {
+          "frame": 54,
+          "event": "P4_near_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.5546875,
+          "relative_player_height": 0.5055555555555555
+        },
+        {
+          "frame": 87,
+          "event": "P1_far_deuce_forehand_swing_dl_non-serve_win",
+          "relative_player_width": 0.378125,
+          "relative_player_height": 0.2388888888888889
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_9675_9764",
+      "num_frames": 89,
+      "events": [
+        {
+          "frame": 14,
+          "event": "P1_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.52421875,
+          "relative_player_height": 0.15416666666666667
+        },
+        {
+          "frame": 32,
+          "event": "P4_near_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.31015625,
+          "relative_player_height": 0.6055555555555555
+        },
+        {
+          "frame": 46,
+          "event": "P2_far_ad_backhand_volley_dl_non-serve_win",
+          "relative_player_width": 0.5375,
+          "relative_player_height": 0.3527777777777778
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_9907_9963",
+      "num_frames": 56,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P3_near_ad_forehand_serve_w_i-formation_win",
+          "relative_player_width": 0.47578125,
+          "relative_player_height": 0.5555555555555556
+        }
+      ]
+    },
+    {
+      "video_id": "Bopanna_&_Ebden_vs_Koolhof_&_Skupski_Indian_Wells_2023_Doubles_Final_Highlights_10140_10220",
+      "num_frames": 80,
+      "events": [
+        {
+          "frame": 10,
+          "event": "P3_far_ad_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.51796875,
+          "relative_player_height": 0.175
+        },
+        {
+          "frame": 26,
+          "event": "P2_near_ad_backhand_return_dl_non-serve_in",
+          "relative_player_width": 0.21796875,
+          "relative_player_height": 0.6513888888888889
+        },
+        {
+          "frame": 42,
+          "event": "P4_far_deuce_forehand_smash_cc_non-serve_win",
+          "relative_player_width": 0.4953125,
+          "relative_player_height": 0.3333333333333333
+        }
+      ]
+    }
+  ]
+}

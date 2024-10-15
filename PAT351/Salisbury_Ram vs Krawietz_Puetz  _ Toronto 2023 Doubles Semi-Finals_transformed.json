@@ -1,0 +1,648 @@
+{
+  "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals",
+  "fps": 25,
+  "player_descriptons": {
+    "p1": "Salisbury (white shirt)",
+    "p2": "Ram (red shirt)",
+    "p3": "Krawietz (black shirt, cap)",
+    "p4": "Puetz (black shirt, no cap)"
+  },
+  "player_hands": {
+    "p1": "Right",
+    "p2": "Right",
+    "p3": "Right",
+    "p4": "Right"
+  },
+  "rallies": [
+    {
+      "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals_97_267",
+      "num_frames": 170,
+      "events": [
+        {
+          "frame": 18,
+          "event": "P3_far_deuce_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.4765625,
+          "relative_player_height": 0.2
+        },
+        {
+          "frame": 36,
+          "event": "P1_near_deuce_backhand_return_ii_non-serve_in",
+          "relative_player_width": 0.61640625,
+          "relative_player_height": 0.6638888888888889
+        },
+        {
+          "frame": 50,
+          "event": "P4_far_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.59375,
+          "relative_player_height": 0.33055555555555555
+        },
+        {
+          "frame": 89,
+          "event": "P1_near_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.7953125,
+          "relative_player_height": 0.6416666666666667
+        },
+        {
+          "frame": 103,
+          "event": "P3_far_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.6984375,
+          "relative_player_height": 0.3277777777777778
+        },
+        {
+          "frame": 132,
+          "event": "P1_near_deuce_forehand_smash_dl_non-serve_win",
+          "relative_player_width": 0.6578125,
+          "relative_player_height": 0.47638888888888886
+        }
+      ]
+    },
+    {
+      "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals_339_429",
+      "num_frames": 90,
+      "events": [
+        {
+          "frame": 18,
+          "event": "P3_far_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.56484375,
+          "relative_player_height": 0.2152777777777778
+        },
+        {
+          "frame": 33,
+          "event": "P2_near_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.2265625,
+          "relative_player_height": 0.6638888888888889
+        },
+        {
+          "frame": 60,
+          "event": "P3_far_ad_backhand_swing_dl_non-serve_err",
+          "relative_player_width": 0.67734375,
+          "relative_player_height": 0.28888888888888886
+        }
+      ]
+    },
+    {
+      "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals_543_627",
+      "num_frames": 84,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P1_near_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.34296875,
+          "relative_player_height": 0.6694444444444444
+        },
+        {
+          "frame": 40,
+          "event": "P4_far_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.62578125,
+          "relative_player_height": 0.2222222222222222
+        },
+        {
+          "frame": 51,
+          "event": "P2_near_deuce_backhand_smash_io_non-serve_win",
+          "relative_player_width": 0.521875,
+          "relative_player_height": 0.48194444444444445
+        }
+      ]
+    },
+    {
+      "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals_722_858",
+      "num_frames": 136,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P2_far_ad_forehand_serve_b_i-formation_in",
+          "relative_player_width": 0.53125,
+          "relative_player_height": 0.18611111111111112
+        },
+        {
+          "frame": 36,
+          "event": "P4_near_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.253125,
+          "relative_player_height": 0.7375
+        },
+        {
+          "frame": 57,
+          "event": "P2_far_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.6125,
+          "relative_player_height": 0.2763888888888889
+        },
+        {
+          "frame": 89,
+          "event": "P3_near_deuce_forehand_swing_cc_non-serve_win",
+          "relative_player_width": 0.60390625,
+          "relative_player_height": 0.6916666666666667
+        }
+      ]
+    },
+    {
+      "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals_988_1297",
+      "num_frames": 309,
+      "events": [
+        {
+          "frame": 14,
+          "event": "P2_far_deuce_forehand_serve_t_conventional_in",
+          "relative_player_width": 0.47890625,
+          "relative_player_height": 0.21944444444444444
+        },
+        {
+          "frame": 35,
+          "event": "P3_near_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.53046875,
+          "relative_player_height": 0.6902777777777778
+        },
+        {
+          "frame": 49,
+          "event": "P1_far_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.42734375,
+          "relative_player_height": 0.3416666666666667
+        },
+        {
+          "frame": 63,
+          "event": "P4_near_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.59453125,
+          "relative_player_height": 0.5291666666666667
+        },
+        {
+          "frame": 81,
+          "event": "P1_far_deuce_backhand_volley_ii_non-serve_in",
+          "relative_player_width": 0.4453125,
+          "relative_player_height": 0.3277777777777778
+        },
+        {
+          "frame": 115,
+          "event": "P3_near_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.42578125,
+          "relative_player_height": 0.7888888888888889
+        },
+        {
+          "frame": 135,
+          "event": "P2_far_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.64765625,
+          "relative_player_height": 0.3194444444444444
+        },
+        {
+          "frame": 153,
+          "event": "P4_near_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.68046875,
+          "relative_player_height": 0.5375
+        },
+        {
+          "frame": 168,
+          "event": "P1_far_deuce_backhand_volley_ii_non-serve_in",
+          "relative_player_width": 0.47265625,
+          "relative_player_height": 0.3138888888888889
+        },
+        {
+          "frame": 193,
+          "event": "P3_near_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.34296875,
+          "relative_player_height": 0.725
+        },
+        {
+          "frame": 211,
+          "event": "P2_far_ad_forehand_volley_io_non-serve_in",
+          "relative_player_width": 0.58046875,
+          "relative_player_height": 0.31805555555555554
+        },
+        {
+          "frame": 241,
+          "event": "P3_near_ad_forehand_swing_ii_non-serve_in",
+          "relative_player_width": 0.25234375,
+          "relative_player_height": 0.7041666666666667
+        },
+        {
+          "frame": 259,
+          "event": "P2_far_deuce_forehand_lob_cc_non-serve_err",
+          "relative_player_width": 0.4703125,
+          "relative_player_height": 0.33055555555555555
+        }
+      ]
+    },
+    {
+      "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals_1424_1569",
+      "num_frames": 145,
+      "events": [
+        {
+          "frame": 15,
+          "event": "P4_near_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.3421875,
+          "relative_player_height": 0.6611111111111111
+        },
+        {
+          "frame": 33,
+          "event": "P2_far_ad_forehand_return_ii_non-serve_in",
+          "relative_player_width": 0.6546875,
+          "relative_player_height": 0.24583333333333332
+        },
+        {
+          "frame": 112,
+          "event": "P4_near_deuce_forehand_smash_cc_non-serve_win",
+          "relative_player_width": 0.84765625,
+          "relative_player_height": 0.7152777777777778
+        }
+      ]
+    },
+    {
+      "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals_1719_2023",
+      "num_frames": 304,
+      "events": [
+        {
+          "frame": 14,
+          "event": "P4_near_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.65234375,
+          "relative_player_height": 0.6958333333333333
+        },
+        {
+          "frame": 31,
+          "event": "P1_far_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.3453125,
+          "relative_player_height": 0.24583333333333332
+        },
+        {
+          "frame": 60,
+          "event": "P4_near_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.71796875,
+          "relative_player_height": 0.5736111111111111
+        },
+        {
+          "frame": 87,
+          "event": "P2_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.4984375,
+          "relative_player_height": 0.2611111111111111
+        },
+        {
+          "frame": 106,
+          "event": "P3_near_ad_backhand_volley_cc_non-serve_in",
+          "relative_player_width": 0.40546875,
+          "relative_player_height": 0.525
+        },
+        {
+          "frame": 123,
+          "event": "P2_far_ad_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.66640625,
+          "relative_player_height": 0.29305555555555557
+        },
+        {
+          "frame": 145,
+          "event": "P4_near_deuce_backhand_volley_io_non-serve_in",
+          "relative_player_width": 0.6734375,
+          "relative_player_height": 0.525
+        },
+        {
+          "frame": 183,
+          "event": "P1_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.32109375,
+          "relative_player_height": 0.3055555555555556
+        },
+        {
+          "frame": 197,
+          "event": "P3_near_ad_backhand_volley_cc_non-serve_in",
+          "relative_player_width": 0.29140625,
+          "relative_player_height": 0.5041666666666667
+        },
+        {
+          "frame": 226,
+          "event": "P2_far_ad_forehand_swing_io_non-serve_in",
+          "relative_player_width": 0.59609375,
+          "relative_player_height": 0.2763888888888889
+        },
+        {
+          "frame": 242,
+          "event": "P3_near_ad_forehand_lob_ii_non-serve_in",
+          "relative_player_width": 0.4453125,
+          "relative_player_height": 0.5402777777777777
+        },
+        {
+          "frame": 261,
+          "event": "P1_far_deuce_forehand_lob_dl_non-serve_win",
+          "relative_player_width": 0.4125,
+          "relative_player_height": 0.31805555555555554
+        }
+      ]
+    },
+    {
+      "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals_2159_2244",
+      "num_frames": 85,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P1_near_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.5578125,
+          "relative_player_height": 0.6625
+        },
+        {
+          "frame": 29,
+          "event": "P3_far_deuce_backhand_return_ii_non-serve_in",
+          "relative_player_width": 0.409375,
+          "relative_player_height": 0.20972222222222223
+        },
+        {
+          "frame": 41,
+          "event": "P2_near_ad_backhand_smash_dl_non-serve_win",
+          "relative_player_width": 0.4828125,
+          "relative_player_height": 0.4986111111111111
+        }
+      ]
+    },
+    {
+      "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals_2380_2458",
+      "num_frames": 78,
+      "events": [
+        {
+          "frame": 10,
+          "event": "P3_far_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.4515625,
+          "relative_player_height": 0.2222222222222222
+        },
+        {
+          "frame": 28,
+          "event": "P1_near_deuce_forehand_return_dl_non-serve_in",
+          "relative_player_width": 0.72109375,
+          "relative_player_height": 0.7763888888888889
+        },
+        {
+          "frame": 40,
+          "event": "P4_far_ad_backhand_volley_cc_non-serve_win",
+          "relative_player_width": 0.59296875,
+          "relative_player_height": 0.3388888888888889
+        }
+      ]
+    },
+    {
+      "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals_2713_2854",
+      "num_frames": 141,
+      "events": [
+        {
+          "frame": 18,
+          "event": "P4_near_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.66640625,
+          "relative_player_height": 0.6666666666666666
+        },
+        {
+          "frame": 35,
+          "event": "P1_far_deuce_backhand_return_io_non-serve_in",
+          "relative_player_width": 0.36171875,
+          "relative_player_height": 0.24444444444444444
+        },
+        {
+          "frame": 55,
+          "event": "P4_near_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.621875,
+          "relative_player_height": 0.5930555555555556
+        },
+        {
+          "frame": 97,
+          "event": "P2_far_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.49453125,
+          "relative_player_height": 0.18888888888888888
+        },
+        {
+          "frame": 106,
+          "event": "P4_near_deuce_forehand_volley_cc_non-serve_win",
+          "relative_player_width": 0.6578125,
+          "relative_player_height": 0.6
+        }
+      ]
+    },
+    {
+      "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals_2965_3053",
+      "num_frames": 88,
+      "events": [
+        {
+          "frame": 18,
+          "event": "P3_far_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.57890625,
+          "relative_player_height": 0.20833333333333334
+        },
+        {
+          "frame": 34,
+          "event": "P2_near_ad_backhand_return_cc_non-serve_in",
+          "relative_player_width": 0.2828125,
+          "relative_player_height": 0.7180555555555556
+        },
+        {
+          "frame": 55,
+          "event": "P3_far_ad_backhand_swing_dl_non-serve_win",
+          "relative_player_width": 0.625,
+          "relative_player_height": 0.3125
+        }
+      ]
+    },
+    {
+      "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals_3149_3286",
+      "num_frames": 137,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P3_far_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.596875,
+          "relative_player_height": 0.19722222222222222
+        },
+        {
+          "frame": 37,
+          "event": "P2_near_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.3453125,
+          "relative_player_height": 0.6861111111111111
+        },
+        {
+          "frame": 57,
+          "event": "P3_far_ad_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.6265625,
+          "relative_player_height": 0.30833333333333335
+        },
+        {
+          "frame": 98,
+          "event": "P2_near_deuce_forehand_lob_cc_non-serve_win",
+          "relative_player_width": 0.67109375,
+          "relative_player_height": 0.7152777777777778
+        }
+      ]
+    },
+    {
+      "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals_3473_3634",
+      "num_frames": 161,
+      "events": [
+        {
+          "frame": 20,
+          "event": "P1_far_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.4625,
+          "relative_player_height": 0.19444444444444445
+        },
+        {
+          "frame": 37,
+          "event": "P3_near_deuce_forehand_return_dl_non-serve_in",
+          "relative_player_width": 0.72734375,
+          "relative_player_height": 0.7458333333333333
+        },
+        {
+          "frame": 64,
+          "event": "P1_far_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.609375,
+          "relative_player_height": 0.26805555555555555
+        },
+        {
+          "frame": 99,
+          "event": "P3_near_deuce_forehand_swing_cc_non-serve_in",
+          "relative_player_width": 0.690625,
+          "relative_player_height": 0.7666666666666667
+        },
+        {
+          "frame": 115,
+          "event": "P2_far_deuce_forehand_volley_dl_non-serve_win",
+          "relative_player_width": 0.42890625,
+          "relative_player_height": 0.325
+        }
+      ]
+    },
+    {
+      "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals_3735_3866",
+      "num_frames": 131,
+      "events": [
+        {
+          "frame": 19,
+          "event": "P4_near_deuce_forehand_serve_w_conventional_in",
+          "relative_player_width": 0.6453125,
+          "relative_player_height": 0.7138888888888889
+        },
+        {
+          "frame": 37,
+          "event": "P1_far_deuce_forehand_return_dl_non-serve_in",
+          "relative_player_width": 0.29765625,
+          "relative_player_height": 0.21944444444444444
+        },
+        {
+          "frame": 54,
+          "event": "P3_near_ad_forehand_smash_ii_non-serve_in",
+          "relative_player_width": 0.38671875,
+          "relative_player_height": 0.4888888888888889
+        },
+        {
+          "frame": 95,
+          "event": "P2_far_deuce_forehand_swing_cc_non-serve_win",
+          "relative_player_width": 0.43359375,
+          "relative_player_height": 0.18888888888888888
+        }
+      ]
+    },
+    {
+      "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals_4010_4224",
+      "num_frames": 214,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P4_near_deuce_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.64765625,
+          "relative_player_height": 0.6763888888888889
+        },
+        {
+          "frame": 29,
+          "event": "P1_far_deuce_forehand_return_dl_non-serve_in",
+          "relative_player_width": 0.34921875,
+          "relative_player_height": 0.22777777777777777
+        },
+        {
+          "frame": 75,
+          "event": "P4_near_ad_backhand_volley_dl_non-serve_in",
+          "relative_player_width": 0.3328125,
+          "relative_player_height": 0.6444444444444445
+        },
+        {
+          "frame": 109,
+          "event": "P1_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.39296875,
+          "relative_player_height": 0.25555555555555554
+        },
+        {
+          "frame": 124,
+          "event": "P3_near_ad_backhand_volley_cc_non-serve_in",
+          "relative_player_width": 0.46015625,
+          "relative_player_height": 0.5222222222222223
+        },
+        {
+          "frame": 173,
+          "event": "P2_far_ad_forehand_swing_ii_non-serve_win",
+          "relative_player_width": 0.6109375,
+          "relative_player_height": 0.2569444444444444
+        }
+      ]
+    },
+    {
+      "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals_4335_4489",
+      "num_frames": 154,
+      "events": [
+        {
+          "frame": 12,
+          "event": "P4_near_deuce_forehand_serve_w_i-formation_in",
+          "relative_player_width": 0.61953125,
+          "relative_player_height": 0.6722222222222223
+        },
+        {
+          "frame": 30,
+          "event": "P1_far_deuce_forehand_return_cc_non-serve_in",
+          "relative_player_width": 0.36796875,
+          "relative_player_height": 0.2388888888888889
+        },
+        {
+          "frame": 50,
+          "event": "P4_near_deuce_forehand_volley_cc_non-serve_in",
+          "relative_player_width": 0.57890625,
+          "relative_player_height": 0.5513888888888889
+        },
+        {
+          "frame": 76,
+          "event": "P1_far_deuce_forehand_swing_dl_non-serve_in",
+          "relative_player_width": 0.384375,
+          "relative_player_height": 0.2986111111111111
+        },
+        {
+          "frame": 107,
+          "event": "P3_near_ad_forehand_smash_ii_non-serve_win",
+          "relative_player_width": 0.3421875,
+          "relative_player_height": 0.5319444444444444
+        }
+      ]
+    },
+    {
+      "video_id": "Salisbury_Ram vs Krawietz_Puetz  _ Toronto 2023 Doubles Semi-Finals_4562_4732",
+      "num_frames": 170,
+      "events": [
+        {
+          "frame": 18,
+          "event": "P2_near_ad_forehand_serve_b_conventional_in",
+          "relative_player_width": 0.42890625,
+          "relative_player_height": 0.6638888888888889
+        },
+        {
+          "frame": 36,
+          "event": "P4_far_ad_forehand_return_io_non-serve_in",
+          "relative_player_width": 0.64140625,
+          "relative_player_height": 0.24444444444444444
+        },
+        {
+          "frame": 60,
+          "event": "P2_near_ad_backhand_swing_cc_non-serve_in",
+          "relative_player_width": 0.4125,
+          "relative_player_height": 0.6388888888888888
+        },
+        {
+          "frame": 102,
+          "event": "P4_far_ad_backhand_swing_dl_non-serve_in",
+          "relative_player_width": 0.66484375,
+          "relative_player_height": 0.2263888888888889
+        },
+        {
+          "frame": 115,
+          "event": "P1_near_deuce_backhand_volley_ii_non-serve_in",
+          "relative_player_width": 0.6328125,
+          "relative_player_height": 0.5138888888888888
+        },
+        {
+          "frame": 140,
+          "event": "P4_far_ad_backhand_swing_dl_non-serve_err",
+          "relative_player_width": 0.6171875,
+          "relative_player_height": 0.25555555555555554
+        }
+      ]
+    }
+  ]
+}

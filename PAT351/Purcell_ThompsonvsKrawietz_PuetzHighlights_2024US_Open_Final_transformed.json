@@ -1,11 +1,17 @@
 {
   "video_id": "Purcell_ThompsonvsKrawietz_PuetzHighlights_2024US_Open_Final",
-  "fps": 60,
+  "fps": 59,
   "player_descriptons": {
     "p1": "orange",
     "p2": "yellow cap",
     "p3": "black shoes",
     "p4": "white shoes"
+  },
+  "player_hands": {
+    "p1": "Right",
+    "p2": "Right",
+    "p3": "Right",
+    "p4": "Right"
   },
   "rallies": [
     {
@@ -305,48 +311,6 @@
           "event": "P1_near_deuce_forehand_serve_w_conventional_win",
           "relative_player_width": 0.5421875,
           "relative_player_height": 0.5208333333333334
-        }
-      ]
-    },
-    {
-      "video_id": "Purcell_ThompsonvsKrawietz_PuetzHighlights_2024US_Open_Final_6942_7226",
-      "num_frames": 284,
-      "events": [
-        {
-          "frame": 13,
-          "event": "P1_far_ad_forehand_serve_t_i-formation_err",
-          "relative_player_width": 0.50078125,
-          "relative_player_height": 0.13055555555555556
-        },
-	{
-          "frame": 14,
-          "event": "P1_far_ad_forehand_second-serve_t_i-formation_in",
-          "relative_player_width": 0.50078125,
-          "relative_player_height": 0.13055555555555556
-        },
-        {
-          "frame": 61,
-          "event": "P4_near_ad_forehand_return_ii_non-serve_in",
-          "relative_player_width": 0.42265625,
-          "relative_player_height": 0.7430555555555556
-        },
-        {
-          "frame": 170,
-          "event": "P1_far_deuce_forehand_smash_dl_non-serve_in",
-          "relative_player_width": 0.47421875,
-          "relative_player_height": 0.2111111111111111
-        },
-        {
-          "frame": 208,
-          "event": "P4_near_ad_forehand_swing_ii_non-serve_in",
-          "relative_player_width": 0.39765625,
-          "relative_player_height": 0.7416666666666667
-        },
-        {
-          "frame": 247,
-          "event": "P2_far_deuce_forehand_volley_cc_non-serve_win",
-          "relative_player_width": 0.45625,
-          "relative_player_height": 0.36527777777777776
         }
       ]
     }

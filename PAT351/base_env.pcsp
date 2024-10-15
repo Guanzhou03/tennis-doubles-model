@@ -1,0 +1,85 @@
+// tennis court (current model is with 8 regions, later model will be 16 regions with more strategies)
+//     *****
+//  P1      P2
+// de_ct   ad_ct
+// ------+------  baseline
+// |  1  |  2  |
+// |-----|-----|  service line
+// |  3  |  4  |
+// |===========|  net. "9" is representing net error or not able to hit over to opponent court area.
+// |  5  |  6  |
+// |-----|-----|  service line
+// |  7  |  8  |
+// ------+------  baseline
+// ad_ct   de_ct
+//  P4      P3
+//     *****
+
+// P1 and P2 are Team1, P3 and P4 are Team2; 
+// P1 and P3 are players standing at the "deuce" court when they return;
+// P2 and P4 are players standing at the "ad" court when they return;
+
+enum{t1, t2, na};  // t1: Team1, t2: Team2
+enum{C, I, A};  // C: Conventional Formation, I: I-Formation, A: Australian Formation
+
+var turn = na; // who serves current turn
+var t1_form = C;  // team1 formation
+var t2_form = C;  // team2 formation
+var team1 = 0;  // team1 points
+var team2 = 0;  // team2 points
+var won = na;  // winning team
+var order = [1,4,2,3];  // serving order
+var points = 1;  // Max point in the tiebreak game
+
+// =========================================================================
+// Four players have equal chances of serving
+TieBreakGame = pcase {
+ 	1: P1DeServe -> P1_DeServe
+ 	1: P2DeServe -> P2_DeServe
+ 	1: P3DeServe -> P3_DeServe
+ 	1: P4DeServe -> P4_DeServe
+ 	1: P1AdServe -> P1_AdServe
+ 	1: P2AdServe -> P2_AdServe
+ 	1: P3AdServe -> P3_AdServe
+	1: P4AdServe -> P4_AdServe
+};
+// =========================================================================
+
+// Proceed to the next point
+P1_Serve = [won==na && turn==1 && (team1+team2)%2==0]ReadyDeServe -> P1_DeServe [] [won==na && turn==1 && (team1+team2)%2==1]ReadyAdServe -> P1_AdServe;
+P2_Serve = [won==na && turn==2 && (team1+team2)%2==0]ReadyDeServe -> P2_DeServe [] [won==na && turn==2 && (team1+team2)%2==1]ReadyAdServe -> P2_AdServe;
+P3_Serve = [won==na && turn==3 && (team1+team2)%2==0]ReadyDeServe -> P3_DeServe [] [won==na && turn==3 && (team1+team2)%2==1]ReadyAdServe -> P3_AdServe;
+P4_Serve = [won==na && turn==4 && (team1+team2)%2==0]ReadyDeServe -> P4_DeServe [] [won==na && turn==4 && (team1+team2)%2==1]ReadyAdServe -> P4_AdServe;
+NextPt = P1_Serve [] P2_Serve [] P3_Serve [] P4_Serve [] ([won != na] GameOver -> Skip);
+
+// ======================================================================================================================================== \\
+// Only call after serving from deuce court
+#define nextServer(p) {if (order[0]==p) {turn=order[1]}
+					   else {if (order[1]==p) {turn=order[2]}
+					         else {if (order[2]==p) {turn=order[3]}
+							       else {turn=order[0]}}}};
+							       
+#define awardPoint(player, to_opponent) {
+	if (!to_opponent) {
+		if (player == 1 || player == 2) {
+	        team1++;
+	    } else {
+	        team2++;
+	    }
+    }
+    else {
+    	if (player == 1 || player == 2) {
+	        team2++;
+	    } else {
+	        team1++;
+	    }
+    }
+    if (team1 == points || team2 == points) {
+        if (team1 == points) {
+            won = t1;
+        } else {
+            won = t2;
+        }
+    } 
+    if ((team2+team1)%2==1) {turn=call(nextServer, turn);}
+};
