@@ -135,8 +135,6 @@ class FormationModel:
                 # Increment the count for this shot type and successor state
                 shot_counts[shot_type][next_state] += 1
 
-        # Update formation text in the file
-        self.update_formation_text_in_file("env_with_formation.pcsp")
 
         # Merge the new counts into the main counts dictionary
         self.counts_dict = self.merge_dicts(self.counts_dict, shot_counts)
@@ -160,7 +158,11 @@ class FormationModel:
         os.system(f'mono PAT3.Console.exe -pcsp {file_name} {file_name[:-5]}.txt')
         with open(f'{file_name[:-5]}.txt', 'r') as f:
             lines = f.readlines()
-        if len(lines) < 5 or '[' not in lines[3] or ']' not in lines[3]:
+        if "VALID" in lines[3]:
+            return 1
+        elif "NOT valid" in lines[3]:
+            return 0
+        elif len(lines) < 5 or '[' not in lines[3] or ']' not in lines[3]:
             print(lines)
             return -1, -1
         # print(lines[3])
@@ -168,6 +170,8 @@ class FormationModel:
         return (min_max_probs[0] + min_max_probs[1]) / 2
 
     def generate_pcsp(self, env_file):
+        # Update formation text in the file
+        self.update_formation_text_in_file(env_file[1:-1])
         output = f'#include {env_file};\n'
         sorted_keys = sorted(self.counts_dict)
         for key in sorted_keys:

@@ -57,9 +57,10 @@ if __name__ == "__main__":
         modify_env_file_to_let_player_serve(player, filename="testing.pcsp")
         player_winning_chances_with_serve[player] = calculate_player_serve_winning_chance(
             player, model, env_file='"testing.pcsp"')
-    
     one_point_env = '"formation_env.pcsp"'
-    print("Team 1 winning chance in full game: ", simulate_full_game(*player_winning_chances_with_serve.values()))
+    tiebreak_env = '"env_with_formation.pcsp"'
+    print(player_winning_chances_with_serve.values())
+    print("Team 1 winning chance in full game: ", simulate_full_match(*player_winning_chances_with_serve.values()))
     print("Team 1 winning chance in 1-point game: ", model.eval_pcsp(model.generate_pcsp(one_point_env)))
+    print("Team 1 winning chance in 7-point PAT: ", model.eval_pcsp(model.generate_pcsp(tiebreak_env)))
     print("Team 1 winning chance in 7-point tiebreak:", simulate_tiebreak(*player_winning_chances_with_serve.values()))
-    

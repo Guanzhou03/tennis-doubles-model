@@ -13,12 +13,11 @@ def simulate_game(server_win_prob):
         # Check for game win
         if server_points >= 4 or receiver_points >= 4:
             # Simplified game win condition (since we're not using deuce)
-            if abs(server_points - receiver_points) >= 2:
-                break
+            break
     return server_points > receiver_points
 
-def simulate_tiebreak(P1_serve_win, P2_serve_win, P3_serve_win, P4_serve_win):
-    num_matches = 1000
+def simulate_tiebreak(P1_serve_win, P2_serve_win, P3_serve_win, P4_serve_win, once=False):
+    num_matches = 1 if once else 1000
     team1_wins = 0
     error = 0.03
     for match in range(num_matches):
@@ -54,7 +53,7 @@ def simulate_tiebreak(P1_serve_win, P2_serve_win, P3_serve_win, P4_serve_win):
 
     return team1_wins / num_matches  # Return True if Team 1 wins
 
-def simulate_full_game(P1_serve_win, P2_serve_win, P3_serve_win, P4_serve_win):
+def simulate_full_match(P1_serve_win, P2_serve_win, P3_serve_win, P4_serve_win):
     # Simulation parameters
     num_matches = 1000
     team1_wins = 0
@@ -70,12 +69,13 @@ def simulate_full_game(P1_serve_win, P2_serve_win, P3_serve_win, P4_serve_win):
 
         # Randomize which team serves first
         first_serving_team = random.choice([1, 2])
-
+        # print(first_serving_team)
         # Randomize serving order within teams for the match, as well as add deviation for each match
-        error = 0.03
+        error = 0.01
         team1_players = [P1_serve_win + random.uniform(-error, error), P2_serve_win + random.uniform(-error, error)]
         team2_players = [P3_serve_win + random.uniform(-error, error), P4_serve_win + random.uniform(-error, error)]
-
+        # print("Team1:", team1_players)
+        # print("Team2:", team2_players)
         # Randomize serving order within teams for each set
         team1_serving_order = team1_players.copy()
         team2_serving_order = team2_players.copy()
@@ -110,7 +110,6 @@ def simulate_full_game(P1_serve_win, P2_serve_win, P3_serve_win, P4_serve_win):
                 # Get current server's win probability
                 server_win_prob = serving_order[server_index % 4]
                 serving_team = 1 if (serving_order[server_index % 4] in team1_players) else 2
-
                 # Simulate the game
                 server_won = simulate_game(server_win_prob)
 
@@ -125,7 +124,6 @@ def simulate_full_game(P1_serve_win, P2_serve_win, P3_serve_win, P4_serve_win):
                         team2_games += 1
                     else:
                         team1_games += 1
-
                 server_index += 1  # Next server
 
                 # Check for set win
@@ -135,8 +133,8 @@ def simulate_full_game(P1_serve_win, P2_serve_win, P3_serve_win, P4_serve_win):
                 # Tie-break at 6-6
                 if team1_games == tiebreak_at and team2_games == tiebreak_at:
                     # Simulate tie-break
-                    tiebreak_winner_team1 = simulate_tiebreak(P1_serve_win, P2_serve_win, P3_serve_win, P4_serve_win)
-                    if tiebreak_winner_team1:
+                    tiebreak_winner_team1 = simulate_tiebreak(P1_serve_win, P2_serve_win, P3_serve_win, P4_serve_win, once=True)
+                    if tiebreak_winner_team1 > 0.5:
                         team1_sets += 1
                     else:
                         team2_sets += 1
@@ -157,7 +155,6 @@ def simulate_full_game(P1_serve_win, P2_serve_win, P3_serve_win, P4_serve_win):
         # Update match wins
         if team1_sets > team2_sets:
             team1_wins += 1
-
     # Calculate and display winning probability
     team1_win_probability = team1_wins / num_matches
     return team1_win_probability
