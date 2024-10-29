@@ -63,4 +63,4 @@ if __name__ == "__main__":
     print("Team 1 winning chance in full game: ", simulate_full_match(*player_winning_chances_with_serve.values()))
     print("Team 1 winning chance in 1-point game: ", model.eval_pcsp(model.generate_pcsp(one_point_env)))
     print("Team 1 winning chance in 7-point PAT: ", model.eval_pcsp(model.generate_pcsp(tiebreak_env)))
-    print("Team 1 winning chance in 7-point tiebreak:", simulate_tiebreak(*player_winning_chances_with_serve.values()))
+    print("Team 1 winning chance in 7-point tiebreak:", simulate(*player_winning_chances_with_serve.values()))

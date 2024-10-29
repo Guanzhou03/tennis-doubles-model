@@ -37,16 +37,16 @@ var points = 1;  // Max point in the tiebreak game
 // formation
 Formation = [turn==1]P1Formation -> pcase {
 	28: C_Formation{p1_form=C} -> Skip
-	8: I_Formation{p1_form=I} -> Skip
+	15: I_Formation{p1_form=I} -> Skip
 } [] [turn==2]P2Formation -> pcase {
-	17: C_Formation{p2_form=C} -> Skip
-	1: I_Formation{p2_form=I} -> Skip
+	22: C_Formation{p2_form=C} -> Skip
+	9: I_Formation{p2_form=I} -> Skip
 } [] [turn==3]P3Formation -> pcase {
-	10: C_Formation{p3_form=C} -> Skip
-	5: I_Formation{p3_form=I} -> Skip
+	47: C_Formation{p3_form=C} -> Skip
+	7: I_Formation{p3_form=I} -> Skip
 } [] [turn==4]P3Formation -> pcase {
-	15: C_Formation{p4_form=C} -> Skip
-	18: I_Formation{p4_form=I} -> Skip
+	42: C_Formation{p4_form=C} -> Skip
+	5: I_Formation{p4_form=I} -> Skip
 };
 
 // Four players have equal chances of serving
